@@ -7,6 +7,11 @@ SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
+COMMONDIR     = ./source/common
+COMMONDOCSDIR = ./source/common_docs
+CONFIGSDIR    = ./source/configs
+IMAGESDIR     = ./source/images
+SCRIPTSDIR    = ./source/scripts
 GITHUBDIR     = ../ghpages
 
 # Put it first so that "make" without argument is like "make help".
@@ -44,7 +49,7 @@ livehtml:
 	ln -s ../../shared/scripts				./source/scripts
 	ln -s ../../shared/docs					./source/common_docs
 	ln -s ../../shared/images				./source/images
-	sphinx-autobuild -b html --poll "$(SOURCEDIR)" "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
+	sphinx-autobuild -b html --poll --watch $(COMMONDIR) --watch $(COMMONDOCSDIR) --watch $(CONFIGSDIR) --watch $(IMAGESDIR) --watch $(SCRIPTSDIR) "$(SOURCEDIR)" "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: github
 github:

@@ -67,6 +67,9 @@ Acronym List
     ER
         Engineering Release
 
+    ESD
+        Electrostatic Discharge
+
     ESXi
         VMware vSphere Hypervisor
 

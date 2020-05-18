@@ -6,3 +6,5 @@ System Hardware Assembly and Configuration
     :maxdepth: 5
     :glob:
 
+    parts_specs
+    assembly

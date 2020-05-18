@@ -23,9 +23,13 @@ sys.path.append(os.path.abspath('./source/common_docs'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Binarylandscapes Homelab System Buildup'
+project = 'Homelab System Buildup'
 copyright = '2020, Josh Johnson @binarylandscapes'
 author = 'Josh Johnson @binarylandscapes'
+
+jinja_contexts = {
+    'test01': {'topics': {'a': 'b', 'c': 'd'}}
+}
 
 # Load the rest of the default configuration
 exec(open(r'./common/sphinx_defaults.py').read())

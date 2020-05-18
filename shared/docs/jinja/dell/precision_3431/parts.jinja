@@ -1,0 +1,21 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(3,'Dell Precision 3431, Parts List', true, ) }}
+
+    .. tabularcolumns:: |>{\RaggedRight}p{\dimexpr 0.4\linewidth-2\tabcolsep}
+                        |>{\RaggedRight}p{\dimexpr 0.4\linewidth-2\tabcolsep}
+
+    .. list-table:: Dell Precision 3431, Parts List
+        :header-rows: 1
+        :class: longtable
+        :name: list_table
+        :align: left
+
+        * - **Header 1**
+          - **Header 2**
+        * - Row 1 content
+          - Row 1 content
+        * - Row 2 content
+          - Row 2 content
+
+.. END: {{ self._TemplateReference__context.name }}

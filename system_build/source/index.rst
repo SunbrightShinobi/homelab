@@ -6,8 +6,9 @@
 
     .. only:: html
 
-        .. image:: /images/<titlelogo>.png
-            :scale: 80
+        .. image:: /images/binarylandscapes_logo.svg
+            :scale: 20
+            :width: 1200
             :alt: Title Logo
             :align: center
 
