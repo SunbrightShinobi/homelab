@@ -6,10 +6,9 @@
 
     .. only:: html
 
-        .. image:: /images/binarylandscapes_logo.svg
-            :scale: 20
-            :width: 1200
-            :alt: Title Logo
+        .. image:: /images/FullColor_1280x1024_lightBG.png
+            :scale: 10
+            :alt: Binarylandscapes Consulting
             :align: center
 
         ---------------------
