@@ -2,7 +2,7 @@
 
     {% import "/common_docs/jinja/macros.jinja" as macros %}
 
-    {{ macros.create_heading(2,"Specifications", true, ) }}
+    {{ macros.create_heading(2,"Hardware Specifications", true, ) }}
 
     {% include "/common_docs/jinja/dell/precision_3431/specs.jinja" %}
 

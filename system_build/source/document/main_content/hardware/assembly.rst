@@ -4,5 +4,5 @@
 
     {{ macros.create_heading(2,"Hardware Assembly", true, ) }}
 
-    {% include "/common_docs/jinja/dell/precision_3431/assembly.jinja" %}
+    {% include "/common_docs/jinja/dell/precision_3431/phys_assy.jinja" %}
 
