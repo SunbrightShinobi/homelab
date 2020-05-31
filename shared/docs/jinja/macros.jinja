@@ -3,22 +3,22 @@
 {% for target in targets %}
     {% if loop.first %}
 
-:strong:`Mark Complete:`
+    :strong:`Mark Complete:`
 
-.. tabularcolumns:: |p{\dimexpr 0.28\linewidth-2\tabcolsep}
-                    |p{\dimexpr 0.4\linewidth-2\tabcolsep}
-                    |p{\dimexpr 0.28\linewidth-2\tabcolsep}|
+    .. tabularcolumns:: |p{\dimexpr 0.28\linewidth-2\tabcolsep}
+                        |p{\dimexpr 0.4\linewidth-2\tabcolsep}
+                        |p{\dimexpr 0.28\linewidth-2\tabcolsep}|
 
-.. list-table::
-    :header-rows: 1
+    .. list-table::
+        :header-rows: 1
 
-    - * :strong:`Hostname`
-      * :strong:`Print and Sign Name`
-      * :strong:`Date`
+        - * :strong:`Hostname`
+          * :strong:`Print and Sign Name`
+          * :strong:`Date`
     {% endif %}
-    - * {% if target %}``{{ target }}``{% endif %}
-      *
-      *
+        - * {% if target %}``{{ target }}``{% endif %}
+          *
+          *
 
 {% endfor %}
 {% endmacro %}
@@ -29,24 +29,24 @@
 {% for target in targets %}
     {% if loop.first %}
 
-:strong:`Mark Complete:`
+    :strong:`Mark Complete:`
 
-.. tabularcolumns:: |p{\dimexpr 0.4\linewidth-2\tabcolsep}
-                    |p{\dimexpr 0.4\linewidth-2\tabcolsep}
-                    |p{\dimexpr 0.2\linewidth-2\tabcolsep}|
+    .. tabularcolumns:: |p{\dimexpr 0.4\linewidth-2\tabcolsep}
+                        |p{\dimexpr 0.4\linewidth-2\tabcolsep}
+                        |p{\dimexpr 0.2\linewidth-2\tabcolsep}|
 
-.. list-table::
-    :header-rows: 1
-    :align: left
-    :class: longtable
+    .. list-table::
+        :header-rows: 1
+        :align: left
+        :class: longtable
 
-    - * :strong:`Hostname`
-      * :strong:`Print and Sign Name`
-      * :strong:`Date`
+        - * :strong:`Hostname`
+          * :strong:`Print and Sign Name`
+          * :strong:`Date`
     {% endif %}
-    - * {% if target %}``{{ target }}``{% endif %}
-      *
-      *
+        - * {% if target %}``{{ target }}``{% endif %}
+          *
+          *
 
 {% endfor %}
 {% endmacro %}
