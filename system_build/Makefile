@@ -45,7 +45,7 @@ livehtml:
 	@ln -snf ../../shared/docs			$(COMMONDOCSDIR)
 	@ln -snf ../../shared/images		$(IMAGESDIR)
 	@ln -snf ../../shared/scripts		$(SCRIPTSDIR)
-	sphinx-autobuild -b html --poll "$(SOURCEDIR)" "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
+	sphinx-autobuild -b html -i $(SOURCEDIR)/jinja_contexts.txt --poll "$(SOURCEDIR)" "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: github
 github:

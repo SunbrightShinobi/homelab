@@ -14,6 +14,8 @@
 #
 import os
 import sys
+import yaml
+from yamlreader import yaml_load
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.append(os.path.abspath('./source/common'))
@@ -28,10 +30,21 @@ project = 'Homelab System Buildup'
 copyright = '2020, Josh Johnson @binarylandscapes'
 author = 'Josh Johnson @binarylandscapes'
 
-jinja_contexts = {
-    'test01': {'topics': {'a': 'b', 'c': 'd'}}
+documentConfig = {
+        '_document' : {
+            'systemName' : 'HOMELAB',
+            'revisionDate' : '2020May31'
+        }
 }
 
+# jinja_contexts can be multiple folders but they will appear to be merged in jinja_contexts.txt output, if you have documentConfig as part of load as it provides a common context
+# the folder must be first option for yaml_load. Only one folder is permitted. It does not load sub-folders
+# Update the context name and folder on a per document basis if needed
+jinja_contexts = {
+    'yaml_load' : yaml_load('configs/system_build',documentConfig),
+}
+with open('jinja_contexts.txt', 'wt') as out:
+    print(yaml.safe_dump(jinja_contexts, default_flow_style=False), file=out)
 # Load the rest of the default configuration
 exec(open(r'./common/sphinx_scripts/sphinx_defaults.py').read())
 

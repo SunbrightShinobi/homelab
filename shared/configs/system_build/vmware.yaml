@@ -1,0 +1,66 @@
+
+# All comments are stripped out with yamlreader
+# Cannot use '&' anchors and '*' aliases in separate yaml files but they will work in same yaml file with yamlreader but actual anchor/alias will be stripped out in final dict
+--- # Directives above and Content below and indicates start of document
+hardware:
+  dell_3431: &dell_3431_ws
+    manufacture: Dell
+    model: 3431 SFF Workstation
+    biosVersion: 1.3.1
+
+operating_systems:
+- &esx_os
+  _name: VMware vSphere ESXi
+  type: Linux
+
+networks:
+  hyrule_network: &hyrule_network
+    _name: hyrule
+    network_id: 10.1.10.0
+    broadcast: 10.1.10.255
+    subnetMask: 255.255.255.0
+    cidr: /24
+    vlanID: 10
+    gateway: 10.1.10.1
+
+hosts:
+- &esx01
+  _name: &esx01_name gerudo
+  hostname: *esx01_name
+  type: Physical
+  hardware:
+    <<: *dell_3431_ws
+  os: 
+    <<: *esx_os
+  remote_mgmt:
+    hostname: &esx01_mgmt_name gerudo-mgmt
+    network: 
+      <<: *hyrule_network
+      ip01: 191
+- &esx02
+  _name: &esx02_name hebra
+  hostname: *esx02_name
+  type: Physical
+  hardware:
+    <<: *dell_3431_ws
+  os: 
+    <<: *esx_os
+  remote_mgmt:
+    hostname: &esx02_mgmt_name hebra-mgmt
+    network: 
+      <<: *hyrule_network
+      ip01: 192
+- &esx03
+  _name: &esx03_name akkala
+  hostname: *esx03_name
+  type: Physical
+  hardware:
+    <<: *dell_3431_ws
+  os: 
+    <<: *esx_os
+  remote_mgmt:
+    hostname: &esx03_mgmt_name akkala-mgmt
+    network: 
+      <<: *hyrule_network
+      ip01: 193
+... # End of document content

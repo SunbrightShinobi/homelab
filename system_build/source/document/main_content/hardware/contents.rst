@@ -8,3 +8,4 @@ System Hardware Assembly and Configuration
 
     specifications
     assembly
+    bios_fw

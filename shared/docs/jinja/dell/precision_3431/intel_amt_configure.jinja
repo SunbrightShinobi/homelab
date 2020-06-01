@@ -1,0 +1,10 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(4,'Dell Precision 3431, Intel Management Engine Configuration for **'+host['_name']+'**', ) }}
+
+#.  If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and :kbd:`F12` when Dell 3431 powers on and shows Dell logo
+#.  :menuselection:`Intel(R) Management Engine BIOS Extension (MEBx)`
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. END: {{ self._TemplateReference__context.name }}

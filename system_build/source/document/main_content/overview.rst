@@ -1,4 +1,4 @@
-.. jinja::
+.. jinja:: yaml_load
 
     {% set globals = {'heading_level': 1,'targets': []} %}
 

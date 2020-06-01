@@ -1,6 +1,6 @@
 .. START: {{ self._TemplateReference__context.name }}
 
-{{ macros.create_heading(3,'Dell Precision 3431, Hardware Assembly', true, ) }}
+{{ macros.create_heading(3,'Dell Precision 3431, Hardware Assembly of **'+host['_name']+'**', true, ) }}
 
 .. important::
 
@@ -19,7 +19,7 @@
 
         Dell Precision 3431, Assembled, Rear View
 
-    {{ macros.sign_off_table(['Dell Precision 3431 Workstation']) }}
+{{ macros.sign_off_table([host['_name']]) }}
 
 #.  Remove Factory 2.5/3.5 inch :term:`HDD` Mount from factory :term:`HDD` Mount Cage:
 
@@ -42,7 +42,7 @@
 
             Dell Precision 3431, HDD Mount Removed
 
-    {{ macros.sign_off_table(['Dell Precision 3431 Workstation']) }}
+{{ macros.sign_off_table([host['_name']]) }}
 
 #.  Remove Factory :term:`HDD` Mount Cage from system:
 
@@ -65,7 +65,7 @@
 
             Dell Precision 3431, HDD Cage Removed
 
-    {{ macros.sign_off_table(['Dell Precision 3431 Workstation']) }}
+{{ macros.sign_off_table([host['_name']]) }}
 
 #.  Replace (or Install) PCIe NVMe M.2 SSD Drive system:
 
@@ -107,7 +107,7 @@
 
     #.  Verify :term:`SSD` is mounted correctly and fully in connector before continuing.
 
-    {{ macros.sign_off_table(['Dell Precision 3431 Workstation']) }}
+{{ macros.sign_off_table([host['_name']]) }}
 
 #.  Reinstallation of :term:`HDD` Mount Cage into system:
 
@@ -132,7 +132,7 @@
 
             Dell Precision 3431, :term:`HDD` Mount Cage Reinstalled
 
-    {{ macros.sign_off_table(['Dell Precision 3431 Workstation']) }}
+{{ macros.sign_off_table([host['_name']]) }}
 
 #.  Installation of :term:`SSD` into Factory 2.5/3.5 inch HDD Mount:
 
@@ -182,7 +182,7 @@
 
             Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (2/2)
 
-    {{ macros.sign_off_table(['Dell Precision 3431 Workstation']) }}
+{{ macros.sign_off_table([host['_name']]) }}
 
 #.  Replacement or Installation of NVIDIA Tesla P4 8GB :term:`GPU`, PCIe 3.0, 16x
 
@@ -222,7 +222,7 @@
 
             Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (2/2)
 
-    {{ macros.sign_off_table(['Dell Precision 3431 Workstation']) }}
+{{ macros.sign_off_table([host['_name']]) }}
 
 #.  Installation of Intel X520-DA2 10Gbe :term:`NIC`, PCIe 2.0, 8x into PCIe 3.0, 4x slot per the images below
 
@@ -251,7 +251,7 @@
 
         Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (3/3)
 
-    {{ macros.sign_off_table(['Dell Precision 3431 Workstation']) }}
+{{ macros.sign_off_table([host['_name']]) }}
 
 #.  Final Assembly
 
@@ -289,6 +289,6 @@
 
             Dell Precision 3431, Assembled (Front View)
 
-    {{ macros.sign_off_table(['Dell Precision 3431 Workstation']) }}
+{{ macros.sign_off_table([host['_name']]) }}
 
 .. END: {{ self._TemplateReference__context.name }}
