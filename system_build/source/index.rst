@@ -11,9 +11,9 @@
             :alt: Binarylandscapes Consulting
             :align: center
 
-        ---------------------
-        Contents
-        ---------------------
+    ---------------------
+    Contents
+    ---------------------
 
     .. toctree::
         :maxdepth: 5
@@ -23,13 +23,39 @@
 
         document/main_content/contents
 
-    .. only:: html
+    ------------------
+    Revision History
+    ------------------
 
-        --------------
-        To Do List
-        --------------
+    .. tabularcolumns:: |>{\RaggedRight}p{\dimexpr 0.2\linewidth-2\tabcolsep}
+                        |>{\RaggedRight}p{\dimexpr 0.2\linewidth-2\tabcolsep}
+                        |>{\RaggedRight}p{\dimexpr 0.6\linewidth-2\tabcolsep}|
 
-        .. todolist::
+    .. list-table:: Revision History
+        :header-rows: 1
+        :class: longtable
+        :name: revision_history
+        :align: center
+
+        * - **Date**
+            - **Rev**
+            - **Description**
+
+        {% for revision in _document['revisionHistory'] %}
+
+        * - {{ revision['date'] }}
+            - {{ revision['rev'] }}
+            - {% for change in revision['changes'] %}
+            {{ change }}
+            {% endfor %}
+
+        {% endfor %}
+
+    --------------
+    To Do List
+    --------------
+
+    .. todolist::
 
     ---------------------
     Appendices

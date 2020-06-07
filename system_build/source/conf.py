@@ -30,10 +30,10 @@ project = 'Homelab System Buildup'
 copyright = '2020, Josh Johnson @binarylandscapes'
 author = 'Josh Johnson @binarylandscapes'
 
-documentConfig = {
-        '_document' : {
+defaultConfig = {
+        'defaultConfig' : {
             'systemName' : 'HOMELAB',
-            'revisionDate' : '2020May31'
+            'revisionDate' : '2020May31',
         }
 }
 
@@ -41,7 +41,7 @@ documentConfig = {
 # the folder must be first option for yaml_load. Only one folder is permitted. It does not load sub-folders
 # Update the context name and folder on a per document basis if needed
 jinja_contexts = {
-    'yaml_load' : yaml_load('configs/system_build',documentConfig),
+    'yaml_load' : yaml_load('configs/system_build',defaultConfig),
 }
 with open('jinja_contexts.txt', 'wt') as out:
     print(yaml.safe_dump(jinja_contexts, default_flow_style=False), file=out)

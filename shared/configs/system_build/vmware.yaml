@@ -17,11 +17,14 @@ networks:
   hyrule_network: &hyrule_network
     _name: hyrule
     network_id: 10.1.10.0
+    network_pre: 10.1.10
     broadcast: 10.1.10.255
     subnetMask: 255.255.255.0
     cidr: /24
     vlanID: 10
     gateway: 10.1.10.1
+    dns01: 10.1.10.1
+    dns02: 0.0.0.0
 
 hosts:
 - &esx01
