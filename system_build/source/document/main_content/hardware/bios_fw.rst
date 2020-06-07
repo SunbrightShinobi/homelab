@@ -26,9 +26,9 @@
 
     {% include "/common_docs/jinja/dell/precision_3431/bios_update.jinja" %}
 
-    {% include "/common_docs/jinja/dell/precision_3431/bios_configure.jinja" %}
-
     {% include "/common_docs/jinja/dell/precision_3431/intel_amt_configure.jinja" %}
+
+    {% include "/common_docs/jinja/dell/precision_3431/bios_configure.jinja" %}
 
         {% endfor %}
     {% endif %}

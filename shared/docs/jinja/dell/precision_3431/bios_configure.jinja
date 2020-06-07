@@ -5,16 +5,33 @@
 #.  If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and :kbd:`F12` when Dell 3431 powers on and shows Dell logo
 #.  :menuselection:`BIOS Configuration`
 
+    .. note::
+
+        If the BIOS has already been configured then you will need to :guilabel:`Unlock` and :kbd:`<Admin Password>` to be able to change any settings.
+
     .. important::
 
         If prompted after :guilabel:`Apply`, Check :guilabel:`Save as Custom User Settings` then :guilabel:`OK`
 
 #.  :guilabel:`General --> Boot Sequence`
 
+    .. important::
+
+        The Boot Sequence menu may only list options set from factory and will require completing configuration of BIOS and installation of OS to populate menu options in documentation.
+
     #.  Configure the Boot List Option to :guilabel:`UEFI`
     #.  Configure the Boot Sequence to the following order:
 
+    {% if host['os']['_name'] in ['VMware vSphere ESXi'] %}
+
         *   UEFI: Samsung USB or VMware ESXi (If installed)
+
+    {% elif host['os']['_name'] in ['Microsoft Windows 10'] %}
+
+        *   UEFI: Windows (If installed)
+
+    {% endif %}
+
         *   Onboard NIC(IPV4)
         *   Onboard NIC(IPV6)
 
@@ -27,7 +44,7 @@
 
 #.  :guilabel:`General --> UEFI Boot Path Security`
 
-    *   :guilabel:`Always,Except Internal HDD&PXE`
+    *   :guilabel:`Always, Except Internal HDD & PXE`
     *   :guilabel:`Apply`
 
 #.  :guilabel:`General --> Date/Time`
@@ -36,7 +53,7 @@
 
 #.  :guilabel:`System Configuration --> Integrated NIC`
 
-    *   Check :guilabel:`Enable UEFI NEtwork Stack`
+    *   Check :guilabel:`Enable UEFI Network Stack`
     *   :guilabel:`Enabled w/PXE`
     *   :guilabel:`Apply`
 
@@ -135,10 +152,10 @@
 
 #.  :guilabel:`Security --> Password Configuration`
 
-    *   Admin Password Min. :kbd:`32`
+    *   Admin Password Min. :kbd:`8`
     *   Admin Password Max. :kbd:`32`
     *   System Password Min. :kbd:`08`
-    *   System Password Max. :kbd:`08`
+    *   System Password Max. :kbd:`32`
     *   :guilabel:`Apply`
 
 #.  :guilabel:`Security --> Password Bypass`
@@ -278,7 +295,7 @@
 
 #.  :guilabel:`Power Management --> Fan Control Override`
 
-    *   Uncheck :guilabel:`Fane Control Overide`
+    *   Uncheck :guilabel:`Fan Control Overide`
     *   :guilabel:`Apply`
 
 #.  :guilabel:`Power Management --> USB Wake Support`
@@ -323,7 +340,7 @@
 
 #.  :guilabel:`POST Behavior --> Warnings and Errors`
 
-    *   Check :guilabel:`Prompt on Warning and Errors`
+    *   :guilabel:`Prompt on Warning and Errors`
     *   :guilabel:`Apply`
 
 #.  :guilabel:`Manageability --> Intel AMT Capability`
@@ -357,7 +374,7 @@
 
 #.  :guilabel:`Virtualization Support --> Trusted Execution`
 
-    *   Uncheck :guilabel:`Trusted Execution` *Grayed out due to previous setting*
+    *   Check :guilabel:`Trusted Execution`
     *   :guilabel:`Apply`
 
 #.  :guilabel:`Wireless --> Wireless Device Enable`
@@ -411,7 +428,7 @@
     *   Uncheck :guilabel:`BIOSConnect`
     *   :guilabel:`Apply`
 
-#.  :guilabel:`Security --> Admin Password`
+#.  :guilabel:`Security --> Admin Password` *If not already set*
 
     *   :kbd:`Enter new *Admin level password*`
     *   :kbd:`Confirm new *Admin level password*`

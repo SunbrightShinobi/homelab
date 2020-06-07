@@ -2,8 +2,111 @@
 
 {{ macros.create_heading(4,'Dell Precision 3431, Intel Management Engine Configuration for **'+host['_name']+'**', ) }}
 
+.. important::
+
+    You cannot access the BIOS configuration menu for the Intel AMT system if connected via the Intel AMT Remote Desktop, once you set a BIOS Admin password. The menu option will dissapear from menu.
+
 #.  If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and :kbd:`F12` when Dell 3431 powers on and shows Dell logo
 #.  :menuselection:`Intel(R) Management Engine BIOS Extension (MEBx)`
+#.  :menuselection:`MEBx Login`
+#.  You will be prompted for factory *Intel(R) ME Password* :kbd:`admin` then :kbd:`Enter`
+#.  You will be prompted to set new password for MEBx login, :kbd:`<Desired Admin Password>` then :kbd:`Enter`
+#.  Verify password by :kbd:`<Desired Admin Password>` again then :kbd:`Enter`
+
+    .. important::
+
+        To change the Intel MEBx password for *admin* user in future from BIOS:
+
+            #.  :menuselection:`Intel(R) ME General Settings`
+            #.  :menuselection:`Change ME Password`
+
+#.  Verify :menuselection:`Intel(R) AMT` is set to :menuselection:`<Enabled>`
+#.  :menuselection:`Intel(R) AMT Configuration`
+
+    #.  :menuselection:`Managebility Feature Selection` set to :menuselection:`<Enabled>`
+    #.  :menuselection:`SOL/Storage Redirection/KVM`
+
+        *   :menuselection:`SOL` set to :menuselection:`<Enabled>`
+        *   :menuselection:`Storage Redirection` set to :menuselection:`<Enabled>`
+        *   :menuselection:`KVM Feature Selection` set to :menuselection:`<Enabled>`
+    
+    #.  :kbd:`Escape`
+    #.  :menuselection:`User Consent`
+
+        .. important::
+
+            It is critical that if you do not have on-site personnel with equipment that *User Opt-in* is set to *<None>* otherwise you will not be able to establish a remote KVM session without user approval from local KB/Display connected to workstation.
+
+        *   :menuselection:`User Opt-in` set to :menuselection:`<None>`
+        *   :menuselection:`Opt-in Configurable from Remote IT` set to :menuselection:`<Enabled>`
+
+    #.  :kbd:`Escape`
+    #.  :menuselection:`Password Policy` set to :menuselection:`<Anytime>`
+    #.  :menuselection:`Network Setup`
+    #.  :menuselection:`Intel(R) ME Network Name Settings`
+
+        *   :menuselection:`Host Name` :kbd:`{{ host['remote_mgmt']['hostname'] }}`
+        *   :menuselection:`Domain Name` :kbd:`{{ _system['domain'] }}`
+        *   :menuselection:`Shared/Dedicated FQDN` set to :menuselection:`<Dedicated>`
+        *   :menuselection:`Dynamic DNS Update` set to :menuselection:`<Disabled>`
+
+    #.  :kbd:`Escape`
+    #.  :menuselection:`TCP/IP Settings`
+    #.  :menuselection:`Wired LAN IPV4 Settings`
+        
+        *   :menuselection:`DHCP Mode` set to :menuselection:`<Disabled>`
+        *   :menuselection:`IPV4 Address` :kbd:`{{ host['remote_mgmt']['network']['network_pre'] }}.{{ host['remote_mgmt']['network']['ip01'] }}`
+        *   :menuselection:`Subnet Mask Address` :kbd:`{{ host['remote_mgmt']['network']['subnetMask'] }}`
+        *   :menuselection:`Default Gateway Address` :kbd:`{{ host['remote_mgmt']['network']['gateway'] }}`
+        *   :menuselection:`Preferred DNS Address` :kbd:`{{ host['remote_mgmt']['network']['dns01'] }}`
+        *   :menuselection:`Alternate DNS Address` :kbd:`{{ host['remote_mgmt']['network']['dns02'] }}`
+
+    #.  :kbd:`Escape`
+    #.  :kbd:`Escape`
+    #.  :kbd:`Escape`
+    #.  :menuselection:`Activate Network Access` then :kbd:`Y`
+    #.  :menuselection:`Power Control`
+
+        *   :menuselection:`Intel(R) AMT ON in Host Sleep States` set to :menuselection:`<Desktop: ON in S0, ME Wake in S3, S4-5>`
+        *   :menuselection:`Idle Timeout` set to :kbd:`65535` *You may want lower in a non lab environment for security reasons*
+   
+    #.  :kbd:`Escape`
+    #.  :kbd:`Escape`
+    #.  :menuselection:`MEBx Exit` then :kbd:`Y` and workstation will Reboot.
+
+#.  Go to your Windows workstation and download and install :program:`MeshCommander` from `<https://www.meshcommander.com/>`_
+#.  Run :program:`MeshCommander`
+#.  :guilabel:`Add Computer...`
+
+    *   Friendly Name :kbd:`{{ host['remote_mgmt']['hostname'] }}`
+    *   Group Name *Leave blank*
+    *   Hostname :kbd:`{{ host['remote_mgmt']['network']['network_pre'] }}.{{ host['remote_mgmt']['network']['ip01'] }}`
+    *   Auth/Security :guilabel:`Digest/None`
+    *   Username :kbd:`admin`
+    *   Password* :kbd:`Configured MEBx Login Password` or *Default is admin (But will not let you connect with default password)*
+
+#.  :guilabel:`OK`
+#.  On the connection for *{{ host['remote_mgmt']['hostname'] }}* :guilabel:`Connect`
+#.  Once first time connection is complete, :guilabel:`Switch to TLS` in top left
+#.  :guilabel:`OK`
+#.  :guilabel:`OK` *If needed*
+#.  :guilabel:`System Status --> Primary display, 3 minutes session timeout`
+#.  Update Session timeout (Minutes) to :kbd:`10` then :guilabel:`OK`
+#.  :guilabel:`Displayed Date & Time`
+#.  When prompted to sync with this computer :guilabel:`OK`
+#.  :guilabel:`Remote Desktop` and then click red banner to enable the feature.
+
+    *   Check :guilabel:`Redirection Port`
+    *   Check :guilabel:`KVM Remote Desktop`
+    *   Check :guilabel:`IDE-Redirection`
+    *   Check :guilabel:`Serial-over-LAN`
+
+#.  :guilabel:`OK`
+#.  :guilabel:`Connect` and verify you can establish a Remote KVM session with computer and then disconnect.
+
+    .. important::
+
+        The Remote KVM requires the system to have an active display connected to it in order to function. So if connected to a physical KVM but off-channel, it will have issues and if display is unplugged it will not work. You will need a *DisplayPort Headless Ghost Display plug* like the following `<https://smile.amazon.com/gp/product/B07YLQZXKY/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1>`_
 
 {{ macros.sign_off_table([host['_name']]) }}
 
