@@ -1,0 +1,23 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(4,'Establish an Intel AMT Remote Desktop session to **'+host['_name']+'**', ) }}
+
+Prerequistes: 
+
+    *   Download and installation of :program:`Meshcommander` from `MeshCommander Download <https://www.meshcommander.com/meshcommander/meshcmd>`_
+    *   Intel AMT is configured per :ref:`dell3431_intel_amt_config_{{ host['remote_mgmt']['hostname'] }}`
+
+#.  From workstation, open :program:`MeshCommander`
+#.  :guilabel:`Computer Management (Networked Computers Icon)`
+#.  Find **{{ host['remote_mgmt']['hostname'] }}** and to on the same row at right-hand side of window :guilabel:`Connect`
+#.  Wait for system status to populate then :guilabel:`Remote Desktop` on left-hand side menu
+#.  In Remote Desktop section of :program:`MeshCommander` :guilabel:`Connect`
+#.  You now have a remote desktop session to **{{ host['_name'] }}** in its current state.
+
+    .. note::
+
+        During reboots or power cycles :program:`MeshCommander` sometimes disconnects and has a delay to reconnect. Just reconnect as able but this is why its recommend to start from powered down for OS installations over Remote Desktop.
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. END: {{ self._TemplateReference__context.name }}

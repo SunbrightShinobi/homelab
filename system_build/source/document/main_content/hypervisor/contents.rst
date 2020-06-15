@@ -6,3 +6,4 @@ System Hypervisor Deployment and Configuration
     :maxdepth: 5
     :glob:
 
+    install

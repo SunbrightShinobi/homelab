@@ -1,5 +1,7 @@
 .. START: {{ self._TemplateReference__context.name }}
 
+.. _dell3431_intel_amt_config_{{ host['remote_mgmt']['hostname'] }}:
+
 {{ macros.create_heading(4,'Dell Precision 3431, Intel Management Engine Configuration for **'+host['_name']+'**', ) }}
 
 .. important::
@@ -74,39 +76,11 @@
     #.  :kbd:`Escape`
     #.  :menuselection:`MEBx Exit` then :kbd:`Y` and workstation will Reboot.
 
-#.  Go to your Windows workstation and download and install :program:`MeshCommander` from `<https://www.meshcommander.com/>`_
-#.  Run :program:`MeshCommander`
-#.  :guilabel:`Add Computer...`
+#.  Verify connectivity by using a :program:`Web Browser` and going to the Intel AMT Web Interface at `<http://{{ host['remote_mgmt']['network']['network_pre'] }}.{{ host['remote_mgmt']['network']['ip01'] }}:16992>`_ and logging in with :kbd:`admin` as username and the *password* you configured.
 
-    *   Friendly Name :kbd:`{{ host['remote_mgmt']['hostname'] }}`
-    *   Group Name *Leave blank*
-    *   Hostname :kbd:`{{ host['remote_mgmt']['network']['network_pre'] }}.{{ host['remote_mgmt']['network']['ip01'] }}`
-    *   Auth/Security :guilabel:`Digest/None`
-    *   Username :kbd:`admin`
-    *   Password* :kbd:`Configured MEBx Login Password` or *Default is admin (But will not let you connect with default password)*
+{{ macros.sign_off_table([host['_name']]) }}
 
-#.  :guilabel:`OK`
-#.  On the connection for *{{ host['remote_mgmt']['hostname'] }}* :guilabel:`Connect`
-#.  Once first time connection is complete, :guilabel:`Switch to TLS` in top left
-#.  :guilabel:`OK`
-#.  :guilabel:`OK` *If needed*
-#.  :guilabel:`System Status --> Primary display, 3 minutes session timeout`
-#.  Update Session timeout (Minutes) to :kbd:`10` then :guilabel:`OK`
-#.  :guilabel:`Displayed Date & Time`
-#.  When prompted to sync with this computer :guilabel:`OK`
-#.  :guilabel:`Remote Desktop` and then click red banner to enable the feature.
-
-    *   Check :guilabel:`Redirection Port`
-    *   Check :guilabel:`KVM Remote Desktop`
-    *   Check :guilabel:`IDE-Redirection`
-    *   Check :guilabel:`Serial-over-LAN`
-
-#.  :guilabel:`OK`
-#.  :guilabel:`Connect` and verify you can establish a Remote KVM session with computer and then disconnect.
-
-    .. important::
-
-        The Remote KVM requires the system to have an active display connected to it in order to function. So if connected to a physical KVM but off-channel, it will have issues and if display is unplugged it will not work. You will need a *DisplayPort Headless Ghost Display plug* like the following `<https://smile.amazon.com/gp/product/B07YLQZXKY/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1>`_
+{% include "/common_docs/jinja/dell/precision_3431/intel_amt_remoteDesktopConfigure.jinja" %}
 
 {{ macros.sign_off_table([host['_name']]) }}
 

@@ -1,0 +1,43 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(4,'Installation of VMware vSphere ESXi for **'+host['_name']+'**', ) }}
+
+.. important::
+
+    Currently for VMware vSphere ESXi 7.0.0-15843807, PXE boot via BIOS or UEFI is non-operational
+
+.. important::
+
+    Currently for VMware vSphere ESXi 7.0.0-15843807, customization of ISO file is non-functional as well as using :program:`Ventoy` for a ISO booting USB.
+
+.. important::
+
+    These steps are written from the expectation previous section is complete for establishing a remote desktop session to host via :program:`MeshCommander`
+
+#.  If host is powered on, :guilabel:`Power Actions... --> Power down --> OK` and wait for red notification that Remote computer is not powered on.
+#.  :guilabel:`IDER` and configure the following options:
+
+    *   Source :guilabel:`ISO & IMG from file`
+    *   .ISO file :guilabel:`Choose File` and browse to location of and then select :file:`{{ host['os']['media']}}`
+    *   Start :guilabel:`Immediate`
+
+#.  :guilabel:`OK` and verify you have have a green bar with **IDE-R Session, Connected** at top of :program:`MeshCommander` now
+#.  :guilabel:`Power Actions... --> Power On to IDE-R CDROM --> OK`
+#.  Verify you see Dell boot image and then it continues to *Loading ESXi installer* 
+#.  At the *Welcome to the VMware ESXI Installation* screen, press :kbd:`Enter`
+#.  At the *EULA* screen, :kbd:`F11`
+#.  At the *Select a Disk to Install or Upgrade*, :menuselection:`Local: Samsung Flash Drive (mpx.vmhba34:C0:T0:L0)` and :kbd:`Enter`
+#.  *If prompted*, use :kbd:`UP` and :kbd:`DOWN` and :kbd:`SPACEBAR` to select :menuselection:`Install` then :kbd:`Enter` to perform a fresh install over current ESXi installation
+#.  At the *Please select a keyboard layout screen*, select :menuselection:`US Default` and :kbd:`Enter`
+#.  :kbd:`<adminPassword>` then reenter to confirm :kbd:`<adminPassword>`
+#.  At the *Confirm Install* screen, :kbd:`F11`
+#.  Once installation is complete, :guilabel:`Stop IDE-R Session` from :program:`MeshCommander`
+#.  :kbd:`Enter` to :menuselection:`Reboot`
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. raw:: latex
+
+    \newpage
+
+.. END: {{ self._TemplateReference__context.name }}

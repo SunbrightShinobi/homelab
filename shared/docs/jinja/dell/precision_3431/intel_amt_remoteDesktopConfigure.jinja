@@ -1,0 +1,46 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(5,'Intel AMT Remote Desktop Configuration for **'+host['_name']+'**', ) }}
+
+#.  Go to your Windows workstation and download and install :program:`MeshCommander` from `<https://www.meshcommander.com/>`_
+#.  Run :program:`MeshCommander`
+#.  :guilabel:`Computer Management (Networked Computers Icon)`
+#.  :guilabel:`Add Computer...`
+
+    *   Friendly Name :kbd:`{{ host['remote_mgmt']['hostname'] }}`
+    *   Group Name *Leave blank*
+    *   Hostname :kbd:`{{ host['remote_mgmt']['network']['network_pre'] }}.{{ host['remote_mgmt']['network']['ip01'] }}`
+    *   Auth/Security :guilabel:`Digest/None`
+    *   Username :kbd:`admin`
+    *   Password* :kbd:`Configured MEBx Login Password` or *Default is admin (But will not let you connect with default password)*
+
+#.  :guilabel:`OK`
+#.  On the connection for *{{ host['remote_mgmt']['hostname'] }}* :guilabel:`Connect`
+#.  Once first time connection is complete, :guilabel:`Switch to TLS` in top left
+#.  :guilabel:`OK`
+#.  :guilabel:`OK` *If needed*
+#.  :guilabel:`System Status --> Primary display, 3 minutes session timeout`
+#.  Update Session timeout (Minutes) to :kbd:`10` then :guilabel:`OK`
+#.  :guilabel:`Displayed Date & Time`
+#.  When prompted to sync with this computer :guilabel:`OK`
+#.  :guilabel:`Remote Desktop` and then click red banner to enable the feature.
+
+    *   Check :guilabel:`Redirection Port`
+    *   Check :guilabel:`KVM Remote Desktop`
+    *   Check :guilabel:`IDE-Redirection`
+    *   Check :guilabel:`Serial-over-LAN`
+
+#.  :guilabel:`OK`
+#.  :guilabel:`Connect` and verify you can establish a Remote KVM session with computer and then disconnect.
+
+    .. important::
+
+        The Remote KVM requires the system to have an active display connected to it in order to function. So if connected to a physical KVM but off-channel, it will have issues and if display is unplugged it will not work. You will need a *DisplayPort Headless Ghost Display plug* like the following `Recommended Ghost Display Plug <https://smile.amazon.com/gp/product/B07YLQZXKY/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1>`_
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. raw:: latex
+
+    \newpage
+
+.. END: {{ self._TemplateReference__context.name }}

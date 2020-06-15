@@ -12,6 +12,7 @@ operating_systems:
 - &esx_os
   _name: VMware vSphere ESXi
   type: Linux
+  media: VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso
 
 networks:
   hyrule_network: &hyrule_network
@@ -25,6 +26,8 @@ networks:
     gateway: 10.1.10.1
     dns01: 10.1.10.1
     dns02: 0.0.0.0
+    domain: hyrule.binarylandscapes.com
+    dns_suffixes: hyrule.binarylandscapes.com
 
 hosts:
 - &esx01
@@ -35,6 +38,9 @@ hosts:
     <<: *dell_3431_ws
   os: 
     <<: *esx_os
+  network: 
+    <<: *hyrule_network
+    ip01: 101
   remote_mgmt:
     hostname: &esx01_mgmt_name gerudo-mgmt
     network: 
@@ -48,6 +54,9 @@ hosts:
     <<: *dell_3431_ws
   os: 
     <<: *esx_os
+  network: 
+    <<: *hyrule_network
+    ip01: 102
   remote_mgmt:
     hostname: &esx02_mgmt_name hebra-mgmt
     network: 
@@ -61,6 +70,9 @@ hosts:
     <<: *dell_3431_ws
   os: 
     <<: *esx_os
+  network: 
+    <<: *hyrule_network
+    ip01: 103
   remote_mgmt:
     hostname: &esx03_mgmt_name akkala-mgmt
     network: 
