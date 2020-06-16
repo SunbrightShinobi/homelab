@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Binarylandscapes’s HomeLab Assembly, Deployment and Configuration &mdash; Homelab System Buildup Git: homelab - HOMELAB-18-document-dell-3431-buildup  [ 43e7fc4a2ea ] documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/drawio_html.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/drawio.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/drawio_html.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.1. Document Overview" href="overview.html" />
+    <link rel="prev" title="Homelab System Buildup - (homelab, Git: homelab - HOMELAB-18-document-dell-3431-buildup [ 43e7fc4a2ea ])" href="../../index.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Homelab System Buildup
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. <strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1.1. Document Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design/contents.html">1.2. System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware/contents.html">1.3. System Hardware Assembly and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network/contents.html">1.4. System Network Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hypervisor/contents.html">1.5. System Hypervisor Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security/contents.html">1.6. System Cyber Security Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/contents.html">1.7. System Monitoring Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup/contents.html">1.8. System Backup Deployment and Configuration</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../common_docs/appendices/acronym_list.html">1. Acronym List</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Homelab System Buildup</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span><strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/document/main_content/contents.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binarylandscapes-s-homelab-assembly-deployment-and-configuration">
+<h1><span class="section-number">1. </span><strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration<a class="headerlink" href="#binarylandscapes-s-homelab-assembly-deployment-and-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1.1. Document Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design/contents.html">1.2. System Design</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware/contents.html">1.3. System Hardware Assembly and Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware/specifications.html">1.3.1. Hardware Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware/assembly.html">1.3.2. Hardware Assembly</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware/assembly.html#dell-precision-3431-hardware-assembly-of-gerudo">1.3.2.1. Dell Precision 3431, Hardware Assembly of <strong>gerudo</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/assembly.html#dell-precision-3431-hardware-assembly-of-hebra">1.3.2.2. Dell Precision 3431, Hardware Assembly of <strong>hebra</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/assembly.html#dell-precision-3431-hardware-assembly-of-akkala">1.3.2.3. Dell Precision 3431, Hardware Assembly of <strong>akkala</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware/bios_fw.html">1.3.3. Hardware BIOS &amp; Firmware Update/Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hardware/bios_fw.html#hardware-bios-firmware-update-configuration-for-alicesynthesis30">1.3.3.1. Hardware BIOS &amp; Firmware Update/Configuration for <strong>alicesynthesis30</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-bios-update-for-alicesynthesis30">1.3.3.1.1. Dell Precision 3431, BIOS Update for <strong>alicesynthesis30</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-bios-configuration-for-for-alicesynthesis30">1.3.3.1.2. Dell Precision 3431, BIOS Configuration for for <strong>alicesynthesis30</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/bios_fw.html#hardware-bios-firmware-update-configuration-for-gerudo">1.3.3.2. Hardware BIOS &amp; Firmware Update/Configuration for <strong>gerudo</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-bios-update-for-gerudo">1.3.3.2.1. Dell Precision 3431, BIOS Update for <strong>gerudo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-intel-management-engine-configuration-for-gerudo">1.3.3.2.2. Dell Precision 3431, Intel Management Engine Configuration for <strong>gerudo</strong></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="hardware/bios_fw.html#intel-amt-remote-desktop-configuration-for-gerudo">1.3.3.2.2.1. Intel AMT Remote Desktop Configuration for <strong>gerudo</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-bios-configuration-for-for-gerudo">1.3.3.2.3. Dell Precision 3431, BIOS Configuration for for <strong>gerudo</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/bios_fw.html#hardware-bios-firmware-update-configuration-for-hebra">1.3.3.3. Hardware BIOS &amp; Firmware Update/Configuration for <strong>hebra</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-bios-update-for-hebra">1.3.3.3.1. Dell Precision 3431, BIOS Update for <strong>hebra</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-intel-management-engine-configuration-for-hebra">1.3.3.3.2. Dell Precision 3431, Intel Management Engine Configuration for <strong>hebra</strong></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="hardware/bios_fw.html#intel-amt-remote-desktop-configuration-for-hebra">1.3.3.3.2.1. Intel AMT Remote Desktop Configuration for <strong>hebra</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-bios-configuration-for-for-hebra">1.3.3.3.3. Dell Precision 3431, BIOS Configuration for for <strong>hebra</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/bios_fw.html#hardware-bios-firmware-update-configuration-for-akkala">1.3.3.4. Hardware BIOS &amp; Firmware Update/Configuration for <strong>akkala</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-bios-update-for-akkala">1.3.3.4.1. Dell Precision 3431, BIOS Update for <strong>akkala</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-intel-management-engine-configuration-for-akkala">1.3.3.4.2. Dell Precision 3431, Intel Management Engine Configuration for <strong>akkala</strong></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="hardware/bios_fw.html#intel-amt-remote-desktop-configuration-for-akkala">1.3.3.4.2.1. Intel AMT Remote Desktop Configuration for <strong>akkala</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bios_fw.html#dell-precision-3431-bios-configuration-for-for-akkala">1.3.3.4.3. Dell Precision 3431, BIOS Configuration for for <strong>akkala</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="network/contents.html">1.4. System Network Deployment and Configuration</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hypervisor/contents.html">1.5. System Hypervisor Deployment and Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hypervisor/install.html">1.5.1. VMware vSphere ESXi Deployment for <strong>gerudo</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hypervisor/install.html#establish-an-intel-amt-remote-desktop-session-to-gerudo">1.5.1.1. Establish an Intel AMT Remote Desktop session to <strong>gerudo</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hypervisor/install.html#installation-of-vmware-vsphere-esxi-for-gerudo">1.5.1.2. Installation of VMware vSphere ESXi for <strong>gerudo</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hypervisor/install.html#post-installation-configuration-of-vmware-vsphere-esxi-for-gerudo">1.5.1.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>gerudo</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hypervisor/install.html#vmware-vsphere-esxi-deployment-for-hebra">1.5.2. VMware vSphere ESXi Deployment for <strong>hebra</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hypervisor/install.html#establish-an-intel-amt-remote-desktop-session-to-hebra">1.5.2.1. Establish an Intel AMT Remote Desktop session to <strong>hebra</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hypervisor/install.html#installation-of-vmware-vsphere-esxi-for-hebra">1.5.2.2. Installation of VMware vSphere ESXi for <strong>hebra</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hypervisor/install.html#post-installation-configuration-of-vmware-vsphere-esxi-for-hebra">1.5.2.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>hebra</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hypervisor/install.html#vmware-vsphere-esxi-deployment-for-akkala">1.5.3. VMware vSphere ESXi Deployment for <strong>akkala</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hypervisor/install.html#establish-an-intel-amt-remote-desktop-session-to-akkala">1.5.3.1. Establish an Intel AMT Remote Desktop session to <strong>akkala</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hypervisor/install.html#installation-of-vmware-vsphere-esxi-for-akkala">1.5.3.2. Installation of VMware vSphere ESXi for <strong>akkala</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="hypervisor/install.html#post-installation-configuration-of-vmware-vsphere-esxi-for-akkala">1.5.3.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>akkala</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security/contents.html">1.6. System Cyber Security Deployment and Configuration</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring/contents.html">1.7. System Monitoring Deployment and Configuration</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="backup/contents.html">1.8. System Backup Deployment and Configuration</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="overview.html" class="btn btn-neutral float-right" title="1.1. Document Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../index.html" class="btn btn-neutral float-left" title="Homelab System Buildup - (homelab, Git: homelab - HOMELAB-18-document-dell-3431-buildup [ 43e7fc4a2ea ])" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Josh Johnson @binarylandscapes
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
