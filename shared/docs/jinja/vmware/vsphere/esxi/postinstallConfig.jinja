@@ -1,0 +1,72 @@
+
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(4,'Post-Installation Configuration of VMware vSphere ESXi for **'+host['_name']+'**', ) }}
+
+#.  Verify system is booted up and ready at the Yellow & Black screen then :kbd:`F2` to Customize System
+#.  Enter :kbd:`root` for ``Login Name`` and :kbd:`<adminPassword>` for ``Password`` then :kbd:`Enter`
+#.  :menuselection:`Configure Management Network` then :kbd:`Enter`
+
+    #.  :menuselection:`Network Adaptors` then :kbd:`Enter`
+
+        *   Verify that ``vmnic0`` is ``[X]`` and ``Status`` is ``Connected``
+        *   Verify that ``vmnic1-2`` are ``[ ]`` and ``Status`` is ``Connected``
+        *   :kbd:`Enter`
+
+    #.  :menuselection:`VLAN (optional)` then :kbd:`Enter` to apply settings and exit menu.
+
+        .. note::
+
+            It is recommended to have your VMware management network as the native vlan or EPG on the configured trunk or as an access port. Which is configured as blank for the VLAN ID.
+
+        *   Verify that :guilabel:`VLAN ID (1-4094, or 4095 to access all VLANs):` :kbd:`blank`
+
+    #.  :menuselection:`IPv4 Configuration` and then :kbd:`Enter`
+
+        *   :menuselection:`Set static IPv4 address and network configuration` and then :kbd:`Space` to mark selection
+        *   :guilabel:`IPv4 Address` = :kbd:`{{host['network']['network_pre']}}.{{host['network']['ip01']}}`
+        *   :guilabel:`Subnet Mask` = :kbd:`{{host['network']['subnetMask']}}`
+        *   :guilabel:`Default Gateway` = :kbd:`{{host['network']['gateway']}}`
+        *   :kbd:`Enter`
+
+    #.  :menuselection:`DNS Configuration` and then :kbd:`Enter`
+
+        *   :menuselection:`Use the following DNS server addresses and hostname` and then :kbd:`Space` to mark selection
+        *   :guilabel:`Primary DNS Server` = :kbd:`{{host['network']['dns01']}}`
+        *   :guilabel:`Alternate DNS Server` = :kbd:`{{host['network']['dns02']}}`
+        *   :guilabel:`Hostname` = :kbd:`{{host['_name']}}`
+        *   :kbd:`Enter`
+
+    #.  :menuselection:`Custom DNS Suffixes` and then :kbd:`Enter`
+
+        *   :guilabel:`Suffixes` = :kbd:`{{host['network']['dns_suffixes']}}`
+        *   :kbd:`Enter`
+
+    #.  :kbd:`ESC` and :kbd:`Y` to Apply changes and restart management network
+
+#.  :menuselection:`Test Management Network` then :kbd:`Enter`
+
+    *   Verify that ``{{host['network']['gateway']}}`` is listed for ``Ping Address #0``
+    *   :kbd:`Enter` to perform a ping test to the default Gateway
+    *   Verify you get ``Pinging address #0 ({{host['network']['gateway']}}).             OK.``
+    *   Verify you get ``Pinging address #1 ({{host['network']['dns01']}}).             OK.``
+    *   *If populated* Verify you get ``Pinging address #2 ({{host['network']['dns02']}}).             OK.``
+    *   Verify you get ``Resolving hostname ({{host['_name']}}.{{host['network']['domain']}}).             OK.``
+    *   :kbd:`Enter`
+
+#.  :menuselection:`Configure Management Network` then :kbd:`Enter`
+
+    #.  :menuselection:`IPv6 Configuration` and then :kbd:`Enter`
+
+        *   :menuselection:`Disable IPv6 (restart required)` and then :kbd:`Space`
+        *   :kbd:`Enter`
+
+    #.  :kbd:`ESC` and :kbd:`Y` to Apply changes and reboot host
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. raw:: latex
+
+    \newpage
+
+.. END: {{ self._TemplateReference__context.name }}

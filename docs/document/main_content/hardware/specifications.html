@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.3.1. Hardware Specifications &mdash; Homelab System Buildup Git: homelab - HOMELAB-18-document-dell-3431-buildup  [ 43e7fc4a2ea ] documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/drawio_html.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/drawio.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/drawio_html.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.3.2. Hardware Assembly" href="assembly.html" />
+    <link rel="prev" title="1.3. System Hardware Assembly and Configuration" href="contents.html" />
+    <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Homelab System Buildup
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">1. <strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">1.1. Document Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/contents.html">1.2. System Design</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="contents.html">1.3. System Hardware Assembly and Configuration</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.3.1. Hardware Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="assembly.html">1.3.2. Hardware Assembly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bios_fw.html">1.3.3. Hardware BIOS &amp; Firmware Update/Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../network/contents.html">1.4. System Network Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hypervisor/contents.html">1.5. System Hypervisor Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/contents.html">1.6. System Cyber Security Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/contents.html">1.7. System Monitoring Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backup/contents.html">1.8. System Backup Deployment and Configuration</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../common_docs/appendices/acronym_list.html">1. Acronym List</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Homelab System Buildup</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../contents.html"><span class="section-number">1. </span><strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a> &raquo;</li>
+        
+          <li><a href="contents.html"><span class="section-number">1.3. </span>System Hardware Assembly and Configuration</a> &raquo;</li>
+        
+      <li><span class="section-number">1.3.1. </span>Hardware Specifications</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/document/main_content/hardware/specifications.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hardware-specifications">
+<span id="id1"></span><h1><span class="section-number">1.3.1. </span>Hardware Specifications<a class="headerlink" href="#hardware-specifications" title="Permalink to this headline">¶</a></h1>
+<table class="longtable docutils align-left" id="dell-3431-specs-esxi">
+<caption><span class="caption-number">Table 1.1 </span><span class="caption-text">Dell Precision 3431, Specifications for VMware vSphere ESXi Server Role</span><a class="headerlink" href="#dell-3431-specs-esxi" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Specification</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Link</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Chassis</p></td>
+<td><p>Precision 3431 Tower with 260W up to 92% efficient PSU (80Plus Platinum)</p></td>
+<td><p><a class="reference external" href="https://www.dell.com/en-us/work/shop/desktop-and-all-in-one-pcs/new-precision-3431-desktop-workstation/spd/precision-3431-workstation">https://www.dell.com/en-us/work/shop/desktop-and-all-in-one-pcs/new-precision-3431-desktop-workstation/spd/precision-3431-workstation</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Processor</p></td>
+<td><p>Intel Core i9-9900,(8 Core, 16MB Cache, 3.1GHz, 5.0GHz Turbo w/UHD Graphics 630)</p></td>
+<td><p><a class="reference external" href="https://www.intel.com/content/www/us/en/products/processors/core/i9-processors/i9-9900.html">https://www.intel.com/content/www/us/en/products/processors/core/i9-processors/i9-9900.html</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Memory</p></td>
+<td><p>64GB 4x16GB DDR4 2666MHz UDIMM Non-ECC</p></td>
+<td><p><em>See Chassis</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Out of Band Management</p></td>
+<td><p>Intel vPro Technology Enabled</p></td>
+<td><p><a class="reference external" href="https://www.intel.com/content/www/us/en/architecture-and-technology/vpro/vpro-platform-general.html">https://www.intel.com/content/www/us/en/architecture-and-technology/vpro/vpro-platform-general.html</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Hard Drive 0 (PCIe NVMe M.2 Slot)</p></td>
+<td><p>Samsung 970 Pro, NVMe M.2 SSD, 1TB</p></td>
+<td><p><a class="reference external" href="https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-970-pro-nvme-m2-1tb-mz-v7p1t0bw/">https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-970-pro-nvme-m2-1tb-mz-v7p1t0bw/</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Hard Drive 1 (3.5/2.5” Chassis HDD0)</p></td>
+<td><p>Empty</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Hard Drive 2 (3.5/2.5” Chassis HDD1)</p></td>
+<td><p>Samsung 860 Pro, SATA SSD, 2TB</p></td>
+<td><p><a class="reference external" href="https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-860-pro-2-5--sata-iii-2tb-mz-76p2t0bw/">https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-860-pro-2-5–sata-iii-2tb-mz-76p2t0bw/</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Graphics Processing Unit (GPU) 0</p></td>
+<td><p>NVIDIA Tesla P4, 8GB, PCIe 3.0 16x (PCIe 3.0, x16 Slot)</p></td>
+<td><p><a class="reference external" href="https://images.nvidia.com/content/pdf/tesla/184457-Tesla-P4-Datasheet-NV-Final-Letter-Web.pdf">https://images.nvidia.com/content/pdf/tesla/184457-Tesla-P4-Datasheet-NV-Final-Letter-Web.pdf</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Network Interface Card (NIC) 0</p></td>
+<td><p>Intel I219-LM, Single RJ45 Port, 1Gbe (Motherboard)</p></td>
+<td><p><a class="reference external" href="https://ark.intel.com/content/www/us/en/ark/products/82185/intel-ethernet-connection-i219-lm.html">https://ark.intel.com/content/www/us/en/ark/products/82185/intel-ethernet-connection-i219-lm.html</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Network Interface Card (NIC) 1</p></td>
+<td><p>Intel X520-DA2, Dual SFP+ Port, 10Gbe, PCIe 2.0, x4 (PCIe 3.0, x4 Slot)</p></td>
+<td><p><a class="reference external" href="https://ark.intel.com/content/www/us/en/ark/products/39776/intel-ethernet-converged-network-adapter-x520-da2.html">https://ark.intel.com/content/www/us/en/ark/products/39776/intel-ethernet-converged-network-adapter-x520-da2.html</a></p></td>
+</tr>
+<tr class="row-even"><td><p>USB Boot Drive</p></td>
+<td><p>Samsung BAR Plus, USB 3.1 Flash Drive, 32GB (Front USB3.1 Port)</p></td>
+<td><p><a class="reference external" href="https://www.samsung.com/us/computing/memory-storage/usb-flash-drives/usb-3-1-flash-drive-bar-plus-32gb-champagne-silver-muf-32be3-am/">https://www.samsung.com/us/computing/memory-storage/usb-flash-drives/usb-3-1-flash-drive-bar-plus-32gb-champagne-silver-muf-32be3-am/</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="longtable docutils align-left" id="dell-3431-specs-dev-station">
+<caption><span class="caption-number">Table 1.2 </span><span class="caption-text">Dell Precision 3431, Specifications for Windows 10 Development Workstation Role</span><a class="headerlink" href="#dell-3431-specs-dev-station" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Specification</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Link</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Chassis</p></td>
+<td><p>Precision 3431 Tower with 260W up to 92% efficient PSU (80Plus Platinum)</p></td>
+<td><p><a class="reference external" href="https://www.dell.com/en-us/work/shop/desktop-and-all-in-one-pcs/new-precision-3431-desktop-workstation/spd/precision-3431-workstation">https://www.dell.com/en-us/work/shop/desktop-and-all-in-one-pcs/new-precision-3431-desktop-workstation/spd/precision-3431-workstation</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Processor</p></td>
+<td><p>Intel Core i9-9900,(8 Core, 16MB Cache, 3.1GHz, 5.0GHz Turbo w/UHD Graphics 630)</p></td>
+<td><p><a class="reference external" href="https://www.intel.com/content/www/us/en/products/processors/core/i9-processors/i9-9900.html">https://www.intel.com/content/www/us/en/products/processors/core/i9-processors/i9-9900.html</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Memory</p></td>
+<td><p>64GB 4x16GB DDR4 2666MHz UDIMM Non-ECC</p></td>
+<td><p><em>See Chassis</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Out of Band Management</p></td>
+<td><p>Intel vPro Technology Disabled</p></td>
+<td><p><a class="reference external" href="https://www.intel.com/content/www/us/en/architecture-and-technology/vpro/vpro-platform-general.html">https://www.intel.com/content/www/us/en/architecture-and-technology/vpro/vpro-platform-general.html</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Hard Drive 0 (PCIe NVMe M.2 Slot)</p></td>
+<td><p>Dell Class 50, NVMe M.2 SSD, 512GB <em>Toshiba KXG60PNV512G</em></p></td>
+<td><p><a class="reference external" href="https://i.dell.com/sites/csdocuments/Shared-Content_data-Sheets_Documents/en/Dell_Precision_Workstation_Storage_Classification.pdf">https://i.dell.com/sites/csdocuments/Shared-Content_data-Sheets_Documents/en/Dell_Precision_Workstation_Storage_Classification.pdf</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Hard Drive 1 (3.5/2.5” Chassis HDD0)</p></td>
+<td><p>Samsung 860 Pro, SATA SSD, 4TB</p></td>
+<td><p><a class="reference external" href="https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-860-pro-2-5--sata-iii-2tb-mz-76p2t0bw/">https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-860-pro-2-5–sata-iii-2tb-mz-76p2t0bw/</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Hard Drive 2 (3.5/2.5” Chassis HDD1)</p></td>
+<td><p>Empty</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Graphics Processing Unit (GPU) 0</p></td>
+<td><p>NVIDIA Quadro P1000, 4GB, PCIe 3.0, x16 (PCIe 3.0, x16 Slot)</p></td>
+<td><p><a class="reference external" href="https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/productspage/quadro/quadro-desktop/quadro-pascal-p1000-data-sheet-us-nv-704475-r1.pdf">https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/productspage/quadro/quadro-desktop/quadro-pascal-p1000-data-sheet-us-nv-704475-r1.pdf</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Network Interface Card (NIC) 0</p></td>
+<td><p>Intel I219-LM, Single RJ45 Port, 1Gbe (Motherboard)</p></td>
+<td><p><a class="reference external" href="https://ark.intel.com/content/www/us/en/ark/products/82185/intel-ethernet-connection-i219-lm.html">https://ark.intel.com/content/www/us/en/ark/products/82185/intel-ethernet-connection-i219-lm.html</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Network Interface Card (NIC) 1</p></td>
+<td><p>Intel X550-T2, Dual Base-T Port, 10Gbe, PCIe 3.0, x4 (PCIe 3.0, x4 Slot)</p></td>
+<td><p><a class="reference external" href="https://www.intel.com/content/www/us/en/products/network-io/ethernet/10-25-40-gigabit-adapters/x550-t2-10gbe.html">https://www.intel.com/content/www/us/en/products/network-io/ethernet/10-25-40-gigabit-adapters/x550-t2-10gbe.html</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="assembly.html" class="btn btn-neutral float-right" title="1.3.2. Hardware Assembly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="contents.html" class="btn btn-neutral float-left" title="1.3. System Hardware Assembly and Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Josh Johnson @binarylandscapes
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

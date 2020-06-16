@@ -1,0 +1,3089 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.3.3. Hardware BIOS &amp; Firmware Update/Configuration &mdash; Homelab System Buildup Git: homelab - HOMELAB-18-document-dell-3431-buildup  [ 43e7fc4a2ea ] documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/drawio_html.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/drawio.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/drawio_html.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.4. System Network Deployment and Configuration" href="../network/contents.html" />
+    <link rel="prev" title="1.3.2. Hardware Assembly" href="assembly.html" />
+    <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Homelab System Buildup
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">1. <strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">1.1. Document Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/contents.html">1.2. System Design</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="contents.html">1.3. System Hardware Assembly and Configuration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="specifications.html">1.3.1. Hardware Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="assembly.html">1.3.2. Hardware Assembly</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.3.3. Hardware BIOS &amp; Firmware Update/Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hardware-bios-firmware-update-configuration-for-alicesynthesis30">1.3.3.1. Hardware BIOS &amp; Firmware Update/Configuration for <strong>alicesynthesis30</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hardware-bios-firmware-update-configuration-for-gerudo">1.3.3.2. Hardware BIOS &amp; Firmware Update/Configuration for <strong>gerudo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hardware-bios-firmware-update-configuration-for-hebra">1.3.3.3. Hardware BIOS &amp; Firmware Update/Configuration for <strong>hebra</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hardware-bios-firmware-update-configuration-for-akkala">1.3.3.4. Hardware BIOS &amp; Firmware Update/Configuration for <strong>akkala</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../network/contents.html">1.4. System Network Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hypervisor/contents.html">1.5. System Hypervisor Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/contents.html">1.6. System Cyber Security Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/contents.html">1.7. System Monitoring Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backup/contents.html">1.8. System Backup Deployment and Configuration</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../common_docs/appendices/acronym_list.html">1. Acronym List</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Homelab System Buildup</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../contents.html"><span class="section-number">1. </span><strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a> &raquo;</li>
+        
+          <li><a href="contents.html"><span class="section-number">1.3. </span>System Hardware Assembly and Configuration</a> &raquo;</li>
+        
+      <li><span class="section-number">1.3.3. </span>Hardware BIOS &amp; Firmware Update/Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/document/main_content/hardware/bios_fw.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hardware-bios-firmware-update-configuration">
+<span id="id1"></span><h1><span class="section-number">1.3.3. </span>Hardware BIOS &amp; Firmware Update/Configuration<a class="headerlink" href="#hardware-bios-firmware-update-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hardware-bios-firmware-update-configuration-for-alicesynthesis30">
+<span id="id2"></span><h2><span class="section-number">1.3.3.1. </span>Hardware BIOS &amp; Firmware Update/Configuration for <strong>alicesynthesis30</strong><a class="headerlink" href="#hardware-bios-firmware-update-configuration-for-alicesynthesis30" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dell-precision-3431-bios-update-for-alicesynthesis30">
+<h3><span class="section-number">1.3.3.1.1. </span>Dell Precision 3431, BIOS Update for <strong>alicesynthesis30</strong><a class="headerlink" href="#dell-precision-3431-bios-update-for-alicesynthesis30" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently if Remote Management if desired, then it must be done at factory to load the correct BIOS version that enabled the Intel vManagement platform. Enabling this feature, if not already enabled in BIOS menu, will not be coverted in these instructions.</p>
+</div>
+<ol class="arabic">
+<li><p>Download <strong>Version 1.3.1</strong> BIOS upgrade file from <a class="reference external" href="https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=gh411&amp;oscode=biosa&amp;productcode=precision-3431-workstation">https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=gh411&amp;oscode=biosa&amp;productcode=precision-3431-workstation</a> and copy to a USB drive</p></li>
+<li><p>Connect the USB drive to Dell 3431 Workstation</p></li>
+<li><p>Restart or Power On (if Off) the Dell 3431 Workstation</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p>At Boot Options Menu, under <cite>OTHER OPTIONS:</cite> <span class="menuselection">BIOS Flash Update</span></p></li>
+<li><p>At BIOS Flash Update window, <span class="guilabel">…</span> and browse through the different File Systems: <code class="samp docutils literal notranslate"><span class="pre">FS#</span></code> until you find the USB drive you inserted</p></li>
+<li><p><span class="guilabel">Precision_3431_1.3.1.exe</span> then <span class="guilabel">OK</span></p></li>
+<li><p>Once file is verified, verify the listed information is correct under <strong>System BIOS Information</strong></p>
+<ul class="simple">
+<li><p><strong>System:</strong> <code class="samp docutils literal notranslate"><span class="pre">Precision</span> <span class="pre">Tower</span> <span class="pre">3431</span></code></p></li>
+<li><p><strong>Revision:</strong> <code class="samp docutils literal notranslate"><span class="pre">&lt;Currently</span> <span class="pre">installed</span> <span class="pre">BIOS</span> <span class="pre">version&gt;</span></code> (Should be lower than listed BIOS Update Information, Revision version)</p></li>
+<li><p><strong>Vendor:</strong> <code class="samp docutils literal notranslate"><span class="pre">Dell</span> <span class="pre">Inc.</span></code></p></li>
+</ul>
+</li>
+<li><p>Verify the listed information is correct under <strong>BIOS UpdateInformation</strong></p>
+<ul class="simple">
+<li><p><strong>BIOS update file:</strong> <code class="samp docutils literal notranslate"><span class="pre">&lt;FS#&gt;:\Precision_3431_1.3.1.exe</span></code> (File you copied to USB drive)</p></li>
+<li><p><strong>System:</strong> <code class="samp docutils literal notranslate"><span class="pre">Precision</span> <span class="pre">Tower</span> <span class="pre">3431</span></code></p></li>
+<li><p><strong>Revision:</strong> <code class="samp docutils literal notranslate"><span class="pre">1.3.1</span></code></p></li>
+<li><p><strong>Vendor:</strong> <code class="samp docutils literal notranslate"><span class="pre">Dell</span> <span class="pre">Inc.</span></code></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Begin Flash Update</span></p></li>
+<li><p>When prompted, <span class="guilabel">Yes</span> to proceed with flashing of BIOS</p></li>
+<li><p>Once flashing of BIOS is complete and Dell 3431 reboots and shows shows Dell logo, <kbd class="kbd docutils literal notranslate">F12</kbd> to enter BIOS Boot Options Menu</p></li>
+<li><p>Verify that bottom banner of Boot Options Menu shows <code class="samp docutils literal notranslate"><span class="pre">BIOS</span> <span class="pre">Revision</span> <span class="pre">1.3.1</span></code> indicating a complete BIOS update.</p></li>
+<li><p>Remove USB drive with BIOS update file from Dell 3431</p></li>
+<li><p><strong>If</strong> updating the BIOS version was the only need at this time, reboot Dell 3431 so it boots into its normal boot cycle. Otherwise continue to BIOS Configuration section</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">alicesynthesis30</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="dell-precision-3431-bios-configuration-for-for-alicesynthesis30">
+<h3><span class="section-number">1.3.3.1.2. </span>Dell Precision 3431, BIOS Configuration for for <strong>alicesynthesis30</strong><a class="headerlink" href="#dell-precision-3431-bios-configuration-for-for-alicesynthesis30" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and <kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p><span class="menuselection">BIOS Configuration</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the BIOS has already been configured then you will need to <span class="guilabel">Unlock</span> and <kbd class="kbd docutils literal notranslate">&lt;Admin Password&gt;</kbd> to be able to change any settings.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If prompted after <span class="guilabel">Apply</span>, Check <span class="guilabel">Save as Custom User Settings</span> then <span class="guilabel">OK</span></p>
+</div>
+</li>
+<li><p><span class="guilabel">General –&gt; Boot Sequence</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Boot Sequence menu may only list options set from factory and will require completing configuration of BIOS and installation of OS to populate menu options in documentation.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Configure the Boot List Option to <span class="guilabel">UEFI</span></p></li>
+<li><p>Configure the Boot Sequence to the following order:</p>
+<ul class="simple">
+<li><p>UEFI: Windows (If installed)</p></li>
+<li><p>Onboard NIC(IPV4)</p></li>
+<li><p>Onboard NIC(IPV6)</p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ol>
+</li>
+<li><p><span class="guilabel">General –&gt; Advanced Boot Options</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Legacy Options ROMs</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">General –&gt; UEFI Boot Path Security</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Always, Except Internal HDD &amp; PXE</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">General –&gt; Date/Time</span></p>
+<ul class="simple">
+<li><p>Configure Time and Date to local UTC time.</p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Integrated NIC</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable UEFI Network Stack</span></p></li>
+<li><p><span class="guilabel">Enabled w/PXE</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Serial Port</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">COM1</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; SATA Operation</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">ACHI</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Drives</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">SATA-0</span></p></li>
+<li><p>Check <span class="guilabel">SATA-2</span></p></li>
+<li><p>Check <span class="guilabel">SATA-3</span></p></li>
+<li><p>Check <span class="guilabel">SATA-4</span></p></li>
+<li><p>Check <span class="guilabel">M.2 PCIe SSD-0</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; SMART Reporting</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable SMART Reporting</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable USB Boot Support</span></p></li>
+<li><p>Check <span class="guilabel">Enable Front USB Ports</span></p></li>
+<li><p>Check <span class="guilabel">Enable Rear USB Ports</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Front USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Front Port 1(Bottom Right)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 1 w/Power Share(Top Right)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 2(Bottom Left)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 2(Top Left)</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Rear USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Rear Port 1(Left)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 2(Left Middle)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 3(Right Middle)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 4(Right)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 1(Left)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 2(Right)</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; USB PowerShare</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB PowerShare</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Audio</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Audio</span></p></li>
+<li><p>Check <span class="guilabel">Enable Microphone</span></p></li>
+<li><p>Check <span class="guilabel">Enable Internal Speaker</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Dust Filter Maintenance</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">90 days</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Miscellaneous Devices</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Secure Digital (SD) Card</span></p></li>
+<li><p>Uncheck <span class="guilabel">Secure Digital (SD) Card Boot</span></p></li>
+<li><p>Uncheck <span class="guilabel">Secure Digital (SD) Card Read-Only Mode</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Video –&gt; Primary Display</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Intel HD Graphics</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; System Password</span></p>
+<ul class="simple">
+<li><p>Should be <em>Not Set</em></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Internal HDD-3 Password</span></p>
+<ul class="simple">
+<li><p>Should be <em>Not Set</em></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Strong Password</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Strong Password</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Configuration</span></p>
+<ul class="simple">
+<li><p>Admin Password Min. <kbd class="kbd docutils literal notranslate">8</kbd></p></li>
+<li><p>Admin Password Max. <kbd class="kbd docutils literal notranslate">32</kbd></p></li>
+<li><p>System Password Min. <kbd class="kbd docutils literal notranslate">08</kbd></p></li>
+<li><p>System Password Max. <kbd class="kbd docutils literal notranslate">32</kbd></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Bypass</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Change</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Allow Non-Admin Password Changes</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; UEFI Capsule Firmware Updates</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable UEFI Capsule Firmware Updates</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; HDD Security</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SED Block SID Authentication</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for SED Block SID Command</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; TPM 2.0 Security</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">TPM On</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Enable Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Disable Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Clear Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">Clear</span></p></li>
+<li><p>Check <span class="guilabel">Attestation Enable</span></p></li>
+<li><p>Check <span class="guilabel">Key Storage Enable</span></p></li>
+<li><p>Check <span class="guilabel">SHA-256</span></p></li>
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Absolute</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Chassis Intrusion</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Clear Intrusion Warning</span></p></li>
+<li><p><span class="guilabel">On-Silent</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; OROM Keyboard Access</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Admin Setup Lockout</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Admin Setup Lockout</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Master Password Lockout</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Master Password Lockout</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; SMM Security Mitigation</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SMM Security Mitigation</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Secure Boot Enable</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Secure Boot Enable</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Secure Boot Mode</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Deployed Mode</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Expert Key Management</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Custom Mode</span></p></li>
+<li><p><span class="guilabel">PK</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Intel Software Guard Extensions –&gt; Intel SGX Enable</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Software Controlled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Intel Software Guard Extensions –&gt; Enclave Memory Size</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">128MB</span> <em>Grayed out due to previous setting</em></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Multi Core Support</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">All</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Intel SpeedStep</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel SpeedStep</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; C-States Control</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">C States</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Intel TurboBoost</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel TurboBoost</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; HyperThread control</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; AC Recovery</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Last Power State</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Enable Intel Speed Shift Technology</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel Speed Shift Technology</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Auto On Time</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Deep Sleep Control</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled in S4 and S5</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Fan Control Override</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Fan Control Overide</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; USB Wake Support</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB Wake Support</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Wake on LAN/WLAN</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Block Sleep</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Block Sleep</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Numlock LED</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Numlock LED</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Keyboard Errors</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Keyboard Error Detection</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Fastboot</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Thorough</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Extend BIOS POST Time</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">5 seconds</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Full Screen Logo</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Full Screen Logo</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Warnings and Errors</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Prompt on Warning and Errors</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; Intel AMT Capability</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This menu option will only appear if the Intel AMT capability was added at factory</p>
+</div>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; USB Provision</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB Provision</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; MEBx Hotkey</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable MEBx Hotkey</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; Virtualization</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel Virtualization Technology</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; VT for Direct I/O</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable VT for Direct I/O</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; Trusted Execution</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Trusted Execution</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Wireless –&gt; Wireless Device Enable</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">WLAN/WiGig</span></p></li>
+<li><p>Uncheck <span class="guilabel">Bluetooth</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; SERR Messages</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable SERR Messages</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; BIOS Downgrade</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Allow BIOS Downgrade</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; Data Wipe</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Wipe on Next Boot</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; BIOS Recovery</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">BIOS Recovery from Hard Drive</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Logs –&gt; BIOS Events</span></p>
+<ul class="simple">
+<li><p>Review BIOS Event Logs</p></li>
+<li><p><span class="guilabel">Clear Log –&gt; Yes</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Advanced configurations –&gt; ASPM</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Auto</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; Auto OS Recovery Threshold</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">OFF</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; SupportAssist OS Recovery</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SupportAssist OS Recovery</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; BIOSConnect</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">BIOSConnect</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Admin Password</span> <em>If not already set</em></p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Enter new *Admin level password*</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Confirm new *Admin level password*</kbd></p></li>
+<li><p><span class="guilabel">OK</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Exit</span></p></li>
+<li><p>Dell 3431 Workstation will reboot. <strong>If</strong> configuration of the BIOS version was the only need at this time, let Dell 3431 boot into its normal boot cycle. Otherwise <kbd class="kbd docutils literal notranslate">F12</kbd> and continue to Intel(R) Management Engine BIOS Extension (MEBx) Configuration section</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">alicesynthesis30</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="hardware-bios-firmware-update-configuration-for-gerudo">
+<span id="id3"></span><h2><span class="section-number">1.3.3.2. </span>Hardware BIOS &amp; Firmware Update/Configuration for <strong>gerudo</strong><a class="headerlink" href="#hardware-bios-firmware-update-configuration-for-gerudo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dell-precision-3431-bios-update-for-gerudo">
+<h3><span class="section-number">1.3.3.2.1. </span>Dell Precision 3431, BIOS Update for <strong>gerudo</strong><a class="headerlink" href="#dell-precision-3431-bios-update-for-gerudo" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently if Remote Management if desired, then it must be done at factory to load the correct BIOS version that enabled the Intel vManagement platform. Enabling this feature, if not already enabled in BIOS menu, will not be coverted in these instructions.</p>
+</div>
+<ol class="arabic">
+<li><p>Download <strong>Version 1.3.1</strong> BIOS upgrade file from <a class="reference external" href="https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=gh411&amp;oscode=biosa&amp;productcode=precision-3431-workstation">https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=gh411&amp;oscode=biosa&amp;productcode=precision-3431-workstation</a> and copy to a USB drive</p></li>
+<li><p>Connect the USB drive to Dell 3431 Workstation</p></li>
+<li><p>Restart or Power On (if Off) the Dell 3431 Workstation</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p>At Boot Options Menu, under <cite>OTHER OPTIONS:</cite> <span class="menuselection">BIOS Flash Update</span></p></li>
+<li><p>At BIOS Flash Update window, <span class="guilabel">…</span> and browse through the different File Systems: <code class="samp docutils literal notranslate"><span class="pre">FS#</span></code> until you find the USB drive you inserted</p></li>
+<li><p><span class="guilabel">Precision_3431_1.3.1.exe</span> then <span class="guilabel">OK</span></p></li>
+<li><p>Once file is verified, verify the listed information is correct under <strong>System BIOS Information</strong></p>
+<ul class="simple">
+<li><p><strong>System:</strong> <code class="samp docutils literal notranslate"><span class="pre">Precision</span> <span class="pre">Tower</span> <span class="pre">3431</span></code></p></li>
+<li><p><strong>Revision:</strong> <code class="samp docutils literal notranslate"><span class="pre">&lt;Currently</span> <span class="pre">installed</span> <span class="pre">BIOS</span> <span class="pre">version&gt;</span></code> (Should be lower than listed BIOS Update Information, Revision version)</p></li>
+<li><p><strong>Vendor:</strong> <code class="samp docutils literal notranslate"><span class="pre">Dell</span> <span class="pre">Inc.</span></code></p></li>
+</ul>
+</li>
+<li><p>Verify the listed information is correct under <strong>BIOS UpdateInformation</strong></p>
+<ul class="simple">
+<li><p><strong>BIOS update file:</strong> <code class="samp docutils literal notranslate"><span class="pre">&lt;FS#&gt;:\Precision_3431_1.3.1.exe</span></code> (File you copied to USB drive)</p></li>
+<li><p><strong>System:</strong> <code class="samp docutils literal notranslate"><span class="pre">Precision</span> <span class="pre">Tower</span> <span class="pre">3431</span></code></p></li>
+<li><p><strong>Revision:</strong> <code class="samp docutils literal notranslate"><span class="pre">1.3.1</span></code></p></li>
+<li><p><strong>Vendor:</strong> <code class="samp docutils literal notranslate"><span class="pre">Dell</span> <span class="pre">Inc.</span></code></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Begin Flash Update</span></p></li>
+<li><p>When prompted, <span class="guilabel">Yes</span> to proceed with flashing of BIOS</p></li>
+<li><p>Once flashing of BIOS is complete and Dell 3431 reboots and shows shows Dell logo, <kbd class="kbd docutils literal notranslate">F12</kbd> to enter BIOS Boot Options Menu</p></li>
+<li><p>Verify that bottom banner of Boot Options Menu shows <code class="samp docutils literal notranslate"><span class="pre">BIOS</span> <span class="pre">Revision</span> <span class="pre">1.3.1</span></code> indicating a complete BIOS update.</p></li>
+<li><p>Remove USB drive with BIOS update file from Dell 3431</p></li>
+<li><p><strong>If</strong> updating the BIOS version was the only need at this time, reboot Dell 3431 so it boots into its normal boot cycle. Otherwise continue to BIOS Configuration section</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="dell-precision-3431-intel-management-engine-configuration-for-gerudo">
+<span id="dell3431-intel-amt-config-gerudo-mgmt"></span><h3><span class="section-number">1.3.3.2.2. </span>Dell Precision 3431, Intel Management Engine Configuration for <strong>gerudo</strong><a class="headerlink" href="#dell-precision-3431-intel-management-engine-configuration-for-gerudo" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You cannot access the BIOS configuration menu for the Intel AMT system if connected via the Intel AMT Remote Desktop, once you set a BIOS Admin password. The menu option will dissapear from menu.</p>
+</div>
+<ol class="arabic">
+<li><p>If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and <kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p><span class="menuselection">Intel(R) Management Engine BIOS Extension (MEBx)</span></p></li>
+<li><p><span class="menuselection">MEBx Login</span></p></li>
+<li><p>You will be prompted for factory <em>Intel(R) ME Password</em> <kbd class="kbd docutils literal notranslate">admin</kbd> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>You will be prompted to set new password for MEBx login, <kbd class="kbd docutils literal notranslate">&lt;Desired Admin Password&gt;</kbd> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>Verify password by <kbd class="kbd docutils literal notranslate">&lt;Desired Admin Password&gt;</kbd> again then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To change the Intel MEBx password for <em>admin</em> user in future from BIOS:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><span class="menuselection">Intel(R) ME General Settings</span></p></li>
+<li><p><span class="menuselection">Change ME Password</span></p></li>
+</ol>
+</div></blockquote>
+</div>
+</li>
+<li><p>Verify <span class="menuselection">Intel(R) AMT</span> is set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">Intel(R) AMT Configuration</span></p>
+<ol class="arabic">
+<li><p><span class="menuselection">Managebility Feature Selection</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">SOL/Storage Redirection/KVM</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">SOL</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">Storage Redirection</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">KVM Feature Selection</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">User Consent</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is critical that if you do not have on-site personnel with equipment that <em>User Opt-in</em> is set to <em>&lt;None&gt;</em> otherwise you will not be able to establish a remote KVM session without user approval from local KB/Display connected to workstation.</p>
+</div>
+<ul class="simple">
+<li><p><span class="menuselection">User Opt-in</span> set to <span class="menuselection">&lt;None&gt;</span></p></li>
+<li><p><span class="menuselection">Opt-in Configurable from Remote IT</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">Password Policy</span> set to <span class="menuselection">&lt;Anytime&gt;</span></p></li>
+<li><p><span class="menuselection">Network Setup</span></p></li>
+<li><p><span class="menuselection">Intel(R) ME Network Name Settings</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">Host Name</span> <kbd class="kbd docutils literal notranslate">gerudo-mgmt</kbd></p></li>
+<li><p><span class="menuselection">Domain Name</span> <kbd class="kbd docutils literal notranslate">hyrule.binarylandscapes.com</kbd></p></li>
+<li><p><span class="menuselection">Shared/Dedicated FQDN</span> set to <span class="menuselection">&lt;Dedicated&gt;</span></p></li>
+<li><p><span class="menuselection">Dynamic DNS Update</span> set to <span class="menuselection">&lt;Disabled&gt;</span></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">TCP/IP Settings</span></p></li>
+<li><p><span class="menuselection">Wired LAN IPV4 Settings</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">DHCP Mode</span> set to <span class="menuselection">&lt;Disabled&gt;</span></p></li>
+<li><p><span class="menuselection">IPV4 Address</span> <kbd class="kbd docutils literal notranslate">10.1.10.191</kbd></p></li>
+<li><p><span class="menuselection">Subnet Mask Address</span> <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p><span class="menuselection">Default Gateway Address</span> <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="menuselection">Preferred DNS Address</span> <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="menuselection">Alternate DNS Address</span> <kbd class="kbd docutils literal notranslate">0.0.0.0</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">Activate Network Access</span> then <kbd class="kbd docutils literal notranslate">Y</kbd></p></li>
+<li><p><span class="menuselection">Power Control</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">Intel(R) AMT ON in Host Sleep States</span> set to <span class="menuselection">&lt;Desktop: ON in S0, ME Wake in S3, S4-5&gt;</span></p></li>
+<li><p><span class="menuselection">Idle Timeout</span> set to <kbd class="kbd docutils literal notranslate">65535</kbd> <em>You may want lower in a non lab environment for security reasons</em></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">MEBx Exit</span> then <kbd class="kbd docutils literal notranslate">Y</kbd> and workstation will Reboot.</p></li>
+</ol>
+</li>
+<li><p>Verify connectivity by using a <strong class="program">Web Browser</strong> and going to the Intel AMT Web Interface at <a class="reference external" href="http://10.1.10.191:16992">http://10.1.10.191:16992</a> and logging in with <kbd class="kbd docutils literal notranslate">admin</kbd> as username and the <em>password</em> you configured.</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<div class="section" id="intel-amt-remote-desktop-configuration-for-gerudo">
+<h4><span class="section-number">1.3.3.2.2.1. </span>Intel AMT Remote Desktop Configuration for <strong>gerudo</strong><a class="headerlink" href="#intel-amt-remote-desktop-configuration-for-gerudo" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p>Go to your Windows workstation and download and install <strong class="program">MeshCommander</strong> from <a class="reference external" href="https://www.meshcommander.com/">https://www.meshcommander.com/</a></p></li>
+<li><p>Run <strong class="program">MeshCommander</strong></p></li>
+<li><p><span class="guilabel">Computer Management (Networked Computers Icon)</span></p></li>
+<li><p><span class="guilabel">Add Computer…</span></p>
+<ul class="simple">
+<li><p>Friendly Name <kbd class="kbd docutils literal notranslate">gerudo-mgmt</kbd></p></li>
+<li><p>Group Name <em>Leave blank</em></p></li>
+<li><p>Hostname <kbd class="kbd docutils literal notranslate">10.1.10.191</kbd></p></li>
+<li><p>Auth/Security <span class="guilabel">Digest/None</span></p></li>
+<li><p>Username <kbd class="kbd docutils literal notranslate">admin</kbd></p></li>
+<li><p>Password* <kbd class="kbd docutils literal notranslate">Configured MEBx Login Password</kbd> or <em>Default is admin (But will not let you connect with default password)</em></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p>On the connection for <em>gerudo-mgmt</em> <span class="guilabel">Connect</span></p></li>
+<li><p>Once first time connection is complete, <span class="guilabel">Switch to TLS</span> in top left</p></li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">OK</span> <em>If needed</em></p></li>
+<li><p><span class="guilabel">System Status –&gt; Primary display, 3 minutes session timeout</span></p></li>
+<li><p>Update Session timeout (Minutes) to <kbd class="kbd docutils literal notranslate">10</kbd> then <span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">Displayed Date &amp; Time</span></p></li>
+<li><p>When prompted to sync with this computer <span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">Remote Desktop</span> and then click red banner to enable the feature.</p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Redirection Port</span></p></li>
+<li><p>Check <span class="guilabel">KVM Remote Desktop</span></p></li>
+<li><p>Check <span class="guilabel">IDE-Redirection</span></p></li>
+<li><p>Check <span class="guilabel">Serial-over-LAN</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">Connect</span> and verify you can establish a Remote KVM session with computer and then disconnect.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Remote KVM requires the system to have an active display connected to it in order to function. So if connected to a physical KVM but off-channel, it will have issues and if display is unplugged it will not work. You will need a <em>DisplayPort Headless Ghost Display plug</em> like the following <a class="reference external" href="https://smile.amazon.com/gp/product/B07YLQZXKY/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&amp;psc=1">Recommended Ghost Display Plug</a></p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="dell-precision-3431-bios-configuration-for-for-gerudo">
+<h3><span class="section-number">1.3.3.2.3. </span>Dell Precision 3431, BIOS Configuration for for <strong>gerudo</strong><a class="headerlink" href="#dell-precision-3431-bios-configuration-for-for-gerudo" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and <kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p><span class="menuselection">BIOS Configuration</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the BIOS has already been configured then you will need to <span class="guilabel">Unlock</span> and <kbd class="kbd docutils literal notranslate">&lt;Admin Password&gt;</kbd> to be able to change any settings.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If prompted after <span class="guilabel">Apply</span>, Check <span class="guilabel">Save as Custom User Settings</span> then <span class="guilabel">OK</span></p>
+</div>
+</li>
+<li><p><span class="guilabel">General –&gt; Boot Sequence</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Boot Sequence menu may only list options set from factory and will require completing configuration of BIOS and installation of OS to populate menu options in documentation.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Configure the Boot List Option to <span class="guilabel">UEFI</span></p></li>
+<li><p>Configure the Boot Sequence to the following order:</p>
+<ul class="simple">
+<li><p>UEFI: Samsung USB or VMware ESXi (If installed)</p></li>
+<li><p>Onboard NIC(IPV4)</p></li>
+<li><p>Onboard NIC(IPV6)</p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ol>
+</li>
+<li><p><span class="guilabel">General –&gt; Advanced Boot Options</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Legacy Options ROMs</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">General –&gt; UEFI Boot Path Security</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Always, Except Internal HDD &amp; PXE</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">General –&gt; Date/Time</span></p>
+<ul class="simple">
+<li><p>Configure Time and Date to local UTC time.</p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Integrated NIC</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable UEFI Network Stack</span></p></li>
+<li><p><span class="guilabel">Enabled w/PXE</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Serial Port</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">COM1</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; SATA Operation</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">ACHI</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Drives</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">SATA-0</span></p></li>
+<li><p>Check <span class="guilabel">SATA-2</span></p></li>
+<li><p>Check <span class="guilabel">SATA-3</span></p></li>
+<li><p>Check <span class="guilabel">SATA-4</span></p></li>
+<li><p>Check <span class="guilabel">M.2 PCIe SSD-0</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; SMART Reporting</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable SMART Reporting</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable USB Boot Support</span></p></li>
+<li><p>Check <span class="guilabel">Enable Front USB Ports</span></p></li>
+<li><p>Check <span class="guilabel">Enable Rear USB Ports</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Front USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Front Port 1(Bottom Right)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 1 w/Power Share(Top Right)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 2(Bottom Left)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 2(Top Left)</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Rear USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Rear Port 1(Left)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 2(Left Middle)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 3(Right Middle)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 4(Right)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 1(Left)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 2(Right)</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; USB PowerShare</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB PowerShare</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Audio</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Audio</span></p></li>
+<li><p>Check <span class="guilabel">Enable Microphone</span></p></li>
+<li><p>Check <span class="guilabel">Enable Internal Speaker</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Dust Filter Maintenance</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">90 days</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Miscellaneous Devices</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Secure Digital (SD) Card</span></p></li>
+<li><p>Uncheck <span class="guilabel">Secure Digital (SD) Card Boot</span></p></li>
+<li><p>Uncheck <span class="guilabel">Secure Digital (SD) Card Read-Only Mode</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Video –&gt; Primary Display</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Intel HD Graphics</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; System Password</span></p>
+<ul class="simple">
+<li><p>Should be <em>Not Set</em></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Internal HDD-3 Password</span></p>
+<ul class="simple">
+<li><p>Should be <em>Not Set</em></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Strong Password</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Strong Password</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Configuration</span></p>
+<ul class="simple">
+<li><p>Admin Password Min. <kbd class="kbd docutils literal notranslate">8</kbd></p></li>
+<li><p>Admin Password Max. <kbd class="kbd docutils literal notranslate">32</kbd></p></li>
+<li><p>System Password Min. <kbd class="kbd docutils literal notranslate">08</kbd></p></li>
+<li><p>System Password Max. <kbd class="kbd docutils literal notranslate">32</kbd></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Bypass</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Change</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Allow Non-Admin Password Changes</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; UEFI Capsule Firmware Updates</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable UEFI Capsule Firmware Updates</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; HDD Security</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SED Block SID Authentication</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for SED Block SID Command</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; TPM 2.0 Security</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">TPM On</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Enable Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Disable Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Clear Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">Clear</span></p></li>
+<li><p>Check <span class="guilabel">Attestation Enable</span></p></li>
+<li><p>Check <span class="guilabel">Key Storage Enable</span></p></li>
+<li><p>Check <span class="guilabel">SHA-256</span></p></li>
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Absolute</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Chassis Intrusion</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Clear Intrusion Warning</span></p></li>
+<li><p><span class="guilabel">On-Silent</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; OROM Keyboard Access</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Admin Setup Lockout</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Admin Setup Lockout</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Master Password Lockout</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Master Password Lockout</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; SMM Security Mitigation</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SMM Security Mitigation</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Secure Boot Enable</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Secure Boot Enable</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Secure Boot Mode</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Deployed Mode</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Expert Key Management</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Custom Mode</span></p></li>
+<li><p><span class="guilabel">PK</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Intel Software Guard Extensions –&gt; Intel SGX Enable</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Software Controlled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Intel Software Guard Extensions –&gt; Enclave Memory Size</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">128MB</span> <em>Grayed out due to previous setting</em></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Multi Core Support</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">All</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Intel SpeedStep</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel SpeedStep</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; C-States Control</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">C States</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Intel TurboBoost</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel TurboBoost</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; HyperThread control</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; AC Recovery</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Last Power State</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Enable Intel Speed Shift Technology</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel Speed Shift Technology</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Auto On Time</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Deep Sleep Control</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled in S4 and S5</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Fan Control Override</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Fan Control Overide</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; USB Wake Support</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB Wake Support</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Wake on LAN/WLAN</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Block Sleep</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Block Sleep</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Numlock LED</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Numlock LED</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Keyboard Errors</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Keyboard Error Detection</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Fastboot</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Thorough</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Extend BIOS POST Time</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">5 seconds</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Full Screen Logo</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Full Screen Logo</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Warnings and Errors</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Prompt on Warning and Errors</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; Intel AMT Capability</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This menu option will only appear if the Intel AMT capability was added at factory</p>
+</div>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; USB Provision</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB Provision</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; MEBx Hotkey</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable MEBx Hotkey</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; Virtualization</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel Virtualization Technology</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; VT for Direct I/O</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable VT for Direct I/O</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; Trusted Execution</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Trusted Execution</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Wireless –&gt; Wireless Device Enable</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">WLAN/WiGig</span></p></li>
+<li><p>Uncheck <span class="guilabel">Bluetooth</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; SERR Messages</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable SERR Messages</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; BIOS Downgrade</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Allow BIOS Downgrade</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; Data Wipe</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Wipe on Next Boot</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; BIOS Recovery</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">BIOS Recovery from Hard Drive</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Logs –&gt; BIOS Events</span></p>
+<ul class="simple">
+<li><p>Review BIOS Event Logs</p></li>
+<li><p><span class="guilabel">Clear Log –&gt; Yes</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Advanced configurations –&gt; ASPM</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Auto</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; Auto OS Recovery Threshold</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">OFF</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; SupportAssist OS Recovery</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SupportAssist OS Recovery</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; BIOSConnect</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">BIOSConnect</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Admin Password</span> <em>If not already set</em></p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Enter new *Admin level password*</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Confirm new *Admin level password*</kbd></p></li>
+<li><p><span class="guilabel">OK</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Exit</span></p></li>
+<li><p>Dell 3431 Workstation will reboot. <strong>If</strong> configuration of the BIOS version was the only need at this time, let Dell 3431 boot into its normal boot cycle. Otherwise <kbd class="kbd docutils literal notranslate">F12</kbd> and continue to Intel(R) Management Engine BIOS Extension (MEBx) Configuration section</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="hardware-bios-firmware-update-configuration-for-hebra">
+<span id="id5"></span><h2><span class="section-number">1.3.3.3. </span>Hardware BIOS &amp; Firmware Update/Configuration for <strong>hebra</strong><a class="headerlink" href="#hardware-bios-firmware-update-configuration-for-hebra" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dell-precision-3431-bios-update-for-hebra">
+<h3><span class="section-number">1.3.3.3.1. </span>Dell Precision 3431, BIOS Update for <strong>hebra</strong><a class="headerlink" href="#dell-precision-3431-bios-update-for-hebra" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently if Remote Management if desired, then it must be done at factory to load the correct BIOS version that enabled the Intel vManagement platform. Enabling this feature, if not already enabled in BIOS menu, will not be coverted in these instructions.</p>
+</div>
+<ol class="arabic">
+<li><p>Download <strong>Version 1.3.1</strong> BIOS upgrade file from <a class="reference external" href="https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=gh411&amp;oscode=biosa&amp;productcode=precision-3431-workstation">https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=gh411&amp;oscode=biosa&amp;productcode=precision-3431-workstation</a> and copy to a USB drive</p></li>
+<li><p>Connect the USB drive to Dell 3431 Workstation</p></li>
+<li><p>Restart or Power On (if Off) the Dell 3431 Workstation</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p>At Boot Options Menu, under <cite>OTHER OPTIONS:</cite> <span class="menuselection">BIOS Flash Update</span></p></li>
+<li><p>At BIOS Flash Update window, <span class="guilabel">…</span> and browse through the different File Systems: <code class="samp docutils literal notranslate"><span class="pre">FS#</span></code> until you find the USB drive you inserted</p></li>
+<li><p><span class="guilabel">Precision_3431_1.3.1.exe</span> then <span class="guilabel">OK</span></p></li>
+<li><p>Once file is verified, verify the listed information is correct under <strong>System BIOS Information</strong></p>
+<ul class="simple">
+<li><p><strong>System:</strong> <code class="samp docutils literal notranslate"><span class="pre">Precision</span> <span class="pre">Tower</span> <span class="pre">3431</span></code></p></li>
+<li><p><strong>Revision:</strong> <code class="samp docutils literal notranslate"><span class="pre">&lt;Currently</span> <span class="pre">installed</span> <span class="pre">BIOS</span> <span class="pre">version&gt;</span></code> (Should be lower than listed BIOS Update Information, Revision version)</p></li>
+<li><p><strong>Vendor:</strong> <code class="samp docutils literal notranslate"><span class="pre">Dell</span> <span class="pre">Inc.</span></code></p></li>
+</ul>
+</li>
+<li><p>Verify the listed information is correct under <strong>BIOS UpdateInformation</strong></p>
+<ul class="simple">
+<li><p><strong>BIOS update file:</strong> <code class="samp docutils literal notranslate"><span class="pre">&lt;FS#&gt;:\Precision_3431_1.3.1.exe</span></code> (File you copied to USB drive)</p></li>
+<li><p><strong>System:</strong> <code class="samp docutils literal notranslate"><span class="pre">Precision</span> <span class="pre">Tower</span> <span class="pre">3431</span></code></p></li>
+<li><p><strong>Revision:</strong> <code class="samp docutils literal notranslate"><span class="pre">1.3.1</span></code></p></li>
+<li><p><strong>Vendor:</strong> <code class="samp docutils literal notranslate"><span class="pre">Dell</span> <span class="pre">Inc.</span></code></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Begin Flash Update</span></p></li>
+<li><p>When prompted, <span class="guilabel">Yes</span> to proceed with flashing of BIOS</p></li>
+<li><p>Once flashing of BIOS is complete and Dell 3431 reboots and shows shows Dell logo, <kbd class="kbd docutils literal notranslate">F12</kbd> to enter BIOS Boot Options Menu</p></li>
+<li><p>Verify that bottom banner of Boot Options Menu shows <code class="samp docutils literal notranslate"><span class="pre">BIOS</span> <span class="pre">Revision</span> <span class="pre">1.3.1</span></code> indicating a complete BIOS update.</p></li>
+<li><p>Remove USB drive with BIOS update file from Dell 3431</p></li>
+<li><p><strong>If</strong> updating the BIOS version was the only need at this time, reboot Dell 3431 so it boots into its normal boot cycle. Otherwise continue to BIOS Configuration section</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="dell-precision-3431-intel-management-engine-configuration-for-hebra">
+<span id="dell3431-intel-amt-config-hebra-mgmt"></span><h3><span class="section-number">1.3.3.3.2. </span>Dell Precision 3431, Intel Management Engine Configuration for <strong>hebra</strong><a class="headerlink" href="#dell-precision-3431-intel-management-engine-configuration-for-hebra" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You cannot access the BIOS configuration menu for the Intel AMT system if connected via the Intel AMT Remote Desktop, once you set a BIOS Admin password. The menu option will dissapear from menu.</p>
+</div>
+<ol class="arabic">
+<li><p>If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and <kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p><span class="menuselection">Intel(R) Management Engine BIOS Extension (MEBx)</span></p></li>
+<li><p><span class="menuselection">MEBx Login</span></p></li>
+<li><p>You will be prompted for factory <em>Intel(R) ME Password</em> <kbd class="kbd docutils literal notranslate">admin</kbd> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>You will be prompted to set new password for MEBx login, <kbd class="kbd docutils literal notranslate">&lt;Desired Admin Password&gt;</kbd> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>Verify password by <kbd class="kbd docutils literal notranslate">&lt;Desired Admin Password&gt;</kbd> again then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To change the Intel MEBx password for <em>admin</em> user in future from BIOS:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><span class="menuselection">Intel(R) ME General Settings</span></p></li>
+<li><p><span class="menuselection">Change ME Password</span></p></li>
+</ol>
+</div></blockquote>
+</div>
+</li>
+<li><p>Verify <span class="menuselection">Intel(R) AMT</span> is set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">Intel(R) AMT Configuration</span></p>
+<ol class="arabic">
+<li><p><span class="menuselection">Managebility Feature Selection</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">SOL/Storage Redirection/KVM</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">SOL</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">Storage Redirection</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">KVM Feature Selection</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">User Consent</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is critical that if you do not have on-site personnel with equipment that <em>User Opt-in</em> is set to <em>&lt;None&gt;</em> otherwise you will not be able to establish a remote KVM session without user approval from local KB/Display connected to workstation.</p>
+</div>
+<ul class="simple">
+<li><p><span class="menuselection">User Opt-in</span> set to <span class="menuselection">&lt;None&gt;</span></p></li>
+<li><p><span class="menuselection">Opt-in Configurable from Remote IT</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">Password Policy</span> set to <span class="menuselection">&lt;Anytime&gt;</span></p></li>
+<li><p><span class="menuselection">Network Setup</span></p></li>
+<li><p><span class="menuselection">Intel(R) ME Network Name Settings</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">Host Name</span> <kbd class="kbd docutils literal notranslate">hebra-mgmt</kbd></p></li>
+<li><p><span class="menuselection">Domain Name</span> <kbd class="kbd docutils literal notranslate">hyrule.binarylandscapes.com</kbd></p></li>
+<li><p><span class="menuselection">Shared/Dedicated FQDN</span> set to <span class="menuselection">&lt;Dedicated&gt;</span></p></li>
+<li><p><span class="menuselection">Dynamic DNS Update</span> set to <span class="menuselection">&lt;Disabled&gt;</span></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">TCP/IP Settings</span></p></li>
+<li><p><span class="menuselection">Wired LAN IPV4 Settings</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">DHCP Mode</span> set to <span class="menuselection">&lt;Disabled&gt;</span></p></li>
+<li><p><span class="menuselection">IPV4 Address</span> <kbd class="kbd docutils literal notranslate">10.1.10.192</kbd></p></li>
+<li><p><span class="menuselection">Subnet Mask Address</span> <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p><span class="menuselection">Default Gateway Address</span> <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="menuselection">Preferred DNS Address</span> <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="menuselection">Alternate DNS Address</span> <kbd class="kbd docutils literal notranslate">0.0.0.0</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">Activate Network Access</span> then <kbd class="kbd docutils literal notranslate">Y</kbd></p></li>
+<li><p><span class="menuselection">Power Control</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">Intel(R) AMT ON in Host Sleep States</span> set to <span class="menuselection">&lt;Desktop: ON in S0, ME Wake in S3, S4-5&gt;</span></p></li>
+<li><p><span class="menuselection">Idle Timeout</span> set to <kbd class="kbd docutils literal notranslate">65535</kbd> <em>You may want lower in a non lab environment for security reasons</em></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">MEBx Exit</span> then <kbd class="kbd docutils literal notranslate">Y</kbd> and workstation will Reboot.</p></li>
+</ol>
+</li>
+<li><p>Verify connectivity by using a <strong class="program">Web Browser</strong> and going to the Intel AMT Web Interface at <a class="reference external" href="http://10.1.10.192:16992">http://10.1.10.192:16992</a> and logging in with <kbd class="kbd docutils literal notranslate">admin</kbd> as username and the <em>password</em> you configured.</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<div class="section" id="intel-amt-remote-desktop-configuration-for-hebra">
+<h4><span class="section-number">1.3.3.3.2.1. </span>Intel AMT Remote Desktop Configuration for <strong>hebra</strong><a class="headerlink" href="#intel-amt-remote-desktop-configuration-for-hebra" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p>Go to your Windows workstation and download and install <strong class="program">MeshCommander</strong> from <a class="reference external" href="https://www.meshcommander.com/">https://www.meshcommander.com/</a></p></li>
+<li><p>Run <strong class="program">MeshCommander</strong></p></li>
+<li><p><span class="guilabel">Computer Management (Networked Computers Icon)</span></p></li>
+<li><p><span class="guilabel">Add Computer…</span></p>
+<ul class="simple">
+<li><p>Friendly Name <kbd class="kbd docutils literal notranslate">hebra-mgmt</kbd></p></li>
+<li><p>Group Name <em>Leave blank</em></p></li>
+<li><p>Hostname <kbd class="kbd docutils literal notranslate">10.1.10.192</kbd></p></li>
+<li><p>Auth/Security <span class="guilabel">Digest/None</span></p></li>
+<li><p>Username <kbd class="kbd docutils literal notranslate">admin</kbd></p></li>
+<li><p>Password* <kbd class="kbd docutils literal notranslate">Configured MEBx Login Password</kbd> or <em>Default is admin (But will not let you connect with default password)</em></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p>On the connection for <em>hebra-mgmt</em> <span class="guilabel">Connect</span></p></li>
+<li><p>Once first time connection is complete, <span class="guilabel">Switch to TLS</span> in top left</p></li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">OK</span> <em>If needed</em></p></li>
+<li><p><span class="guilabel">System Status –&gt; Primary display, 3 minutes session timeout</span></p></li>
+<li><p>Update Session timeout (Minutes) to <kbd class="kbd docutils literal notranslate">10</kbd> then <span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">Displayed Date &amp; Time</span></p></li>
+<li><p>When prompted to sync with this computer <span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">Remote Desktop</span> and then click red banner to enable the feature.</p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Redirection Port</span></p></li>
+<li><p>Check <span class="guilabel">KVM Remote Desktop</span></p></li>
+<li><p>Check <span class="guilabel">IDE-Redirection</span></p></li>
+<li><p>Check <span class="guilabel">Serial-over-LAN</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">Connect</span> and verify you can establish a Remote KVM session with computer and then disconnect.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Remote KVM requires the system to have an active display connected to it in order to function. So if connected to a physical KVM but off-channel, it will have issues and if display is unplugged it will not work. You will need a <em>DisplayPort Headless Ghost Display plug</em> like the following <a class="reference external" href="https://smile.amazon.com/gp/product/B07YLQZXKY/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&amp;psc=1">Recommended Ghost Display Plug</a></p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="dell-precision-3431-bios-configuration-for-for-hebra">
+<h3><span class="section-number">1.3.3.3.3. </span>Dell Precision 3431, BIOS Configuration for for <strong>hebra</strong><a class="headerlink" href="#dell-precision-3431-bios-configuration-for-for-hebra" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and <kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p><span class="menuselection">BIOS Configuration</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the BIOS has already been configured then you will need to <span class="guilabel">Unlock</span> and <kbd class="kbd docutils literal notranslate">&lt;Admin Password&gt;</kbd> to be able to change any settings.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If prompted after <span class="guilabel">Apply</span>, Check <span class="guilabel">Save as Custom User Settings</span> then <span class="guilabel">OK</span></p>
+</div>
+</li>
+<li><p><span class="guilabel">General –&gt; Boot Sequence</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Boot Sequence menu may only list options set from factory and will require completing configuration of BIOS and installation of OS to populate menu options in documentation.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Configure the Boot List Option to <span class="guilabel">UEFI</span></p></li>
+<li><p>Configure the Boot Sequence to the following order:</p>
+<ul class="simple">
+<li><p>UEFI: Samsung USB or VMware ESXi (If installed)</p></li>
+<li><p>Onboard NIC(IPV4)</p></li>
+<li><p>Onboard NIC(IPV6)</p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ol>
+</li>
+<li><p><span class="guilabel">General –&gt; Advanced Boot Options</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Legacy Options ROMs</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">General –&gt; UEFI Boot Path Security</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Always, Except Internal HDD &amp; PXE</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">General –&gt; Date/Time</span></p>
+<ul class="simple">
+<li><p>Configure Time and Date to local UTC time.</p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Integrated NIC</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable UEFI Network Stack</span></p></li>
+<li><p><span class="guilabel">Enabled w/PXE</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Serial Port</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">COM1</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; SATA Operation</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">ACHI</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Drives</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">SATA-0</span></p></li>
+<li><p>Check <span class="guilabel">SATA-2</span></p></li>
+<li><p>Check <span class="guilabel">SATA-3</span></p></li>
+<li><p>Check <span class="guilabel">SATA-4</span></p></li>
+<li><p>Check <span class="guilabel">M.2 PCIe SSD-0</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; SMART Reporting</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable SMART Reporting</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable USB Boot Support</span></p></li>
+<li><p>Check <span class="guilabel">Enable Front USB Ports</span></p></li>
+<li><p>Check <span class="guilabel">Enable Rear USB Ports</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Front USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Front Port 1(Bottom Right)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 1 w/Power Share(Top Right)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 2(Bottom Left)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 2(Top Left)</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Rear USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Rear Port 1(Left)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 2(Left Middle)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 3(Right Middle)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 4(Right)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 1(Left)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 2(Right)</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; USB PowerShare</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB PowerShare</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Audio</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Audio</span></p></li>
+<li><p>Check <span class="guilabel">Enable Microphone</span></p></li>
+<li><p>Check <span class="guilabel">Enable Internal Speaker</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Dust Filter Maintenance</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">90 days</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Miscellaneous Devices</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Secure Digital (SD) Card</span></p></li>
+<li><p>Uncheck <span class="guilabel">Secure Digital (SD) Card Boot</span></p></li>
+<li><p>Uncheck <span class="guilabel">Secure Digital (SD) Card Read-Only Mode</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Video –&gt; Primary Display</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Intel HD Graphics</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; System Password</span></p>
+<ul class="simple">
+<li><p>Should be <em>Not Set</em></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Internal HDD-3 Password</span></p>
+<ul class="simple">
+<li><p>Should be <em>Not Set</em></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Strong Password</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Strong Password</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Configuration</span></p>
+<ul class="simple">
+<li><p>Admin Password Min. <kbd class="kbd docutils literal notranslate">8</kbd></p></li>
+<li><p>Admin Password Max. <kbd class="kbd docutils literal notranslate">32</kbd></p></li>
+<li><p>System Password Min. <kbd class="kbd docutils literal notranslate">08</kbd></p></li>
+<li><p>System Password Max. <kbd class="kbd docutils literal notranslate">32</kbd></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Bypass</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Change</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Allow Non-Admin Password Changes</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; UEFI Capsule Firmware Updates</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable UEFI Capsule Firmware Updates</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; HDD Security</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SED Block SID Authentication</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for SED Block SID Command</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; TPM 2.0 Security</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">TPM On</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Enable Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Disable Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Clear Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">Clear</span></p></li>
+<li><p>Check <span class="guilabel">Attestation Enable</span></p></li>
+<li><p>Check <span class="guilabel">Key Storage Enable</span></p></li>
+<li><p>Check <span class="guilabel">SHA-256</span></p></li>
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Absolute</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Chassis Intrusion</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Clear Intrusion Warning</span></p></li>
+<li><p><span class="guilabel">On-Silent</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; OROM Keyboard Access</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Admin Setup Lockout</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Admin Setup Lockout</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Master Password Lockout</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Master Password Lockout</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; SMM Security Mitigation</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SMM Security Mitigation</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Secure Boot Enable</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Secure Boot Enable</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Secure Boot Mode</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Deployed Mode</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Expert Key Management</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Custom Mode</span></p></li>
+<li><p><span class="guilabel">PK</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Intel Software Guard Extensions –&gt; Intel SGX Enable</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Software Controlled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Intel Software Guard Extensions –&gt; Enclave Memory Size</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">128MB</span> <em>Grayed out due to previous setting</em></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Multi Core Support</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">All</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Intel SpeedStep</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel SpeedStep</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; C-States Control</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">C States</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Intel TurboBoost</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel TurboBoost</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; HyperThread control</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; AC Recovery</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Last Power State</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Enable Intel Speed Shift Technology</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel Speed Shift Technology</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Auto On Time</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Deep Sleep Control</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled in S4 and S5</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Fan Control Override</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Fan Control Overide</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; USB Wake Support</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB Wake Support</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Wake on LAN/WLAN</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Block Sleep</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Block Sleep</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Numlock LED</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Numlock LED</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Keyboard Errors</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Keyboard Error Detection</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Fastboot</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Thorough</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Extend BIOS POST Time</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">5 seconds</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Full Screen Logo</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Full Screen Logo</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Warnings and Errors</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Prompt on Warning and Errors</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; Intel AMT Capability</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This menu option will only appear if the Intel AMT capability was added at factory</p>
+</div>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; USB Provision</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB Provision</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; MEBx Hotkey</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable MEBx Hotkey</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; Virtualization</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel Virtualization Technology</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; VT for Direct I/O</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable VT for Direct I/O</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; Trusted Execution</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Trusted Execution</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Wireless –&gt; Wireless Device Enable</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">WLAN/WiGig</span></p></li>
+<li><p>Uncheck <span class="guilabel">Bluetooth</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; SERR Messages</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable SERR Messages</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; BIOS Downgrade</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Allow BIOS Downgrade</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; Data Wipe</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Wipe on Next Boot</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; BIOS Recovery</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">BIOS Recovery from Hard Drive</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Logs –&gt; BIOS Events</span></p>
+<ul class="simple">
+<li><p>Review BIOS Event Logs</p></li>
+<li><p><span class="guilabel">Clear Log –&gt; Yes</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Advanced configurations –&gt; ASPM</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Auto</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; Auto OS Recovery Threshold</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">OFF</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; SupportAssist OS Recovery</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SupportAssist OS Recovery</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; BIOSConnect</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">BIOSConnect</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Admin Password</span> <em>If not already set</em></p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Enter new *Admin level password*</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Confirm new *Admin level password*</kbd></p></li>
+<li><p><span class="guilabel">OK</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Exit</span></p></li>
+<li><p>Dell 3431 Workstation will reboot. <strong>If</strong> configuration of the BIOS version was the only need at this time, let Dell 3431 boot into its normal boot cycle. Otherwise <kbd class="kbd docutils literal notranslate">F12</kbd> and continue to Intel(R) Management Engine BIOS Extension (MEBx) Configuration section</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="hardware-bios-firmware-update-configuration-for-akkala">
+<span id="id9"></span><h2><span class="section-number">1.3.3.4. </span>Hardware BIOS &amp; Firmware Update/Configuration for <strong>akkala</strong><a class="headerlink" href="#hardware-bios-firmware-update-configuration-for-akkala" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dell-precision-3431-bios-update-for-akkala">
+<h3><span class="section-number">1.3.3.4.1. </span>Dell Precision 3431, BIOS Update for <strong>akkala</strong><a class="headerlink" href="#dell-precision-3431-bios-update-for-akkala" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently if Remote Management if desired, then it must be done at factory to load the correct BIOS version that enabled the Intel vManagement platform. Enabling this feature, if not already enabled in BIOS menu, will not be coverted in these instructions.</p>
+</div>
+<ol class="arabic">
+<li><p>Download <strong>Version 1.3.1</strong> BIOS upgrade file from <a class="reference external" href="https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=gh411&amp;oscode=biosa&amp;productcode=precision-3431-workstation">https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=gh411&amp;oscode=biosa&amp;productcode=precision-3431-workstation</a> and copy to a USB drive</p></li>
+<li><p>Connect the USB drive to Dell 3431 Workstation</p></li>
+<li><p>Restart or Power On (if Off) the Dell 3431 Workstation</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p>At Boot Options Menu, under <cite>OTHER OPTIONS:</cite> <span class="menuselection">BIOS Flash Update</span></p></li>
+<li><p>At BIOS Flash Update window, <span class="guilabel">…</span> and browse through the different File Systems: <code class="samp docutils literal notranslate"><span class="pre">FS#</span></code> until you find the USB drive you inserted</p></li>
+<li><p><span class="guilabel">Precision_3431_1.3.1.exe</span> then <span class="guilabel">OK</span></p></li>
+<li><p>Once file is verified, verify the listed information is correct under <strong>System BIOS Information</strong></p>
+<ul class="simple">
+<li><p><strong>System:</strong> <code class="samp docutils literal notranslate"><span class="pre">Precision</span> <span class="pre">Tower</span> <span class="pre">3431</span></code></p></li>
+<li><p><strong>Revision:</strong> <code class="samp docutils literal notranslate"><span class="pre">&lt;Currently</span> <span class="pre">installed</span> <span class="pre">BIOS</span> <span class="pre">version&gt;</span></code> (Should be lower than listed BIOS Update Information, Revision version)</p></li>
+<li><p><strong>Vendor:</strong> <code class="samp docutils literal notranslate"><span class="pre">Dell</span> <span class="pre">Inc.</span></code></p></li>
+</ul>
+</li>
+<li><p>Verify the listed information is correct under <strong>BIOS UpdateInformation</strong></p>
+<ul class="simple">
+<li><p><strong>BIOS update file:</strong> <code class="samp docutils literal notranslate"><span class="pre">&lt;FS#&gt;:\Precision_3431_1.3.1.exe</span></code> (File you copied to USB drive)</p></li>
+<li><p><strong>System:</strong> <code class="samp docutils literal notranslate"><span class="pre">Precision</span> <span class="pre">Tower</span> <span class="pre">3431</span></code></p></li>
+<li><p><strong>Revision:</strong> <code class="samp docutils literal notranslate"><span class="pre">1.3.1</span></code></p></li>
+<li><p><strong>Vendor:</strong> <code class="samp docutils literal notranslate"><span class="pre">Dell</span> <span class="pre">Inc.</span></code></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Begin Flash Update</span></p></li>
+<li><p>When prompted, <span class="guilabel">Yes</span> to proceed with flashing of BIOS</p></li>
+<li><p>Once flashing of BIOS is complete and Dell 3431 reboots and shows shows Dell logo, <kbd class="kbd docutils literal notranslate">F12</kbd> to enter BIOS Boot Options Menu</p></li>
+<li><p>Verify that bottom banner of Boot Options Menu shows <code class="samp docutils literal notranslate"><span class="pre">BIOS</span> <span class="pre">Revision</span> <span class="pre">1.3.1</span></code> indicating a complete BIOS update.</p></li>
+<li><p>Remove USB drive with BIOS update file from Dell 3431</p></li>
+<li><p><strong>If</strong> updating the BIOS version was the only need at this time, reboot Dell 3431 so it boots into its normal boot cycle. Otherwise continue to BIOS Configuration section</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="dell-precision-3431-intel-management-engine-configuration-for-akkala">
+<span id="dell3431-intel-amt-config-akkala-mgmt"></span><h3><span class="section-number">1.3.3.4.2. </span>Dell Precision 3431, Intel Management Engine Configuration for <strong>akkala</strong><a class="headerlink" href="#dell-precision-3431-intel-management-engine-configuration-for-akkala" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You cannot access the BIOS configuration menu for the Intel AMT system if connected via the Intel AMT Remote Desktop, once you set a BIOS Admin password. The menu option will dissapear from menu.</p>
+</div>
+<ol class="arabic">
+<li><p>If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and <kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p><span class="menuselection">Intel(R) Management Engine BIOS Extension (MEBx)</span></p></li>
+<li><p><span class="menuselection">MEBx Login</span></p></li>
+<li><p>You will be prompted for factory <em>Intel(R) ME Password</em> <kbd class="kbd docutils literal notranslate">admin</kbd> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>You will be prompted to set new password for MEBx login, <kbd class="kbd docutils literal notranslate">&lt;Desired Admin Password&gt;</kbd> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>Verify password by <kbd class="kbd docutils literal notranslate">&lt;Desired Admin Password&gt;</kbd> again then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To change the Intel MEBx password for <em>admin</em> user in future from BIOS:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><span class="menuselection">Intel(R) ME General Settings</span></p></li>
+<li><p><span class="menuselection">Change ME Password</span></p></li>
+</ol>
+</div></blockquote>
+</div>
+</li>
+<li><p>Verify <span class="menuselection">Intel(R) AMT</span> is set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">Intel(R) AMT Configuration</span></p>
+<ol class="arabic">
+<li><p><span class="menuselection">Managebility Feature Selection</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">SOL/Storage Redirection/KVM</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">SOL</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">Storage Redirection</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+<li><p><span class="menuselection">KVM Feature Selection</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">User Consent</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is critical that if you do not have on-site personnel with equipment that <em>User Opt-in</em> is set to <em>&lt;None&gt;</em> otherwise you will not be able to establish a remote KVM session without user approval from local KB/Display connected to workstation.</p>
+</div>
+<ul class="simple">
+<li><p><span class="menuselection">User Opt-in</span> set to <span class="menuselection">&lt;None&gt;</span></p></li>
+<li><p><span class="menuselection">Opt-in Configurable from Remote IT</span> set to <span class="menuselection">&lt;Enabled&gt;</span></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">Password Policy</span> set to <span class="menuselection">&lt;Anytime&gt;</span></p></li>
+<li><p><span class="menuselection">Network Setup</span></p></li>
+<li><p><span class="menuselection">Intel(R) ME Network Name Settings</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">Host Name</span> <kbd class="kbd docutils literal notranslate">akkala-mgmt</kbd></p></li>
+<li><p><span class="menuselection">Domain Name</span> <kbd class="kbd docutils literal notranslate">hyrule.binarylandscapes.com</kbd></p></li>
+<li><p><span class="menuselection">Shared/Dedicated FQDN</span> set to <span class="menuselection">&lt;Dedicated&gt;</span></p></li>
+<li><p><span class="menuselection">Dynamic DNS Update</span> set to <span class="menuselection">&lt;Disabled&gt;</span></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">TCP/IP Settings</span></p></li>
+<li><p><span class="menuselection">Wired LAN IPV4 Settings</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">DHCP Mode</span> set to <span class="menuselection">&lt;Disabled&gt;</span></p></li>
+<li><p><span class="menuselection">IPV4 Address</span> <kbd class="kbd docutils literal notranslate">10.1.10.193</kbd></p></li>
+<li><p><span class="menuselection">Subnet Mask Address</span> <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p><span class="menuselection">Default Gateway Address</span> <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="menuselection">Preferred DNS Address</span> <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="menuselection">Alternate DNS Address</span> <kbd class="kbd docutils literal notranslate">0.0.0.0</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">Activate Network Access</span> then <kbd class="kbd docutils literal notranslate">Y</kbd></p></li>
+<li><p><span class="menuselection">Power Control</span></p>
+<ul class="simple">
+<li><p><span class="menuselection">Intel(R) AMT ON in Host Sleep States</span> set to <span class="menuselection">&lt;Desktop: ON in S0, ME Wake in S3, S4-5&gt;</span></p></li>
+<li><p><span class="menuselection">Idle Timeout</span> set to <kbd class="kbd docutils literal notranslate">65535</kbd> <em>You may want lower in a non lab environment for security reasons</em></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Escape</kbd></p></li>
+<li><p><span class="menuselection">MEBx Exit</span> then <kbd class="kbd docutils literal notranslate">Y</kbd> and workstation will Reboot.</p></li>
+</ol>
+</li>
+<li><p>Verify connectivity by using a <strong class="program">Web Browser</strong> and going to the Intel AMT Web Interface at <a class="reference external" href="http://10.1.10.193:16992">http://10.1.10.193:16992</a> and logging in with <kbd class="kbd docutils literal notranslate">admin</kbd> as username and the <em>password</em> you configured.</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<div class="section" id="intel-amt-remote-desktop-configuration-for-akkala">
+<h4><span class="section-number">1.3.3.4.2.1. </span>Intel AMT Remote Desktop Configuration for <strong>akkala</strong><a class="headerlink" href="#intel-amt-remote-desktop-configuration-for-akkala" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p>Go to your Windows workstation and download and install <strong class="program">MeshCommander</strong> from <a class="reference external" href="https://www.meshcommander.com/">https://www.meshcommander.com/</a></p></li>
+<li><p>Run <strong class="program">MeshCommander</strong></p></li>
+<li><p><span class="guilabel">Computer Management (Networked Computers Icon)</span></p></li>
+<li><p><span class="guilabel">Add Computer…</span></p>
+<ul class="simple">
+<li><p>Friendly Name <kbd class="kbd docutils literal notranslate">akkala-mgmt</kbd></p></li>
+<li><p>Group Name <em>Leave blank</em></p></li>
+<li><p>Hostname <kbd class="kbd docutils literal notranslate">10.1.10.193</kbd></p></li>
+<li><p>Auth/Security <span class="guilabel">Digest/None</span></p></li>
+<li><p>Username <kbd class="kbd docutils literal notranslate">admin</kbd></p></li>
+<li><p>Password* <kbd class="kbd docutils literal notranslate">Configured MEBx Login Password</kbd> or <em>Default is admin (But will not let you connect with default password)</em></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p>On the connection for <em>akkala-mgmt</em> <span class="guilabel">Connect</span></p></li>
+<li><p>Once first time connection is complete, <span class="guilabel">Switch to TLS</span> in top left</p></li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">OK</span> <em>If needed</em></p></li>
+<li><p><span class="guilabel">System Status –&gt; Primary display, 3 minutes session timeout</span></p></li>
+<li><p>Update Session timeout (Minutes) to <kbd class="kbd docutils literal notranslate">10</kbd> then <span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">Displayed Date &amp; Time</span></p></li>
+<li><p>When prompted to sync with this computer <span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">Remote Desktop</span> and then click red banner to enable the feature.</p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Redirection Port</span></p></li>
+<li><p>Check <span class="guilabel">KVM Remote Desktop</span></p></li>
+<li><p>Check <span class="guilabel">IDE-Redirection</span></p></li>
+<li><p>Check <span class="guilabel">Serial-over-LAN</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p><span class="guilabel">Connect</span> and verify you can establish a Remote KVM session with computer and then disconnect.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Remote KVM requires the system to have an active display connected to it in order to function. So if connected to a physical KVM but off-channel, it will have issues and if display is unplugged it will not work. You will need a <em>DisplayPort Headless Ghost Display plug</em> like the following <a class="reference external" href="https://smile.amazon.com/gp/product/B07YLQZXKY/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&amp;psc=1">Recommended Ghost Display Plug</a></p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="dell-precision-3431-bios-configuration-for-for-akkala">
+<h3><span class="section-number">1.3.3.4.3. </span>Dell Precision 3431, BIOS Configuration for for <strong>akkala</strong><a class="headerlink" href="#dell-precision-3431-bios-configuration-for-for-akkala" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and <kbd class="kbd docutils literal notranslate">F12</kbd> when Dell 3431 powers on and shows Dell logo</p></li>
+<li><p><span class="menuselection">BIOS Configuration</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the BIOS has already been configured then you will need to <span class="guilabel">Unlock</span> and <kbd class="kbd docutils literal notranslate">&lt;Admin Password&gt;</kbd> to be able to change any settings.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If prompted after <span class="guilabel">Apply</span>, Check <span class="guilabel">Save as Custom User Settings</span> then <span class="guilabel">OK</span></p>
+</div>
+</li>
+<li><p><span class="guilabel">General –&gt; Boot Sequence</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Boot Sequence menu may only list options set from factory and will require completing configuration of BIOS and installation of OS to populate menu options in documentation.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Configure the Boot List Option to <span class="guilabel">UEFI</span></p></li>
+<li><p>Configure the Boot Sequence to the following order:</p>
+<ul class="simple">
+<li><p>UEFI: Samsung USB or VMware ESXi (If installed)</p></li>
+<li><p>Onboard NIC(IPV4)</p></li>
+<li><p>Onboard NIC(IPV6)</p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ol>
+</li>
+<li><p><span class="guilabel">General –&gt; Advanced Boot Options</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Legacy Options ROMs</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">General –&gt; UEFI Boot Path Security</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Always, Except Internal HDD &amp; PXE</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">General –&gt; Date/Time</span></p>
+<ul class="simple">
+<li><p>Configure Time and Date to local UTC time.</p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Integrated NIC</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable UEFI Network Stack</span></p></li>
+<li><p><span class="guilabel">Enabled w/PXE</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Serial Port</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">COM1</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; SATA Operation</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">ACHI</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Drives</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">SATA-0</span></p></li>
+<li><p>Check <span class="guilabel">SATA-2</span></p></li>
+<li><p>Check <span class="guilabel">SATA-3</span></p></li>
+<li><p>Check <span class="guilabel">SATA-4</span></p></li>
+<li><p>Check <span class="guilabel">M.2 PCIe SSD-0</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; SMART Reporting</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable SMART Reporting</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable USB Boot Support</span></p></li>
+<li><p>Check <span class="guilabel">Enable Front USB Ports</span></p></li>
+<li><p>Check <span class="guilabel">Enable Rear USB Ports</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Front USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Front Port 1(Bottom Right)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 1 w/Power Share(Top Right)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 2(Bottom Left)</span></p></li>
+<li><p>Check <span class="guilabel">Front Port 2(Top Left)</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Rear USB Configuration</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Rear Port 1(Left)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 2(Left Middle)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 3(Right Middle)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 4(Right)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 1(Left)</span></p></li>
+<li><p>Check <span class="guilabel">Rear Port 2(Right)</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; USB PowerShare</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB PowerShare</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Audio</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Audio</span></p></li>
+<li><p>Check <span class="guilabel">Enable Microphone</span></p></li>
+<li><p>Check <span class="guilabel">Enable Internal Speaker</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Dust Filter Maintenance</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">90 days</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Configuration –&gt; Miscellaneous Devices</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Secure Digital (SD) Card</span></p></li>
+<li><p>Uncheck <span class="guilabel">Secure Digital (SD) Card Boot</span></p></li>
+<li><p>Uncheck <span class="guilabel">Secure Digital (SD) Card Read-Only Mode</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Video –&gt; Primary Display</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Intel HD Graphics</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; System Password</span></p>
+<ul class="simple">
+<li><p>Should be <em>Not Set</em></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Internal HDD-3 Password</span></p>
+<ul class="simple">
+<li><p>Should be <em>Not Set</em></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Strong Password</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Strong Password</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Configuration</span></p>
+<ul class="simple">
+<li><p>Admin Password Min. <kbd class="kbd docutils literal notranslate">8</kbd></p></li>
+<li><p>Admin Password Max. <kbd class="kbd docutils literal notranslate">32</kbd></p></li>
+<li><p>System Password Min. <kbd class="kbd docutils literal notranslate">08</kbd></p></li>
+<li><p>System Password Max. <kbd class="kbd docutils literal notranslate">32</kbd></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Bypass</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Password Change</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Allow Non-Admin Password Changes</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; UEFI Capsule Firmware Updates</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable UEFI Capsule Firmware Updates</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; HDD Security</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SED Block SID Authentication</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for SED Block SID Command</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; TPM 2.0 Security</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">TPM On</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Enable Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Disable Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">PPI Bypass for Clear Commands</span></p></li>
+<li><p>Uncheck <span class="guilabel">Clear</span></p></li>
+<li><p>Check <span class="guilabel">Attestation Enable</span></p></li>
+<li><p>Check <span class="guilabel">Key Storage Enable</span></p></li>
+<li><p>Check <span class="guilabel">SHA-256</span></p></li>
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Absolute</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Chassis Intrusion</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Clear Intrusion Warning</span></p></li>
+<li><p><span class="guilabel">On-Silent</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; OROM Keyboard Access</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Admin Setup Lockout</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Admin Setup Lockout</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Master Password Lockout</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Master Password Lockout</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; SMM Security Mitigation</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SMM Security Mitigation</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Secure Boot Enable</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Secure Boot Enable</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Secure Boot Mode</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Deployed Mode</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Secure Boot –&gt; Expert Key Management</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Custom Mode</span></p></li>
+<li><p><span class="guilabel">PK</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Intel Software Guard Extensions –&gt; Intel SGX Enable</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Software Controlled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Intel Software Guard Extensions –&gt; Enclave Memory Size</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">128MB</span> <em>Grayed out due to previous setting</em></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Multi Core Support</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">All</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Intel SpeedStep</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel SpeedStep</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; C-States Control</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">C States</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; Intel TurboBoost</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel TurboBoost</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Performance –&gt; HyperThread control</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; AC Recovery</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Last Power State</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Enable Intel Speed Shift Technology</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel Speed Shift Technology</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Auto On Time</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Deep Sleep Control</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled in S4 and S5</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Fan Control Override</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Fan Control Overide</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; USB Wake Support</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB Wake Support</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Wake on LAN/WLAN</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Power Management –&gt; Block Sleep</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Block Sleep</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Numlock LED</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Numlock LED</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Keyboard Errors</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Keyboard Error Detection</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Fastboot</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Thorough</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Extend BIOS POST Time</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">5 seconds</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Full Screen Logo</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable Full Screen Logo</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">POST Behavior –&gt; Warnings and Errors</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Prompt on Warning and Errors</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; Intel AMT Capability</span></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This menu option will only appear if the Intel AMT capability was added at factory</p>
+</div>
+<ul class="simple">
+<li><p><span class="guilabel">Enabled</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; USB Provision</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Enable USB Provision</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Manageability –&gt; MEBx Hotkey</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable MEBx Hotkey</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; Virtualization</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable Intel Virtualization Technology</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; VT for Direct I/O</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable VT for Direct I/O</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Virtualization Support –&gt; Trusted Execution</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Trusted Execution</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Wireless –&gt; Wireless Device Enable</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">WLAN/WiGig</span></p></li>
+<li><p>Uncheck <span class="guilabel">Bluetooth</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; SERR Messages</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Enable SERR Messages</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; BIOS Downgrade</span></p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Allow BIOS Downgrade</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; Data Wipe</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Wipe on Next Boot</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Maintenance –&gt; BIOS Recovery</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">BIOS Recovery from Hard Drive</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">System Logs –&gt; BIOS Events</span></p>
+<ul class="simple">
+<li><p>Review BIOS Event Logs</p></li>
+<li><p><span class="guilabel">Clear Log –&gt; Yes</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Advanced configurations –&gt; ASPM</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">Auto</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; Auto OS Recovery Threshold</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">OFF</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; SupportAssist OS Recovery</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">SupportAssist OS Recovery</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">SupportAssist System Resolution –&gt; BIOSConnect</span></p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">BIOSConnect</span></p></li>
+<li><p><span class="guilabel">Apply</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Security –&gt; Admin Password</span> <em>If not already set</em></p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Enter new *Admin level password*</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Confirm new *Admin level password*</kbd></p></li>
+<li><p><span class="guilabel">OK</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Exit</span></p></li>
+<li><p>Dell 3431 Workstation will reboot. <strong>If</strong> configuration of the BIOS version was the only need at this time, let Dell 3431 boot into its normal boot cycle. Otherwise <kbd class="kbd docutils literal notranslate">F12</kbd> and continue to Intel(R) Management Engine BIOS Extension (MEBx) Configuration section</p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../network/contents.html" class="btn btn-neutral float-right" title="1.4. System Network Deployment and Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="assembly.html" class="btn btn-neutral float-left" title="1.3.2. Hardware Assembly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Josh Johnson @binarylandscapes
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

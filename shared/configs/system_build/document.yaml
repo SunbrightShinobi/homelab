@@ -1,0 +1,24 @@
+
+# All comments are stripped out with yamlreader
+# Cannot use '&' anchors and '*' aliases in separate yaml files but they will work in same yaml file with yamlreader but actual anchor/alias will be stripped out in final dict
+--- # Directives above and Content below and indicates start of document
+_document:
+  partNumber: AxxxxB####
+  revisionHistory: 
+  - &doc_rev_nc
+    rev: NC
+    date: tbd
+    changes:
+    - Initial Release
+    - Section x.x, <Change Made>
+    - Section x.x, <Change Made>
+    - Section x.x, <Change Made>
+  - &doc_rev_a
+    rev: A
+    date: tbd
+    changes:
+    - Revised for <reason>
+    - Section x.x, <Change Made>
+    - Section x.x, <Change Made>
+    - Section x.x, <Change Made>
+... # End of document content

@@ -1,0 +1,70 @@
+
+{% macro sign_off_table(targets) %}
+{% for target in targets %}
+    {% if loop.first %}
+
+    :strong:`Mark Complete:`
+
+    .. tabularcolumns:: |p{\dimexpr 0.28\linewidth-2\tabcolsep}
+                        |p{\dimexpr 0.4\linewidth-2\tabcolsep}
+                        |p{\dimexpr 0.28\linewidth-2\tabcolsep}|
+
+    .. list-table::
+        :header-rows: 1
+
+        - * :strong:`Hostname`
+          * :strong:`Print and Sign Name`
+          * :strong:`Date`
+    {% endif %}
+        - * {% if target %}``{{ target }}``{% endif %}
+          *
+          *
+
+{% endfor %}
+{% endmacro %}
+
+
+
+{% macro sign_off_table_wide(targets) %}
+{% for target in targets %}
+    {% if loop.first %}
+
+    :strong:`Mark Complete:`
+
+    .. tabularcolumns:: |p{\dimexpr 0.4\linewidth-2\tabcolsep}
+                        |p{\dimexpr 0.4\linewidth-2\tabcolsep}
+                        |p{\dimexpr 0.2\linewidth-2\tabcolsep}|
+
+    .. list-table::
+        :header-rows: 1
+        :align: left
+        :class: longtable
+
+        - * :strong:`Hostname`
+          * :strong:`Print and Sign Name`
+          * :strong:`Date`
+    {% endif %}
+        - * {% if target %}``{{ target }}``{% endif %}
+          *
+          *
+
+{% endfor %}
+{% endmacro %}
+
+
+
+{% macro create_link_string(title) %}
+.. _{{ title.replace(' ', '_') | lower }}:
+{% endmacro %}
+
+
+
+{% macro create_heading(level, title, link=False, context_name='') %}
+{% if link %}
+{{ create_link_string(title + context_name) }}
+{% endif %}
+{% set headers = '#*=-^"!@$%' %}
+{{ '{}'.format(headers[level]) * 180 }}
+{{ '{}'.format(title) }}
+{{ '{}'.format(headers[level]) * 180 }}
+{% endmacro %}

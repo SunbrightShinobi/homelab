@@ -1,0 +1,835 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.5.1. VMware vSphere ESXi Deployment for gerudo &mdash; Homelab System Buildup Git: homelab - HOMELAB-18-document-dell-3431-buildup  [ 43e7fc4a2ea ] documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/drawio_html.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/drawio.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/drawio_html.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.6. System Cyber Security Deployment and Configuration" href="../security/contents.html" />
+    <link rel="prev" title="1.5. System Hypervisor Deployment and Configuration" href="contents.html" />
+    <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Homelab System Buildup
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">1. <strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">1.1. Document Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/contents.html">1.2. System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hardware/contents.html">1.3. System Hardware Assembly and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network/contents.html">1.4. System Network Deployment and Configuration</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="contents.html">1.5. System Hypervisor Deployment and Configuration</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.5.1. VMware vSphere ESXi Deployment for <strong>gerudo</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#establish-an-intel-amt-remote-desktop-session-to-gerudo">1.5.1.1. Establish an Intel AMT Remote Desktop session to <strong>gerudo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-of-vmware-vsphere-esxi-for-gerudo">1.5.1.2. Installation of VMware vSphere ESXi for <strong>gerudo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-installation-configuration-of-vmware-vsphere-esxi-for-gerudo">1.5.1.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>gerudo</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#vmware-vsphere-esxi-deployment-for-hebra">1.5.2. VMware vSphere ESXi Deployment for <strong>hebra</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#establish-an-intel-amt-remote-desktop-session-to-hebra">1.5.2.1. Establish an Intel AMT Remote Desktop session to <strong>hebra</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-of-vmware-vsphere-esxi-for-hebra">1.5.2.2. Installation of VMware vSphere ESXi for <strong>hebra</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-installation-configuration-of-vmware-vsphere-esxi-for-hebra">1.5.2.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>hebra</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#vmware-vsphere-esxi-deployment-for-akkala">1.5.3. VMware vSphere ESXi Deployment for <strong>akkala</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#establish-an-intel-amt-remote-desktop-session-to-akkala">1.5.3.1. Establish an Intel AMT Remote Desktop session to <strong>akkala</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-of-vmware-vsphere-esxi-for-akkala">1.5.3.2. Installation of VMware vSphere ESXi for <strong>akkala</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-installation-configuration-of-vmware-vsphere-esxi-for-akkala">1.5.3.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>akkala</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../security/contents.html">1.6. System Cyber Security Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/contents.html">1.7. System Monitoring Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backup/contents.html">1.8. System Backup Deployment and Configuration</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../common_docs/appendices/acronym_list.html">1. Acronym List</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Homelab System Buildup</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../contents.html"><span class="section-number">1. </span><strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a> &raquo;</li>
+        
+          <li><a href="contents.html"><span class="section-number">1.5. </span>System Hypervisor Deployment and Configuration</a> &raquo;</li>
+        
+      <li><span class="section-number">1.5.1. </span>VMware vSphere ESXi Deployment for <strong>gerudo</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/document/main_content/hypervisor/install.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vmware-vsphere-esxi-deployment-for-gerudo">
+<span id="id1"></span><h1><span class="section-number">1.5.1. </span>VMware vSphere ESXi Deployment for <strong>gerudo</strong><a class="headerlink" href="#vmware-vsphere-esxi-deployment-for-gerudo" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="establish-an-intel-amt-remote-desktop-session-to-gerudo">
+<h2><span class="section-number">1.5.1.1. </span>Establish an Intel AMT Remote Desktop session to <strong>gerudo</strong><a class="headerlink" href="#establish-an-intel-amt-remote-desktop-session-to-gerudo" title="Permalink to this headline">¶</a></h2>
+<p>Prerequistes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Download and installation of <strong class="program">Meshcommander</strong> from <a class="reference external" href="https://www.meshcommander.com/meshcommander/meshcmd">MeshCommander Download</a></p></li>
+<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#dell3431-intel-amt-config-gerudo-mgmt"><span class="std std-ref">Dell Precision 3431, Intel Management Engine Configuration for gerudo</span></a></p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic">
+<li><p>From workstation, open <strong class="program">MeshCommander</strong></p></li>
+<li><p><span class="guilabel">Computer Management (Networked Computers Icon)</span></p></li>
+<li><p>Find <strong>gerudo-mgmt</strong> and to on the same row at right-hand side of window <span class="guilabel">Connect</span></p></li>
+<li><p>Wait for system status to populate then <span class="guilabel">Remote Desktop</span> on left-hand side menu</p></li>
+<li><p>In Remote Desktop section of <strong class="program">MeshCommander</strong> <span class="guilabel">Connect</span></p></li>
+<li><p>You now have a remote desktop session to <strong>gerudo</strong> in its current state.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>During reboots or power cycles <strong class="program">MeshCommander</strong> sometimes disconnects and has a delay to reconnect. Just reconnect as able but this is why its recommend to start from powered down for OS installations over Remote Desktop.</p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="installation-of-vmware-vsphere-esxi-for-gerudo">
+<h2><span class="section-number">1.5.1.2. </span>Installation of VMware vSphere ESXi for <strong>gerudo</strong><a class="headerlink" href="#installation-of-vmware-vsphere-esxi-for-gerudo" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently for VMware vSphere ESXi 7.0.0-15843807, PXE boot via BIOS or UEFI is non-operational</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently for VMware vSphere ESXi 7.0.0-15843807, customization of ISO file is non-functional as well as using <strong class="program">Ventoy</strong> for a ISO booting USB.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These steps are written from the expectation previous section is complete for establishing a remote desktop session to host via <strong class="program">MeshCommander</strong></p>
+</div>
+<ol class="arabic">
+<li><p>If host is powered on, <span class="guilabel">Power Actions… –&gt; Power down –&gt; OK</span> and wait for red notification that Remote computer is not powered on.</p></li>
+<li><p><span class="guilabel">IDER</span> and configure the following options:</p>
+<ul class="simple">
+<li><p>Source <span class="guilabel">ISO &amp; IMG from file</span></p></li>
+<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso</span></code></p></li>
+<li><p>Start <span class="guilabel">Immediate</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span> and verify you have have a green bar with <strong>IDE-R Session, Connected</strong> at top of <strong class="program">MeshCommander</strong> now</p></li>
+<li><p><span class="guilabel">Power Actions… –&gt; Power On to IDE-R CDROM –&gt; OK</span></p></li>
+<li><p>Verify you see Dell boot image and then it continues to <em>Loading ESXi installer</em></p></li>
+<li><p>At the <em>Welcome to the VMware ESXI Installation</em> screen, press <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>At the <em>EULA</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
+<li><p>At the <em>Select a Disk to Install or Upgrade</em>, <span class="menuselection">Local: Samsung Flash Drive (mpx.vmhba34:C0:T0:L0)</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><em>If prompted</em>, use <kbd class="kbd docutils literal notranslate">UP</kbd> and <kbd class="kbd docutils literal notranslate">DOWN</kbd> and <kbd class="kbd docutils literal notranslate">SPACEBAR</kbd> to select <span class="menuselection">Install</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a fresh install over current ESXi installation</p></li>
+<li><p>At the <em>Please select a keyboard layout screen</em>, select <span class="menuselection">US Default</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd> then reenter to confirm <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+<li><p>At the <em>Confirm Install</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
+<li><p>Once installation is complete, <span class="guilabel">Stop IDE-R Session</span> from <strong class="program">MeshCommander</strong></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to <span class="menuselection">Reboot</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="post-installation-configuration-of-vmware-vsphere-esxi-for-gerudo">
+<h2><span class="section-number">1.5.1.3. </span>Post-Installation Configuration of VMware vSphere ESXi for <strong>gerudo</strong><a class="headerlink" href="#post-installation-configuration-of-vmware-vsphere-esxi-for-gerudo" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Verify system is booted up and ready at the Yellow &amp; Black screen then <kbd class="kbd docutils literal notranslate">F2</kbd> to Customize System</p></li>
+<li><p>Enter <kbd class="kbd docutils literal notranslate">root</kbd> for <code class="docutils literal notranslate"><span class="pre">Login</span> <span class="pre">Name</span></code> and <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd> for <code class="docutils literal notranslate"><span class="pre">Password</span></code> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><span class="menuselection">Configure Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ol class="arabic">
+<li><p><span class="menuselection">Network Adaptors</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">vmnic0</span></code> is <code class="docutils literal notranslate"><span class="pre">[X]</span></code> and <code class="docutils literal notranslate"><span class="pre">Status</span></code> is <code class="docutils literal notranslate"><span class="pre">Connected</span></code></p></li>
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">vmnic1-2</span></code> are <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> and <code class="docutils literal notranslate"><span class="pre">Status</span></code> is <code class="docutils literal notranslate"><span class="pre">Connected</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">VLAN (optional)</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd> to apply settings and exit menu.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to have your VMware management network as the native vlan or EPG on the configured trunk or as an access port. Which is configured as blank for the VLAN ID.</p>
+</div>
+<ul class="simple">
+<li><p>Verify that <span class="guilabel">VLAN ID (1-4094, or 4095 to access all VLANs):</span> <kbd class="kbd docutils literal notranslate">blank</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">IPv4 Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Set static IPv4 address and network configuration</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
+<li><p><span class="guilabel">IPv4 Address</span> = <kbd class="kbd docutils literal notranslate">10.1.10.101</kbd></p></li>
+<li><p><span class="guilabel">Subnet Mask</span> = <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p><span class="guilabel">Default Gateway</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">DNS Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Use the following DNS server addresses and hostname</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
+<li><p><span class="guilabel">Primary DNS Server</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">0.0.0.0</kbd></p></li>
+<li><p><span class="guilabel">Hostname</span> = <kbd class="kbd docutils literal notranslate">gerudo</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Custom DNS Suffixes</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="guilabel">Suffixes</span> = <kbd class="kbd docutils literal notranslate">hyrule.binarylandscapes.com</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">ESC</kbd> and <kbd class="kbd docutils literal notranslate">Y</kbd> to Apply changes and restart management network</p></li>
+</ol>
+</li>
+<li><p><span class="menuselection">Test Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">10.1.10.1</span></code> is listed for <code class="docutils literal notranslate"><span class="pre">Ping</span> <span class="pre">Address</span> <span class="pre">#0</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a ping test to the default Gateway</p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#0</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#1</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(0.0.0.0).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Resolving</span> <span class="pre">hostname</span> <span class="pre">(gerudo.hyrule.binarylandscapes.com).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Configure Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ol class="arabic simple">
+<li><p><span class="menuselection">IPv6 Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Disable IPv6 (restart required)</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">ESC</kbd> and <kbd class="kbd docutils literal notranslate">Y</kbd> to Apply changes and reboot host</p></li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="vmware-vsphere-esxi-deployment-for-hebra">
+<span id="id2"></span><h1><span class="section-number">1.5.2. </span>VMware vSphere ESXi Deployment for <strong>hebra</strong><a class="headerlink" href="#vmware-vsphere-esxi-deployment-for-hebra" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="establish-an-intel-amt-remote-desktop-session-to-hebra">
+<h2><span class="section-number">1.5.2.1. </span>Establish an Intel AMT Remote Desktop session to <strong>hebra</strong><a class="headerlink" href="#establish-an-intel-amt-remote-desktop-session-to-hebra" title="Permalink to this headline">¶</a></h2>
+<p>Prerequistes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Download and installation of <strong class="program">Meshcommander</strong> from <a class="reference external" href="https://www.meshcommander.com/meshcommander/meshcmd">MeshCommander Download</a></p></li>
+<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#dell3431-intel-amt-config-hebra-mgmt"><span class="std std-ref">Dell Precision 3431, Intel Management Engine Configuration for hebra</span></a></p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic">
+<li><p>From workstation, open <strong class="program">MeshCommander</strong></p></li>
+<li><p><span class="guilabel">Computer Management (Networked Computers Icon)</span></p></li>
+<li><p>Find <strong>hebra-mgmt</strong> and to on the same row at right-hand side of window <span class="guilabel">Connect</span></p></li>
+<li><p>Wait for system status to populate then <span class="guilabel">Remote Desktop</span> on left-hand side menu</p></li>
+<li><p>In Remote Desktop section of <strong class="program">MeshCommander</strong> <span class="guilabel">Connect</span></p></li>
+<li><p>You now have a remote desktop session to <strong>hebra</strong> in its current state.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>During reboots or power cycles <strong class="program">MeshCommander</strong> sometimes disconnects and has a delay to reconnect. Just reconnect as able but this is why its recommend to start from powered down for OS installations over Remote Desktop.</p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="installation-of-vmware-vsphere-esxi-for-hebra">
+<h2><span class="section-number">1.5.2.2. </span>Installation of VMware vSphere ESXi for <strong>hebra</strong><a class="headerlink" href="#installation-of-vmware-vsphere-esxi-for-hebra" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently for VMware vSphere ESXi 7.0.0-15843807, PXE boot via BIOS or UEFI is non-operational</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently for VMware vSphere ESXi 7.0.0-15843807, customization of ISO file is non-functional as well as using <strong class="program">Ventoy</strong> for a ISO booting USB.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These steps are written from the expectation previous section is complete for establishing a remote desktop session to host via <strong class="program">MeshCommander</strong></p>
+</div>
+<ol class="arabic">
+<li><p>If host is powered on, <span class="guilabel">Power Actions… –&gt; Power down –&gt; OK</span> and wait for red notification that Remote computer is not powered on.</p></li>
+<li><p><span class="guilabel">IDER</span> and configure the following options:</p>
+<ul class="simple">
+<li><p>Source <span class="guilabel">ISO &amp; IMG from file</span></p></li>
+<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso</span></code></p></li>
+<li><p>Start <span class="guilabel">Immediate</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span> and verify you have have a green bar with <strong>IDE-R Session, Connected</strong> at top of <strong class="program">MeshCommander</strong> now</p></li>
+<li><p><span class="guilabel">Power Actions… –&gt; Power On to IDE-R CDROM –&gt; OK</span></p></li>
+<li><p>Verify you see Dell boot image and then it continues to <em>Loading ESXi installer</em></p></li>
+<li><p>At the <em>Welcome to the VMware ESXI Installation</em> screen, press <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>At the <em>EULA</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
+<li><p>At the <em>Select a Disk to Install or Upgrade</em>, <span class="menuselection">Local: Samsung Flash Drive (mpx.vmhba34:C0:T0:L0)</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><em>If prompted</em>, use <kbd class="kbd docutils literal notranslate">UP</kbd> and <kbd class="kbd docutils literal notranslate">DOWN</kbd> and <kbd class="kbd docutils literal notranslate">SPACEBAR</kbd> to select <span class="menuselection">Install</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a fresh install over current ESXi installation</p></li>
+<li><p>At the <em>Please select a keyboard layout screen</em>, select <span class="menuselection">US Default</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd> then reenter to confirm <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+<li><p>At the <em>Confirm Install</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
+<li><p>Once installation is complete, <span class="guilabel">Stop IDE-R Session</span> from <strong class="program">MeshCommander</strong></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to <span class="menuselection">Reboot</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="post-installation-configuration-of-vmware-vsphere-esxi-for-hebra">
+<h2><span class="section-number">1.5.2.3. </span>Post-Installation Configuration of VMware vSphere ESXi for <strong>hebra</strong><a class="headerlink" href="#post-installation-configuration-of-vmware-vsphere-esxi-for-hebra" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Verify system is booted up and ready at the Yellow &amp; Black screen then <kbd class="kbd docutils literal notranslate">F2</kbd> to Customize System</p></li>
+<li><p>Enter <kbd class="kbd docutils literal notranslate">root</kbd> for <code class="docutils literal notranslate"><span class="pre">Login</span> <span class="pre">Name</span></code> and <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd> for <code class="docutils literal notranslate"><span class="pre">Password</span></code> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><span class="menuselection">Configure Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ol class="arabic">
+<li><p><span class="menuselection">Network Adaptors</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">vmnic0</span></code> is <code class="docutils literal notranslate"><span class="pre">[X]</span></code> and <code class="docutils literal notranslate"><span class="pre">Status</span></code> is <code class="docutils literal notranslate"><span class="pre">Connected</span></code></p></li>
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">vmnic1-2</span></code> are <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> and <code class="docutils literal notranslate"><span class="pre">Status</span></code> is <code class="docutils literal notranslate"><span class="pre">Connected</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">VLAN (optional)</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd> to apply settings and exit menu.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to have your VMware management network as the native vlan or EPG on the configured trunk or as an access port. Which is configured as blank for the VLAN ID.</p>
+</div>
+<ul class="simple">
+<li><p>Verify that <span class="guilabel">VLAN ID (1-4094, or 4095 to access all VLANs):</span> <kbd class="kbd docutils literal notranslate">blank</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">IPv4 Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Set static IPv4 address and network configuration</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
+<li><p><span class="guilabel">IPv4 Address</span> = <kbd class="kbd docutils literal notranslate">10.1.10.102</kbd></p></li>
+<li><p><span class="guilabel">Subnet Mask</span> = <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p><span class="guilabel">Default Gateway</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">DNS Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Use the following DNS server addresses and hostname</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
+<li><p><span class="guilabel">Primary DNS Server</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">0.0.0.0</kbd></p></li>
+<li><p><span class="guilabel">Hostname</span> = <kbd class="kbd docutils literal notranslate">hebra</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Custom DNS Suffixes</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="guilabel">Suffixes</span> = <kbd class="kbd docutils literal notranslate">hyrule.binarylandscapes.com</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">ESC</kbd> and <kbd class="kbd docutils literal notranslate">Y</kbd> to Apply changes and restart management network</p></li>
+</ol>
+</li>
+<li><p><span class="menuselection">Test Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">10.1.10.1</span></code> is listed for <code class="docutils literal notranslate"><span class="pre">Ping</span> <span class="pre">Address</span> <span class="pre">#0</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a ping test to the default Gateway</p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#0</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#1</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(0.0.0.0).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Resolving</span> <span class="pre">hostname</span> <span class="pre">(hebra.hyrule.binarylandscapes.com).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Configure Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ol class="arabic simple">
+<li><p><span class="menuselection">IPv6 Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Disable IPv6 (restart required)</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">ESC</kbd> and <kbd class="kbd docutils literal notranslate">Y</kbd> to Apply changes and reboot host</p></li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="vmware-vsphere-esxi-deployment-for-akkala">
+<span id="id4"></span><h1><span class="section-number">1.5.3. </span>VMware vSphere ESXi Deployment for <strong>akkala</strong><a class="headerlink" href="#vmware-vsphere-esxi-deployment-for-akkala" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="establish-an-intel-amt-remote-desktop-session-to-akkala">
+<h2><span class="section-number">1.5.3.1. </span>Establish an Intel AMT Remote Desktop session to <strong>akkala</strong><a class="headerlink" href="#establish-an-intel-amt-remote-desktop-session-to-akkala" title="Permalink to this headline">¶</a></h2>
+<p>Prerequistes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Download and installation of <strong class="program">Meshcommander</strong> from <a class="reference external" href="https://www.meshcommander.com/meshcommander/meshcmd">MeshCommander Download</a></p></li>
+<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#dell3431-intel-amt-config-akkala-mgmt"><span class="std std-ref">Dell Precision 3431, Intel Management Engine Configuration for akkala</span></a></p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic">
+<li><p>From workstation, open <strong class="program">MeshCommander</strong></p></li>
+<li><p><span class="guilabel">Computer Management (Networked Computers Icon)</span></p></li>
+<li><p>Find <strong>akkala-mgmt</strong> and to on the same row at right-hand side of window <span class="guilabel">Connect</span></p></li>
+<li><p>Wait for system status to populate then <span class="guilabel">Remote Desktop</span> on left-hand side menu</p></li>
+<li><p>In Remote Desktop section of <strong class="program">MeshCommander</strong> <span class="guilabel">Connect</span></p></li>
+<li><p>You now have a remote desktop session to <strong>akkala</strong> in its current state.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>During reboots or power cycles <strong class="program">MeshCommander</strong> sometimes disconnects and has a delay to reconnect. Just reconnect as able but this is why its recommend to start from powered down for OS installations over Remote Desktop.</p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="installation-of-vmware-vsphere-esxi-for-akkala">
+<h2><span class="section-number">1.5.3.2. </span>Installation of VMware vSphere ESXi for <strong>akkala</strong><a class="headerlink" href="#installation-of-vmware-vsphere-esxi-for-akkala" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently for VMware vSphere ESXi 7.0.0-15843807, PXE boot via BIOS or UEFI is non-operational</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently for VMware vSphere ESXi 7.0.0-15843807, customization of ISO file is non-functional as well as using <strong class="program">Ventoy</strong> for a ISO booting USB.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These steps are written from the expectation previous section is complete for establishing a remote desktop session to host via <strong class="program">MeshCommander</strong></p>
+</div>
+<ol class="arabic">
+<li><p>If host is powered on, <span class="guilabel">Power Actions… –&gt; Power down –&gt; OK</span> and wait for red notification that Remote computer is not powered on.</p></li>
+<li><p><span class="guilabel">IDER</span> and configure the following options:</p>
+<ul class="simple">
+<li><p>Source <span class="guilabel">ISO &amp; IMG from file</span></p></li>
+<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso</span></code></p></li>
+<li><p>Start <span class="guilabel">Immediate</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span> and verify you have have a green bar with <strong>IDE-R Session, Connected</strong> at top of <strong class="program">MeshCommander</strong> now</p></li>
+<li><p><span class="guilabel">Power Actions… –&gt; Power On to IDE-R CDROM –&gt; OK</span></p></li>
+<li><p>Verify you see Dell boot image and then it continues to <em>Loading ESXi installer</em></p></li>
+<li><p>At the <em>Welcome to the VMware ESXI Installation</em> screen, press <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>At the <em>EULA</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
+<li><p>At the <em>Select a Disk to Install or Upgrade</em>, <span class="menuselection">Local: Samsung Flash Drive (mpx.vmhba34:C0:T0:L0)</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><em>If prompted</em>, use <kbd class="kbd docutils literal notranslate">UP</kbd> and <kbd class="kbd docutils literal notranslate">DOWN</kbd> and <kbd class="kbd docutils literal notranslate">SPACEBAR</kbd> to select <span class="menuselection">Install</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a fresh install over current ESXi installation</p></li>
+<li><p>At the <em>Please select a keyboard layout screen</em>, select <span class="menuselection">US Default</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd> then reenter to confirm <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+<li><p>At the <em>Confirm Install</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
+<li><p>Once installation is complete, <span class="guilabel">Stop IDE-R Session</span> from <strong class="program">MeshCommander</strong></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to <span class="menuselection">Reboot</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="post-installation-configuration-of-vmware-vsphere-esxi-for-akkala">
+<h2><span class="section-number">1.5.3.3. </span>Post-Installation Configuration of VMware vSphere ESXi for <strong>akkala</strong><a class="headerlink" href="#post-installation-configuration-of-vmware-vsphere-esxi-for-akkala" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Verify system is booted up and ready at the Yellow &amp; Black screen then <kbd class="kbd docutils literal notranslate">F2</kbd> to Customize System</p></li>
+<li><p>Enter <kbd class="kbd docutils literal notranslate">root</kbd> for <code class="docutils literal notranslate"><span class="pre">Login</span> <span class="pre">Name</span></code> and <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd> for <code class="docutils literal notranslate"><span class="pre">Password</span></code> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><span class="menuselection">Configure Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ol class="arabic">
+<li><p><span class="menuselection">Network Adaptors</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">vmnic0</span></code> is <code class="docutils literal notranslate"><span class="pre">[X]</span></code> and <code class="docutils literal notranslate"><span class="pre">Status</span></code> is <code class="docutils literal notranslate"><span class="pre">Connected</span></code></p></li>
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">vmnic1-2</span></code> are <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> and <code class="docutils literal notranslate"><span class="pre">Status</span></code> is <code class="docutils literal notranslate"><span class="pre">Connected</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">VLAN (optional)</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd> to apply settings and exit menu.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to have your VMware management network as the native vlan or EPG on the configured trunk or as an access port. Which is configured as blank for the VLAN ID.</p>
+</div>
+<ul class="simple">
+<li><p>Verify that <span class="guilabel">VLAN ID (1-4094, or 4095 to access all VLANs):</span> <kbd class="kbd docutils literal notranslate">blank</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">IPv4 Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Set static IPv4 address and network configuration</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
+<li><p><span class="guilabel">IPv4 Address</span> = <kbd class="kbd docutils literal notranslate">10.1.10.103</kbd></p></li>
+<li><p><span class="guilabel">Subnet Mask</span> = <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p><span class="guilabel">Default Gateway</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">DNS Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Use the following DNS server addresses and hostname</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
+<li><p><span class="guilabel">Primary DNS Server</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">0.0.0.0</kbd></p></li>
+<li><p><span class="guilabel">Hostname</span> = <kbd class="kbd docutils literal notranslate">akkala</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Custom DNS Suffixes</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="guilabel">Suffixes</span> = <kbd class="kbd docutils literal notranslate">hyrule.binarylandscapes.com</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">ESC</kbd> and <kbd class="kbd docutils literal notranslate">Y</kbd> to Apply changes and restart management network</p></li>
+</ol>
+</li>
+<li><p><span class="menuselection">Test Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">10.1.10.1</span></code> is listed for <code class="docutils literal notranslate"><span class="pre">Ping</span> <span class="pre">Address</span> <span class="pre">#0</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a ping test to the default Gateway</p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#0</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#1</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(0.0.0.0).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Resolving</span> <span class="pre">hostname</span> <span class="pre">(akkala.hyrule.binarylandscapes.com).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Configure Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ol class="arabic simple">
+<li><p><span class="menuselection">IPv6 Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Disable IPv6 (restart required)</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">ESC</kbd> and <kbd class="kbd docutils literal notranslate">Y</kbd> to Apply changes and reboot host</p></li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../security/contents.html" class="btn btn-neutral float-right" title="1.6. System Cyber Security Deployment and Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="contents.html" class="btn btn-neutral float-left" title="1.5. System Hypervisor Deployment and Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Josh Johnson @binarylandscapes
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

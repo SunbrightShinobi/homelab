@@ -1,0 +1,1386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.3.2. Hardware Assembly &mdash; Homelab System Buildup Git: homelab - HOMELAB-18-document-dell-3431-buildup  [ 43e7fc4a2ea ] documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/drawio_html.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/drawio.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/drawio_html.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.3.3. Hardware BIOS &amp; Firmware Update/Configuration" href="bios_fw.html" />
+    <link rel="prev" title="1.3.1. Hardware Specifications" href="specifications.html" />
+    <link href="../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Homelab System Buildup
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../contents.html">1. <strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">1.1. Document Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design/contents.html">1.2. System Design</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="contents.html">1.3. System Hardware Assembly and Configuration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="specifications.html">1.3.1. Hardware Specifications</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.3.2. Hardware Assembly</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dell-precision-3431-hardware-assembly-of-gerudo">1.3.2.1. Dell Precision 3431, Hardware Assembly of <strong>gerudo</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dell-precision-3431-hardware-assembly-of-hebra">1.3.2.2. Dell Precision 3431, Hardware Assembly of <strong>hebra</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dell-precision-3431-hardware-assembly-of-akkala">1.3.2.3. Dell Precision 3431, Hardware Assembly of <strong>akkala</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="bios_fw.html">1.3.3. Hardware BIOS &amp; Firmware Update/Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../network/contents.html">1.4. System Network Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hypervisor/contents.html">1.5. System Hypervisor Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../security/contents.html">1.6. System Cyber Security Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/contents.html">1.7. System Monitoring Deployment and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backup/contents.html">1.8. System Backup Deployment and Configuration</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../common_docs/appendices/acronym_list.html">1. Acronym List</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Homelab System Buildup</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../contents.html"><span class="section-number">1. </span><strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a> &raquo;</li>
+        
+          <li><a href="contents.html"><span class="section-number">1.3. </span>System Hardware Assembly and Configuration</a> &raquo;</li>
+        
+      <li><span class="section-number">1.3.2. </span>Hardware Assembly</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/document/main_content/hardware/assembly.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hardware-assembly">
+<span id="id1"></span><h1><span class="section-number">1.3.2. </span>Hardware Assembly<a class="headerlink" href="#hardware-assembly" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dell-precision-3431-hardware-assembly-of-gerudo">
+<span id="id2"></span><h2><span class="section-number">1.3.2.1. </span>Dell Precision 3431, Hardware Assembly of <strong>gerudo</strong><a class="headerlink" href="#dell-precision-3431-hardware-assembly-of-gerudo" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These assembly steps and images are intended to be used by someone with previous experience and knowledge of electronics assembly including following proper <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-ESD"><span class="xref std std-term">ESD</span></a> procedures and are provided for use at user’s own risk.</p>
+<p>See <a class="reference download internal" download="" href="../../../_downloads/f78a93cc76a7cd6fa31e63c4d6072d15/precision-3431-workstation_service-manual_en-us.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Reference:</span> <span class="pre">OEM</span> <span class="pre">Dell</span> <span class="pre">Precision</span> <span class="pre">3431</span> <span class="pre">Workstation</span> <span class="pre">Service</span> <span class="pre">Manual</span></code></a></p>
+</div>
+<ol class="arabic">
+<li><p>Remove top cover from system by sliding <em>Blue Lever</em> at rear of system to right. Then use grip on cover to slide cover rearward from front of system to where it can be lifted up and set aside.</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../../_images/assembled_rear.png"><img alt="Dell Precision 3431, Assembled, Rear View" src="../../../_images/assembled_rear.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.1 </span><span class="caption-text">Dell Precision 3431, Assembled, Rear View</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Remove Factory 2.5/3.5 inch <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount from factory <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage:</p>
+<ol class="arabic">
+<li><p>Disconnect SATA Power cable from <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount harness</p></li>
+<li><p>Using care, remove remaining cabling from being attached to <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount in order for it to be removed without obstacles</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="../../../_images/factory_cover_off.png"><img alt="Dell Precision 3431, Top Cover Removed" src="../../../_images/factory_cover_off.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.2 </span><span class="caption-text">Dell Precision 3431, Top Cover Removed</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using the lever with arrow on it, pull level towards front of system and lift out <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount and set aside</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_mount_removed.png"><img alt="Dell Precision 3431, HDD Mount Removed" src="../../../_images/factory_hdd_mount_removed.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.3 </span><span class="caption-text">Dell Precision 3431, HDD Mount Removed</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Remove Factory <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage from system:</p>
+<ol class="arabic">
+<li><p>Using care, remove cabling from being attached to <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Cage lever in order for it to be removed without obstacles</p>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_cage_removal_cable_prep.png"><img alt="Dell Precision 3431, HDD Cage Cabling Unrouted" src="../../../_images/factory_hdd_cage_removal_cable_prep.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.4 </span><span class="caption-text">Dell Precision 3431, HDD Cage Cabling Unrouted</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, lift up on three tabs of system front bezel cover, so that it is tilted away from system frame and not locking in <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Cage edge</p></li>
+<li><p>Using the lever with arrow on it, pull level towards rear of system and lift out <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount and set aside</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_cage_removed.png"><img alt="Dell Precision 3431, HDD Cage Removed" src="../../../_images/factory_hdd_cage_removed.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.5 </span><span class="caption-text">Dell Precision 3431, HDD Cage Removed</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Replace (or Install) PCIe NVMe M.2 SSD Drive system:</p>
+<ol class="arabic">
+<li><p>Using care, unscrew Phillips screw at edge of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> and set aside</p>
+<div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement01.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (1 of 4)" src="../../../_images/pcie_nvm_ssd_replacement01.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.6 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (1 of 4)</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, lift up on screw edge of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> to 45 degree angle and then pull out very carefully from PCIe NVMe M.2 connector and set aside. Take care of silicon sponge-like heatsink (If factory installed)</p>
+<div class="figure align-center" id="id11">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement02.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (2 of 4)" src="../../../_images/pcie_nvm_ssd_replacement02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.7 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (2 of 4)</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, remove and install in same location silicon sponge-like heatsink from removed <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> (If factory installed) onto new <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a></p>
+<div class="figure align-center" id="id12">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement03.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (3 of 4)" src="../../../_images/pcie_nvm_ssd_replacement03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.8 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (3 of 4)</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, install new <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> in same manner as removal by inserting device into PCIe NVMe M.2 connector at a 45 degree and ensuring it is seated fully, then tilting down to line up screw mount and install screw.</p>
+<div class="figure align-center" id="id13">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement04.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (4 of 4)" src="../../../_images/pcie_nvm_ssd_replacement04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.9 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (4 of 4)</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Verify <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> is mounted correctly and fully in connector before continuing.</p></li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Reinstallation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage into system:</p>
+<ol class="arabic">
+<li><p>Ensure factory connected <em>Blue</em> SATA cable to <strong>SATA0</strong> port and the <em>Black</em> SATA cable to the <strong>SATA3</strong> port next to the PCIe NVMe M.2 SSD connector as shown in previous section.</p>
+<div class="figure align-center" id="id14">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement04.png"><img alt="Dell Precision 3431, Verify SATA Connections" src="../../../_images/pcie_nvm_ssd_replacement04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.10 </span><span class="caption-text">Dell Precision 3431, Verify SATA Connections</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Reinstall <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage by inserting at a angle to the side of system, ensuring metal tabs slide into position.</p></li>
+<li><p>Then rotate <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage down until flat in position.</p></li>
+<li><p>Reinstall system front bezel cover, ensuring all three tabs are secured</p></li>
+<li><p>Using the lever with arrow on it on <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage, pull level towards front of system to fully secure cage.</p>
+<div class="figure align-center" id="id15">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_cage_reinstalled.png"><img alt="Dell Precision 3431, :term:`HDD` Mount Cage Reinstalled" src="../../../_images/factory_hdd_cage_reinstalled.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.11 </span><span class="caption-text">Dell Precision 3431, <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage Reinstalled</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Installation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into Factory 2.5/3.5 inch HDD Mount:</p>
+<ol class="arabic">
+<li><p>Install <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into Factory 2.5/3.5 inch HDD Mount in HDD1 slot, using the below figures</p>
+<blockquote>
+<div><div class="figure align-center" id="id16">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount01.png"><img alt="Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (1/2)" src="../../../_images/factory_2.5_hdd_install_mount01.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.12 </span><span class="caption-text">Dell Precision 3431, Installation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into HDD Mount, HDD1 Slot (1/2)</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id17">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount02.png"><img alt="Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (2/2)" src="../../../_images/factory_2.5_hdd_install_mount02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.13 </span><span class="caption-text">Dell Precision 3431, Installation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into HDD Mount, HDD1 Slot (2/2)</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Reinstall the Factory 2.5/3.5 inch HDD Mount into system, connect and route cabling using the below figures</p>
+<div class="figure align-center" id="id18">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount03.png"><img alt="Dell Precision 3431, Reinstallation of Factory 2.5/3.5 inch HDD Mount into system" src="../../../_images/factory_2.5_hdd_install_mount03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.14 </span><span class="caption-text">Dell Precision 3431, Reinstallation of Factory 2.5/3.5 inch HDD Mount into system</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id19">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount04.png"><img alt="Dell Precision 3431, Reconnection of Factory 2.5/3.5 inch HDD Mount to system" src="../../../_images/factory_2.5_hdd_install_mount04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.15 </span><span class="caption-text">Dell Precision 3431, Reconnection of Factory 2.5/3.5 inch HDD Mount to system</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id20">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount05.png"><img alt="Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (1/2)" src="../../../_images/factory_2.5_hdd_install_mount05.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.16 </span><span class="caption-text">Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (1/2)</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id21">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount06.png"><img alt="Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (2/2)" src="../../../_images/factory_2.5_hdd_install_mount06.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.17 </span><span class="caption-text">Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (2/2)</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Replacement or Installation of NVIDIA Tesla P4 8GB <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-GPU"><span class="xref std std-term">GPU</span></a>, PCIe 3.0, 16x</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The NVIDIA Tesla P4 GPU is meant for a system with an active forced air cooling system to push in cool air to inlet of GPU. For a normal enterprise datacenter server this airflow is built into the server but the Dell 3431 Workstation is not an enterprise server. I am testing installation of the Tesla P4 as-is since its installed position is directly in front of the main systme intake fan that hopefully will not require an inlet duct for more direct air flow force.</p>
+</div>
+<ol class="arabic">
+<li><p>Replace the full profile bracket with the low profile bracket on the NVIDIA Tesla P4 GPU with the (2) front screws and (2) rear screws on backplate shown in the following figures.</p>
+<div class="figure align-center" id="id22">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement02.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (1/2)" src="../../../_images/factory_gpu_replacement02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.18 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (1/2)</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id23">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement03.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (2/2)" src="../../../_images/factory_gpu_replacement03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.19 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (2/2)</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Remove currently installed GPU (If there is one) then replace with NVIDIA Tesla P4 PCIe 3.0 GPU in the PCIe 3.0, 16x slot.</p>
+<div class="figure align-center" id="id24">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement04.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (1/2)" src="../../../_images/factory_gpu_replacement04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.20 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (1/2)</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id25">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement05.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (2/2)" src="../../../_images/factory_gpu_replacement05.png" style="width: 756.0px; height: 1008.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.21 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (2/2)</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Installation of Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a>, PCIe 2.0, 8x into PCIe 3.0, 4x slot per the images below</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> is designed for a PCIe 2.0, 8x but the Dell 3431 PCIe 3.0, 4x slot is open ended so a 8x card will fit. I am still testing if there are bandwidth limitations by installing it in a PCIe 3.0, 4x slot. It is compatible and usable by VMware vSphere ESXi but needs to be load tested to determine if both 10Gbe SFP+ port can support 10Gbe concurrently.</p>
+</div>
+<div class="figure align-center" id="id26">
+<a class="reference internal image-reference" href="../../../_images/10gbe_pcie_install01.png"><img alt="Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (1/3)" src="../../../_images/10gbe_pcie_install01.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.22 </span><span class="caption-text">Dell Precision 3431, Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> Installation (1/3)</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id27">
+<a class="reference internal image-reference" href="../../../_images/10gbe_pcie_install02.png"><img alt="Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (2/3)" src="../../../_images/10gbe_pcie_install02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.23 </span><span class="caption-text">Dell Precision 3431, Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> Installation (2/3)</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id28">
+<a class="reference internal image-reference" href="../../../_images/10gbe_pcie_install03.png"><img alt="Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (3/3)" src="../../../_images/10gbe_pcie_install03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.24 </span><span class="caption-text">Dell Precision 3431, Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> Installation (3/3)</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Final Assembly</p>
+<ol class="arabic">
+<li><p>Reinstall Dell 3431 Workstation top cover</p>
+<div class="figure align-center" id="id29">
+<a class="reference internal image-reference" href="../../../_images/post_assemble_rearview.png"><img alt="Dell Precision 3431, Assembled Top Cover (Rear View)" src="../../../_images/post_assemble_rearview.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.25 </span><span class="caption-text">Dell Precision 3431, Assembled Top Cover (Rear View)</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Install Dell SFF Intake Filter on Dell 3431 Workstation</p>
+<div class="figure align-center" id="id30">
+<a class="reference internal image-reference" href="../../../_images/filter_installation.png"><img alt="Dell Precision 3431, Intake Filter Installation" src="../../../_images/filter_installation.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.26 </span><span class="caption-text">Dell Precision 3431, Intake Filter Installation</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Install Samsung USB key and Dell SFF Intake Filter</p>
+<div class="figure align-center" id="id31">
+<a class="reference internal image-reference" href="../../../_images/samsung_usb_drive.png"><img alt="Dell Precision 3431, Bootable USB (Front View)" src="../../../_images/samsung_usb_drive.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.27 </span><span class="caption-text">Dell Precision 3431, Bootable USB (Front View)</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id32">
+<a class="reference internal image-reference" href="../../../_images/assembled_front.png"><img alt="Dell Precision 3431, Assembled (Front View)" src="../../../_images/assembled_front.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.28 </span><span class="caption-text">Dell Precision 3431, Assembled (Front View)</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="dell-precision-3431-hardware-assembly-of-hebra">
+<span id="id3"></span><h2><span class="section-number">1.3.2.2. </span>Dell Precision 3431, Hardware Assembly of <strong>hebra</strong><a class="headerlink" href="#dell-precision-3431-hardware-assembly-of-hebra" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These assembly steps and images are intended to be used by someone with previous experience and knowledge of electronics assembly including following proper <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-ESD"><span class="xref std std-term">ESD</span></a> procedures and are provided for use at user’s own risk.</p>
+<p>See <a class="reference download internal" download="" href="../../../_downloads/f78a93cc76a7cd6fa31e63c4d6072d15/precision-3431-workstation_service-manual_en-us.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Reference:</span> <span class="pre">OEM</span> <span class="pre">Dell</span> <span class="pre">Precision</span> <span class="pre">3431</span> <span class="pre">Workstation</span> <span class="pre">Service</span> <span class="pre">Manual</span></code></a></p>
+</div>
+<ol class="arabic">
+<li><p>Remove top cover from system by sliding <em>Blue Lever</em> at rear of system to right. Then use grip on cover to slide cover rearward from front of system to where it can be lifted up and set aside.</p>
+<div class="figure align-center" id="id33">
+<a class="reference internal image-reference" href="../../../_images/assembled_rear.png"><img alt="Dell Precision 3431, Assembled, Rear View" src="../../../_images/assembled_rear.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.29 </span><span class="caption-text">Dell Precision 3431, Assembled, Rear View</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Remove Factory 2.5/3.5 inch <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount from factory <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage:</p>
+<ol class="arabic">
+<li><p>Disconnect SATA Power cable from <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount harness</p></li>
+<li><p>Using care, remove remaining cabling from being attached to <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount in order for it to be removed without obstacles</p>
+<div class="figure align-center" id="id34">
+<a class="reference internal image-reference" href="../../../_images/factory_cover_off.png"><img alt="Dell Precision 3431, Top Cover Removed" src="../../../_images/factory_cover_off.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.30 </span><span class="caption-text">Dell Precision 3431, Top Cover Removed</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using the lever with arrow on it, pull level towards front of system and lift out <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount and set aside</p>
+<div class="figure align-center" id="id35">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_mount_removed.png"><img alt="Dell Precision 3431, HDD Mount Removed" src="../../../_images/factory_hdd_mount_removed.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.31 </span><span class="caption-text">Dell Precision 3431, HDD Mount Removed</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Remove Factory <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage from system:</p>
+<ol class="arabic">
+<li><p>Using care, remove cabling from being attached to <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Cage lever in order for it to be removed without obstacles</p>
+<div class="figure align-center" id="id36">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_cage_removal_cable_prep.png"><img alt="Dell Precision 3431, HDD Cage Cabling Unrouted" src="../../../_images/factory_hdd_cage_removal_cable_prep.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.32 </span><span class="caption-text">Dell Precision 3431, HDD Cage Cabling Unrouted</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, lift up on three tabs of system front bezel cover, so that it is tilted away from system frame and not locking in <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Cage edge</p></li>
+<li><p>Using the lever with arrow on it, pull level towards rear of system and lift out <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount and set aside</p>
+<div class="figure align-center" id="id37">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_cage_removed.png"><img alt="Dell Precision 3431, HDD Cage Removed" src="../../../_images/factory_hdd_cage_removed.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.33 </span><span class="caption-text">Dell Precision 3431, HDD Cage Removed</span><a class="headerlink" href="#id37" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Replace (or Install) PCIe NVMe M.2 SSD Drive system:</p>
+<ol class="arabic">
+<li><p>Using care, unscrew Phillips screw at edge of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> and set aside</p>
+<div class="figure align-center" id="id38">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement01.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (1 of 4)" src="../../../_images/pcie_nvm_ssd_replacement01.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.34 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (1 of 4)</span><a class="headerlink" href="#id38" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, lift up on screw edge of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> to 45 degree angle and then pull out very carefully from PCIe NVMe M.2 connector and set aside. Take care of silicon sponge-like heatsink (If factory installed)</p>
+<div class="figure align-center" id="id39">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement02.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (2 of 4)" src="../../../_images/pcie_nvm_ssd_replacement02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.35 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (2 of 4)</span><a class="headerlink" href="#id39" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, remove and install in same location silicon sponge-like heatsink from removed <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> (If factory installed) onto new <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a></p>
+<div class="figure align-center" id="id40">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement03.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (3 of 4)" src="../../../_images/pcie_nvm_ssd_replacement03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.36 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (3 of 4)</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, install new <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> in same manner as removal by inserting device into PCIe NVMe M.2 connector at a 45 degree and ensuring it is seated fully, then tilting down to line up screw mount and install screw.</p>
+<div class="figure align-center" id="id41">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement04.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (4 of 4)" src="../../../_images/pcie_nvm_ssd_replacement04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.37 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (4 of 4)</span><a class="headerlink" href="#id41" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Verify <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> is mounted correctly and fully in connector before continuing.</p></li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Reinstallation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage into system:</p>
+<ol class="arabic">
+<li><p>Ensure factory connected <em>Blue</em> SATA cable to <strong>SATA0</strong> port and the <em>Black</em> SATA cable to the <strong>SATA3</strong> port next to the PCIe NVMe M.2 SSD connector as shown in previous section.</p>
+<div class="figure align-center" id="id42">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement04.png"><img alt="Dell Precision 3431, Verify SATA Connections" src="../../../_images/pcie_nvm_ssd_replacement04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.38 </span><span class="caption-text">Dell Precision 3431, Verify SATA Connections</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Reinstall <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage by inserting at a angle to the side of system, ensuring metal tabs slide into position.</p></li>
+<li><p>Then rotate <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage down until flat in position.</p></li>
+<li><p>Reinstall system front bezel cover, ensuring all three tabs are secured</p></li>
+<li><p>Using the lever with arrow on it on <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage, pull level towards front of system to fully secure cage.</p>
+<div class="figure align-center" id="id43">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_cage_reinstalled.png"><img alt="Dell Precision 3431, :term:`HDD` Mount Cage Reinstalled" src="../../../_images/factory_hdd_cage_reinstalled.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.39 </span><span class="caption-text">Dell Precision 3431, <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage Reinstalled</span><a class="headerlink" href="#id43" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Installation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into Factory 2.5/3.5 inch HDD Mount:</p>
+<ol class="arabic">
+<li><p>Install <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into Factory 2.5/3.5 inch HDD Mount in HDD1 slot, using the below figures</p>
+<blockquote>
+<div><div class="figure align-center" id="id44">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount01.png"><img alt="Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (1/2)" src="../../../_images/factory_2.5_hdd_install_mount01.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.40 </span><span class="caption-text">Dell Precision 3431, Installation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into HDD Mount, HDD1 Slot (1/2)</span><a class="headerlink" href="#id44" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id45">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount02.png"><img alt="Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (2/2)" src="../../../_images/factory_2.5_hdd_install_mount02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.41 </span><span class="caption-text">Dell Precision 3431, Installation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into HDD Mount, HDD1 Slot (2/2)</span><a class="headerlink" href="#id45" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Reinstall the Factory 2.5/3.5 inch HDD Mount into system, connect and route cabling using the below figures</p>
+<div class="figure align-center" id="id46">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount03.png"><img alt="Dell Precision 3431, Reinstallation of Factory 2.5/3.5 inch HDD Mount into system" src="../../../_images/factory_2.5_hdd_install_mount03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.42 </span><span class="caption-text">Dell Precision 3431, Reinstallation of Factory 2.5/3.5 inch HDD Mount into system</span><a class="headerlink" href="#id46" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id47">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount04.png"><img alt="Dell Precision 3431, Reconnection of Factory 2.5/3.5 inch HDD Mount to system" src="../../../_images/factory_2.5_hdd_install_mount04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.43 </span><span class="caption-text">Dell Precision 3431, Reconnection of Factory 2.5/3.5 inch HDD Mount to system</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id48">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount05.png"><img alt="Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (1/2)" src="../../../_images/factory_2.5_hdd_install_mount05.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.44 </span><span class="caption-text">Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (1/2)</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id49">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount06.png"><img alt="Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (2/2)" src="../../../_images/factory_2.5_hdd_install_mount06.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.45 </span><span class="caption-text">Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (2/2)</span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Replacement or Installation of NVIDIA Tesla P4 8GB <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-GPU"><span class="xref std std-term">GPU</span></a>, PCIe 3.0, 16x</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The NVIDIA Tesla P4 GPU is meant for a system with an active forced air cooling system to push in cool air to inlet of GPU. For a normal enterprise datacenter server this airflow is built into the server but the Dell 3431 Workstation is not an enterprise server. I am testing installation of the Tesla P4 as-is since its installed position is directly in front of the main systme intake fan that hopefully will not require an inlet duct for more direct air flow force.</p>
+</div>
+<ol class="arabic">
+<li><p>Replace the full profile bracket with the low profile bracket on the NVIDIA Tesla P4 GPU with the (2) front screws and (2) rear screws on backplate shown in the following figures.</p>
+<div class="figure align-center" id="id50">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement02.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (1/2)" src="../../../_images/factory_gpu_replacement02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.46 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (1/2)</span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id51">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement03.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (2/2)" src="../../../_images/factory_gpu_replacement03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.47 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (2/2)</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Remove currently installed GPU (If there is one) then replace with NVIDIA Tesla P4 PCIe 3.0 GPU in the PCIe 3.0, 16x slot.</p>
+<div class="figure align-center" id="id52">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement04.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (1/2)" src="../../../_images/factory_gpu_replacement04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.48 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (1/2)</span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id53">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement05.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (2/2)" src="../../../_images/factory_gpu_replacement05.png" style="width: 756.0px; height: 1008.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.49 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (2/2)</span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Installation of Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a>, PCIe 2.0, 8x into PCIe 3.0, 4x slot per the images below</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> is designed for a PCIe 2.0, 8x but the Dell 3431 PCIe 3.0, 4x slot is open ended so a 8x card will fit. I am still testing if there are bandwidth limitations by installing it in a PCIe 3.0, 4x slot. It is compatible and usable by VMware vSphere ESXi but needs to be load tested to determine if both 10Gbe SFP+ port can support 10Gbe concurrently.</p>
+</div>
+<div class="figure align-center" id="id54">
+<a class="reference internal image-reference" href="../../../_images/10gbe_pcie_install01.png"><img alt="Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (1/3)" src="../../../_images/10gbe_pcie_install01.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.50 </span><span class="caption-text">Dell Precision 3431, Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> Installation (1/3)</span><a class="headerlink" href="#id54" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id55">
+<a class="reference internal image-reference" href="../../../_images/10gbe_pcie_install02.png"><img alt="Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (2/3)" src="../../../_images/10gbe_pcie_install02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.51 </span><span class="caption-text">Dell Precision 3431, Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> Installation (2/3)</span><a class="headerlink" href="#id55" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id56">
+<a class="reference internal image-reference" href="../../../_images/10gbe_pcie_install03.png"><img alt="Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (3/3)" src="../../../_images/10gbe_pcie_install03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.52 </span><span class="caption-text">Dell Precision 3431, Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> Installation (3/3)</span><a class="headerlink" href="#id56" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Final Assembly</p>
+<ol class="arabic">
+<li><p>Reinstall Dell 3431 Workstation top cover</p>
+<div class="figure align-center" id="id57">
+<a class="reference internal image-reference" href="../../../_images/post_assemble_rearview.png"><img alt="Dell Precision 3431, Assembled Top Cover (Rear View)" src="../../../_images/post_assemble_rearview.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.53 </span><span class="caption-text">Dell Precision 3431, Assembled Top Cover (Rear View)</span><a class="headerlink" href="#id57" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Install Dell SFF Intake Filter on Dell 3431 Workstation</p>
+<div class="figure align-center" id="id58">
+<a class="reference internal image-reference" href="../../../_images/filter_installation.png"><img alt="Dell Precision 3431, Intake Filter Installation" src="../../../_images/filter_installation.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.54 </span><span class="caption-text">Dell Precision 3431, Intake Filter Installation</span><a class="headerlink" href="#id58" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Install Samsung USB key and Dell SFF Intake Filter</p>
+<div class="figure align-center" id="id59">
+<a class="reference internal image-reference" href="../../../_images/samsung_usb_drive.png"><img alt="Dell Precision 3431, Bootable USB (Front View)" src="../../../_images/samsung_usb_drive.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.55 </span><span class="caption-text">Dell Precision 3431, Bootable USB (Front View)</span><a class="headerlink" href="#id59" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id60">
+<a class="reference internal image-reference" href="../../../_images/assembled_front.png"><img alt="Dell Precision 3431, Assembled (Front View)" src="../../../_images/assembled_front.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.56 </span><span class="caption-text">Dell Precision 3431, Assembled (Front View)</span><a class="headerlink" href="#id60" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="dell-precision-3431-hardware-assembly-of-akkala">
+<span id="id4"></span><h2><span class="section-number">1.3.2.3. </span>Dell Precision 3431, Hardware Assembly of <strong>akkala</strong><a class="headerlink" href="#dell-precision-3431-hardware-assembly-of-akkala" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These assembly steps and images are intended to be used by someone with previous experience and knowledge of electronics assembly including following proper <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-ESD"><span class="xref std std-term">ESD</span></a> procedures and are provided for use at user’s own risk.</p>
+<p>See <a class="reference download internal" download="" href="../../../_downloads/f78a93cc76a7cd6fa31e63c4d6072d15/precision-3431-workstation_service-manual_en-us.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Reference:</span> <span class="pre">OEM</span> <span class="pre">Dell</span> <span class="pre">Precision</span> <span class="pre">3431</span> <span class="pre">Workstation</span> <span class="pre">Service</span> <span class="pre">Manual</span></code></a></p>
+</div>
+<ol class="arabic">
+<li><p>Remove top cover from system by sliding <em>Blue Lever</em> at rear of system to right. Then use grip on cover to slide cover rearward from front of system to where it can be lifted up and set aside.</p>
+<div class="figure align-center" id="id61">
+<a class="reference internal image-reference" href="../../../_images/assembled_rear.png"><img alt="Dell Precision 3431, Assembled, Rear View" src="../../../_images/assembled_rear.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.57 </span><span class="caption-text">Dell Precision 3431, Assembled, Rear View</span><a class="headerlink" href="#id61" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Remove Factory 2.5/3.5 inch <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount from factory <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage:</p>
+<ol class="arabic">
+<li><p>Disconnect SATA Power cable from <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount harness</p></li>
+<li><p>Using care, remove remaining cabling from being attached to <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount in order for it to be removed without obstacles</p>
+<div class="figure align-center" id="id62">
+<a class="reference internal image-reference" href="../../../_images/factory_cover_off.png"><img alt="Dell Precision 3431, Top Cover Removed" src="../../../_images/factory_cover_off.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.58 </span><span class="caption-text">Dell Precision 3431, Top Cover Removed</span><a class="headerlink" href="#id62" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using the lever with arrow on it, pull level towards front of system and lift out <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount and set aside</p>
+<div class="figure align-center" id="id63">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_mount_removed.png"><img alt="Dell Precision 3431, HDD Mount Removed" src="../../../_images/factory_hdd_mount_removed.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.59 </span><span class="caption-text">Dell Precision 3431, HDD Mount Removed</span><a class="headerlink" href="#id63" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Remove Factory <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage from system:</p>
+<ol class="arabic">
+<li><p>Using care, remove cabling from being attached to <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Cage lever in order for it to be removed without obstacles</p>
+<div class="figure align-center" id="id64">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_cage_removal_cable_prep.png"><img alt="Dell Precision 3431, HDD Cage Cabling Unrouted" src="../../../_images/factory_hdd_cage_removal_cable_prep.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.60 </span><span class="caption-text">Dell Precision 3431, HDD Cage Cabling Unrouted</span><a class="headerlink" href="#id64" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, lift up on three tabs of system front bezel cover, so that it is tilted away from system frame and not locking in <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Cage edge</p></li>
+<li><p>Using the lever with arrow on it, pull level towards rear of system and lift out <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount and set aside</p>
+<div class="figure align-center" id="id65">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_cage_removed.png"><img alt="Dell Precision 3431, HDD Cage Removed" src="../../../_images/factory_hdd_cage_removed.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.61 </span><span class="caption-text">Dell Precision 3431, HDD Cage Removed</span><a class="headerlink" href="#id65" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Replace (or Install) PCIe NVMe M.2 SSD Drive system:</p>
+<ol class="arabic">
+<li><p>Using care, unscrew Phillips screw at edge of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> and set aside</p>
+<div class="figure align-center" id="id66">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement01.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (1 of 4)" src="../../../_images/pcie_nvm_ssd_replacement01.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.62 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (1 of 4)</span><a class="headerlink" href="#id66" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, lift up on screw edge of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> to 45 degree angle and then pull out very carefully from PCIe NVMe M.2 connector and set aside. Take care of silicon sponge-like heatsink (If factory installed)</p>
+<div class="figure align-center" id="id67">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement02.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (2 of 4)" src="../../../_images/pcie_nvm_ssd_replacement02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.63 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (2 of 4)</span><a class="headerlink" href="#id67" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, remove and install in same location silicon sponge-like heatsink from removed <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> (If factory installed) onto new <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a></p>
+<div class="figure align-center" id="id68">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement03.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (3 of 4)" src="../../../_images/pcie_nvm_ssd_replacement03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.64 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (3 of 4)</span><a class="headerlink" href="#id68" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Using care, install new <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> in same manner as removal by inserting device into PCIe NVMe M.2 connector at a 45 degree and ensuring it is seated fully, then tilting down to line up screw mount and install screw.</p>
+<div class="figure align-center" id="id69">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement04.png"><img alt="Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (4 of 4)" src="../../../_images/pcie_nvm_ssd_replacement04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.65 </span><span class="caption-text">Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (4 of 4)</span><a class="headerlink" href="#id69" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Verify <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> is mounted correctly and fully in connector before continuing.</p></li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Reinstallation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage into system:</p>
+<ol class="arabic">
+<li><p>Ensure factory connected <em>Blue</em> SATA cable to <strong>SATA0</strong> port and the <em>Black</em> SATA cable to the <strong>SATA3</strong> port next to the PCIe NVMe M.2 SSD connector as shown in previous section.</p>
+<div class="figure align-center" id="id70">
+<a class="reference internal image-reference" href="../../../_images/pcie_nvm_ssd_replacement04.png"><img alt="Dell Precision 3431, Verify SATA Connections" src="../../../_images/pcie_nvm_ssd_replacement04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.66 </span><span class="caption-text">Dell Precision 3431, Verify SATA Connections</span><a class="headerlink" href="#id70" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Reinstall <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage by inserting at a angle to the side of system, ensuring metal tabs slide into position.</p></li>
+<li><p>Then rotate <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage down until flat in position.</p></li>
+<li><p>Reinstall system front bezel cover, ensuring all three tabs are secured</p></li>
+<li><p>Using the lever with arrow on it on <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage, pull level towards front of system to fully secure cage.</p>
+<div class="figure align-center" id="id71">
+<a class="reference internal image-reference" href="../../../_images/factory_hdd_cage_reinstalled.png"><img alt="Dell Precision 3431, :term:`HDD` Mount Cage Reinstalled" src="../../../_images/factory_hdd_cage_reinstalled.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.67 </span><span class="caption-text">Dell Precision 3431, <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-HDD"><span class="xref std std-term">HDD</span></a> Mount Cage Reinstalled</span><a class="headerlink" href="#id71" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Installation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into Factory 2.5/3.5 inch HDD Mount:</p>
+<ol class="arabic">
+<li><p>Install <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into Factory 2.5/3.5 inch HDD Mount in HDD1 slot, using the below figures</p>
+<blockquote>
+<div><div class="figure align-center" id="id72">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount01.png"><img alt="Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (1/2)" src="../../../_images/factory_2.5_hdd_install_mount01.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.68 </span><span class="caption-text">Dell Precision 3431, Installation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into HDD Mount, HDD1 Slot (1/2)</span><a class="headerlink" href="#id72" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id73">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount02.png"><img alt="Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (2/2)" src="../../../_images/factory_2.5_hdd_install_mount02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.69 </span><span class="caption-text">Dell Precision 3431, Installation of <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-SSD"><span class="xref std std-term">SSD</span></a> into HDD Mount, HDD1 Slot (2/2)</span><a class="headerlink" href="#id73" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>Reinstall the Factory 2.5/3.5 inch HDD Mount into system, connect and route cabling using the below figures</p>
+<div class="figure align-center" id="id74">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount03.png"><img alt="Dell Precision 3431, Reinstallation of Factory 2.5/3.5 inch HDD Mount into system" src="../../../_images/factory_2.5_hdd_install_mount03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.70 </span><span class="caption-text">Dell Precision 3431, Reinstallation of Factory 2.5/3.5 inch HDD Mount into system</span><a class="headerlink" href="#id74" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id75">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount04.png"><img alt="Dell Precision 3431, Reconnection of Factory 2.5/3.5 inch HDD Mount to system" src="../../../_images/factory_2.5_hdd_install_mount04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.71 </span><span class="caption-text">Dell Precision 3431, Reconnection of Factory 2.5/3.5 inch HDD Mount to system</span><a class="headerlink" href="#id75" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id76">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount05.png"><img alt="Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (1/2)" src="../../../_images/factory_2.5_hdd_install_mount05.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.72 </span><span class="caption-text">Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (1/2)</span><a class="headerlink" href="#id76" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id77">
+<a class="reference internal image-reference" href="../../../_images/factory_2.5_hdd_install_mount06.png"><img alt="Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (2/2)" src="../../../_images/factory_2.5_hdd_install_mount06.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.73 </span><span class="caption-text">Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (2/2)</span><a class="headerlink" href="#id77" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Replacement or Installation of NVIDIA Tesla P4 8GB <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-GPU"><span class="xref std std-term">GPU</span></a>, PCIe 3.0, 16x</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The NVIDIA Tesla P4 GPU is meant for a system with an active forced air cooling system to push in cool air to inlet of GPU. For a normal enterprise datacenter server this airflow is built into the server but the Dell 3431 Workstation is not an enterprise server. I am testing installation of the Tesla P4 as-is since its installed position is directly in front of the main systme intake fan that hopefully will not require an inlet duct for more direct air flow force.</p>
+</div>
+<ol class="arabic">
+<li><p>Replace the full profile bracket with the low profile bracket on the NVIDIA Tesla P4 GPU with the (2) front screws and (2) rear screws on backplate shown in the following figures.</p>
+<div class="figure align-center" id="id78">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement02.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (1/2)" src="../../../_images/factory_gpu_replacement02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.74 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (1/2)</span><a class="headerlink" href="#id78" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id79">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement03.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (2/2)" src="../../../_images/factory_gpu_replacement03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.75 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (2/2)</span><a class="headerlink" href="#id79" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Remove currently installed GPU (If there is one) then replace with NVIDIA Tesla P4 PCIe 3.0 GPU in the PCIe 3.0, 16x slot.</p>
+<div class="figure align-center" id="id80">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement04.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (1/2)" src="../../../_images/factory_gpu_replacement04.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.76 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (1/2)</span><a class="headerlink" href="#id80" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id81">
+<a class="reference internal image-reference" href="../../../_images/factory_gpu_replacement05.png"><img alt="Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (2/2)" src="../../../_images/factory_gpu_replacement05.png" style="width: 756.0px; height: 1008.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.77 </span><span class="caption-text">Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (2/2)</span><a class="headerlink" href="#id81" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Installation of Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a>, PCIe 2.0, 8x into PCIe 3.0, 4x slot per the images below</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> is designed for a PCIe 2.0, 8x but the Dell 3431 PCIe 3.0, 4x slot is open ended so a 8x card will fit. I am still testing if there are bandwidth limitations by installing it in a PCIe 3.0, 4x slot. It is compatible and usable by VMware vSphere ESXi but needs to be load tested to determine if both 10Gbe SFP+ port can support 10Gbe concurrently.</p>
+</div>
+<div class="figure align-center" id="id82">
+<a class="reference internal image-reference" href="../../../_images/10gbe_pcie_install01.png"><img alt="Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (1/3)" src="../../../_images/10gbe_pcie_install01.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.78 </span><span class="caption-text">Dell Precision 3431, Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> Installation (1/3)</span><a class="headerlink" href="#id82" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id83">
+<a class="reference internal image-reference" href="../../../_images/10gbe_pcie_install02.png"><img alt="Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (2/3)" src="../../../_images/10gbe_pcie_install02.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.79 </span><span class="caption-text">Dell Precision 3431, Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> Installation (2/3)</span><a class="headerlink" href="#id83" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id84">
+<a class="reference internal image-reference" href="../../../_images/10gbe_pcie_install03.png"><img alt="Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (3/3)" src="../../../_images/10gbe_pcie_install03.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.80 </span><span class="caption-text">Dell Precision 3431, Intel X520-DA2 10Gbe <a class="reference internal" href="../../../common_docs/appendices/acronym_list.html#term-NIC"><span class="xref std std-term">NIC</span></a> Installation (3/3)</span><a class="headerlink" href="#id84" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Final Assembly</p>
+<ol class="arabic">
+<li><p>Reinstall Dell 3431 Workstation top cover</p>
+<div class="figure align-center" id="id85">
+<a class="reference internal image-reference" href="../../../_images/post_assemble_rearview.png"><img alt="Dell Precision 3431, Assembled Top Cover (Rear View)" src="../../../_images/post_assemble_rearview.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.81 </span><span class="caption-text">Dell Precision 3431, Assembled Top Cover (Rear View)</span><a class="headerlink" href="#id85" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Install Dell SFF Intake Filter on Dell 3431 Workstation</p>
+<div class="figure align-center" id="id86">
+<a class="reference internal image-reference" href="../../../_images/filter_installation.png"><img alt="Dell Precision 3431, Intake Filter Installation" src="../../../_images/filter_installation.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.82 </span><span class="caption-text">Dell Precision 3431, Intake Filter Installation</span><a class="headerlink" href="#id86" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Install Samsung USB key and Dell SFF Intake Filter</p>
+<div class="figure align-center" id="id87">
+<a class="reference internal image-reference" href="../../../_images/samsung_usb_drive.png"><img alt="Dell Precision 3431, Bootable USB (Front View)" src="../../../_images/samsung_usb_drive.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.83 </span><span class="caption-text">Dell Precision 3431, Bootable USB (Front View)</span><a class="headerlink" href="#id87" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id88">
+<a class="reference internal image-reference" href="../../../_images/assembled_front.png"><img alt="Dell Precision 3431, Assembled (Front View)" src="../../../_images/assembled_front.png" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Figure 1.84 </span><span class="caption-text">Dell Precision 3431, Assembled (Front View)</span><a class="headerlink" href="#id88" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bios_fw.html" class="btn btn-neutral float-right" title="1.3.3. Hardware BIOS &amp; Firmware Update/Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="specifications.html" class="btn btn-neutral float-left" title="1.3.1. Hardware Specifications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Josh Johnson @binarylandscapes
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

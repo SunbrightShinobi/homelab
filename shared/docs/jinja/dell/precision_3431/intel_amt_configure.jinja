@@ -1,0 +1,87 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+.. _dell3431_intel_amt_config_{{ host['remote_mgmt']['hostname'] }}:
+
+{{ macros.create_heading(4,'Dell Precision 3431, Intel Management Engine Configuration for **'+host['_name']+'**', ) }}
+
+.. important::
+
+    You cannot access the BIOS configuration menu for the Intel AMT system if connected via the Intel AMT Remote Desktop, once you set a BIOS Admin password. The menu option will dissapear from menu.
+
+#.  If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and :kbd:`F12` when Dell 3431 powers on and shows Dell logo
+#.  :menuselection:`Intel(R) Management Engine BIOS Extension (MEBx)`
+#.  :menuselection:`MEBx Login`
+#.  You will be prompted for factory *Intel(R) ME Password* :kbd:`admin` then :kbd:`Enter`
+#.  You will be prompted to set new password for MEBx login, :kbd:`<Desired Admin Password>` then :kbd:`Enter`
+#.  Verify password by :kbd:`<Desired Admin Password>` again then :kbd:`Enter`
+
+    .. important::
+
+        To change the Intel MEBx password for *admin* user in future from BIOS:
+
+            #.  :menuselection:`Intel(R) ME General Settings`
+            #.  :menuselection:`Change ME Password`
+
+#.  Verify :menuselection:`Intel(R) AMT` is set to :menuselection:`<Enabled>`
+#.  :menuselection:`Intel(R) AMT Configuration`
+
+    #.  :menuselection:`Managebility Feature Selection` set to :menuselection:`<Enabled>`
+    #.  :menuselection:`SOL/Storage Redirection/KVM`
+
+        *   :menuselection:`SOL` set to :menuselection:`<Enabled>`
+        *   :menuselection:`Storage Redirection` set to :menuselection:`<Enabled>`
+        *   :menuselection:`KVM Feature Selection` set to :menuselection:`<Enabled>`
+    
+    #.  :kbd:`Escape`
+    #.  :menuselection:`User Consent`
+
+        .. important::
+
+            It is critical that if you do not have on-site personnel with equipment that *User Opt-in* is set to *<None>* otherwise you will not be able to establish a remote KVM session without user approval from local KB/Display connected to workstation.
+
+        *   :menuselection:`User Opt-in` set to :menuselection:`<None>`
+        *   :menuselection:`Opt-in Configurable from Remote IT` set to :menuselection:`<Enabled>`
+
+    #.  :kbd:`Escape`
+    #.  :menuselection:`Password Policy` set to :menuselection:`<Anytime>`
+    #.  :menuselection:`Network Setup`
+    #.  :menuselection:`Intel(R) ME Network Name Settings`
+
+        *   :menuselection:`Host Name` :kbd:`{{ host['remote_mgmt']['hostname'] }}`
+        *   :menuselection:`Domain Name` :kbd:`{{ _system['domain'] }}`
+        *   :menuselection:`Shared/Dedicated FQDN` set to :menuselection:`<Dedicated>`
+        *   :menuselection:`Dynamic DNS Update` set to :menuselection:`<Disabled>`
+
+    #.  :kbd:`Escape`
+    #.  :menuselection:`TCP/IP Settings`
+    #.  :menuselection:`Wired LAN IPV4 Settings`
+        
+        *   :menuselection:`DHCP Mode` set to :menuselection:`<Disabled>`
+        *   :menuselection:`IPV4 Address` :kbd:`{{ host['remote_mgmt']['network']['network_pre'] }}.{{ host['remote_mgmt']['network']['ip01'] }}`
+        *   :menuselection:`Subnet Mask Address` :kbd:`{{ host['remote_mgmt']['network']['subnetMask'] }}`
+        *   :menuselection:`Default Gateway Address` :kbd:`{{ host['remote_mgmt']['network']['gateway'] }}`
+        *   :menuselection:`Preferred DNS Address` :kbd:`{{ host['remote_mgmt']['network']['dns01'] }}`
+        *   :menuselection:`Alternate DNS Address` :kbd:`{{ host['remote_mgmt']['network']['dns02'] }}`
+
+    #.  :kbd:`Escape`
+    #.  :kbd:`Escape`
+    #.  :kbd:`Escape`
+    #.  :menuselection:`Activate Network Access` then :kbd:`Y`
+    #.  :menuselection:`Power Control`
+
+        *   :menuselection:`Intel(R) AMT ON in Host Sleep States` set to :menuselection:`<Desktop: ON in S0, ME Wake in S3, S4-5>`
+        *   :menuselection:`Idle Timeout` set to :kbd:`65535` *You may want lower in a non lab environment for security reasons*
+   
+    #.  :kbd:`Escape`
+    #.  :kbd:`Escape`
+    #.  :menuselection:`MEBx Exit` then :kbd:`Y` and workstation will Reboot.
+
+#.  Verify connectivity by using a :program:`Web Browser` and going to the Intel AMT Web Interface at `<http://{{ host['remote_mgmt']['network']['network_pre'] }}.{{ host['remote_mgmt']['network']['ip01'] }}:16992>`_ and logging in with :kbd:`admin` as username and the *password* you configured.
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+{% include "/common_docs/jinja/dell/precision_3431/intel_amt_remoteDesktopConfigure.jinja" %}
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. END: {{ self._TemplateReference__context.name }}

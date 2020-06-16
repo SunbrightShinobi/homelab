@@ -1,0 +1,442 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(4,'Dell Precision 3431, BIOS Configuration for for **'+host['_name']+'**', ) }}
+
+#.  If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and :kbd:`F12` when Dell 3431 powers on and shows Dell logo
+#.  :menuselection:`BIOS Configuration`
+
+    .. note::
+
+        If the BIOS has already been configured then you will need to :guilabel:`Unlock` and :kbd:`<Admin Password>` to be able to change any settings.
+
+    .. important::
+
+        If prompted after :guilabel:`Apply`, Check :guilabel:`Save as Custom User Settings` then :guilabel:`OK`
+
+#.  :guilabel:`General --> Boot Sequence`
+
+    .. important::
+
+        The Boot Sequence menu may only list options set from factory and will require completing configuration of BIOS and installation of OS to populate menu options in documentation.
+
+    #.  Configure the Boot List Option to :guilabel:`UEFI`
+    #.  Configure the Boot Sequence to the following order:
+
+    {% if host['os']['_name'] in ['VMware vSphere ESXi'] %}
+
+        *   UEFI: Samsung USB or VMware ESXi (If installed)
+
+    {% elif host['os']['_name'] in ['Microsoft Windows 10'] %}
+
+        *   UEFI: Windows (If installed)
+
+    {% endif %}
+
+        *   Onboard NIC(IPV4)
+        *   Onboard NIC(IPV6)
+
+    #.  :guilabel:`Apply`
+
+#.  :guilabel:`General --> Advanced Boot Options`
+
+    *   Uncheck :guilabel:`Enable Legacy Options ROMs`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`General --> UEFI Boot Path Security`
+
+    *   :guilabel:`Always, Except Internal HDD & PXE`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`General --> Date/Time`
+
+    *   Configure Time and Date to local UTC time.
+
+#.  :guilabel:`System Configuration --> Integrated NIC`
+
+    *   Check :guilabel:`Enable UEFI Network Stack`
+    *   :guilabel:`Enabled w/PXE`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> Serial Port`
+
+    *   :guilabel:`COM1`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> SATA Operation`
+
+    *   :guilabel:`ACHI`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> Drives`
+
+    *   Check :guilabel:`SATA-0`
+    *   Check :guilabel:`SATA-2`
+    *   Check :guilabel:`SATA-3`
+    *   Check :guilabel:`SATA-4`
+    *   Check :guilabel:`M.2 PCIe SSD-0`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> SMART Reporting`
+
+    *   Check :guilabel:`Enable SMART Reporting`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> USB Configuration`
+
+    *   Check :guilabel:`Enable USB Boot Support`
+    *   Check :guilabel:`Enable Front USB Ports`
+    *   Check :guilabel:`Enable Rear USB Ports`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> Front USB Configuration`
+
+    *   Check :guilabel:`Front Port 1(Bottom Right)`
+    *   Check :guilabel:`Front Port 1 w/Power Share(Top Right)`
+    *   Check :guilabel:`Front Port 2(Bottom Left)`
+    *   Check :guilabel:`Front Port 2(Top Left)`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> Rear USB Configuration`
+
+    *   Check :guilabel:`Rear Port 1(Left)`
+    *   Check :guilabel:`Rear Port 2(Left Middle)`
+    *   Check :guilabel:`Rear Port 3(Right Middle)`
+    *   Check :guilabel:`Rear Port 4(Right)`
+    *   Check :guilabel:`Rear Port 1(Left)`
+    *   Check :guilabel:`Rear Port 2(Right)`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> USB PowerShare`
+
+    *   Uncheck :guilabel:`Enable USB PowerShare`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> Audio`
+
+    *   Check :guilabel:`Enable Audio`
+    *   Check :guilabel:`Enable Microphone`
+    *   Check :guilabel:`Enable Internal Speaker`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> Dust Filter Maintenance`
+
+    *   :guilabel:`90 days`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Configuration --> Miscellaneous Devices`
+
+    *   Uncheck :guilabel:`Enable Secure Digital (SD) Card`
+    *   Uncheck :guilabel:`Secure Digital (SD) Card Boot`
+    *   Uncheck :guilabel:`Secure Digital (SD) Card Read-Only Mode`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Video --> Primary Display`
+
+    *   :guilabel:`Intel HD Graphics`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> System Password`
+
+    *   Should be *Not Set*
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Internal HDD-3 Password`
+
+    *   Should be *Not Set*
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Strong Password`
+
+    *   Check :guilabel:`Enable Strong Password`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Password Configuration`
+
+    *   Admin Password Min. :kbd:`8`
+    *   Admin Password Max. :kbd:`32`
+    *   System Password Min. :kbd:`08`
+    *   System Password Max. :kbd:`32`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Password Bypass`
+
+    *   :guilabel:`Disabled`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Password Change`
+
+    *   Check :guilabel:`Allow Non-Admin Password Changes`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> UEFI Capsule Firmware Updates`
+
+    *   Check :guilabel:`Enable UEFI Capsule Firmware Updates`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> HDD Security`
+
+    *   Uncheck :guilabel:`SED Block SID Authentication`
+    *   Uncheck :guilabel:`PPI Bypass for SED Block SID Command`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> TPM 2.0 Security`
+
+    *   Check :guilabel:`TPM On`
+    *   Uncheck :guilabel:`PPI Bypass for Enable Commands`
+    *   Uncheck :guilabel:`PPI Bypass for Disable Commands`
+    *   Uncheck :guilabel:`PPI Bypass for Clear Commands`
+    *   Uncheck :guilabel:`Clear`
+    *   Check :guilabel:`Attestation Enable`
+    *   Check :guilabel:`Key Storage Enable`
+    *   Check :guilabel:`SHA-256`
+    *   :guilabel:`Enabled`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Absolute`
+
+    *   :guilabel:`Enabled`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Chassis Intrusion`
+
+    *   Uncheck :guilabel:`Clear Intrusion Warning`
+    *   :guilabel:`On-Silent`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> OROM Keyboard Access`
+
+    *   :guilabel:`Enabled`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Admin Setup Lockout`
+
+    *   Uncheck :guilabel:`Enable Admin Setup Lockout`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Master Password Lockout`
+
+    *   Uncheck :guilabel:`Enable Master Password Lockout`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> SMM Security Mitigation`
+
+    *   Uncheck :guilabel:`SMM Security Mitigation`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Secure Boot --> Secure Boot Enable`
+
+    *   Uncheck :guilabel:`Secure Boot Enable`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Secure Boot --> Secure Boot Mode`
+
+    *   :guilabel:`Deployed Mode`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Secure Boot --> Expert Key Management`
+
+    *   Uncheck :guilabel:`Enable Custom Mode`
+    *   :guilabel:`PK`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Intel Software Guard Extensions --> Intel SGX Enable`
+
+    *   :guilabel:`Software Controlled`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Intel Software Guard Extensions --> Enclave Memory Size`
+
+    *   :guilabel:`128MB` *Grayed out due to previous setting*
+
+#.  :guilabel:`Performance --> Multi Core Support`
+
+    *   :guilabel:`All`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Performance --> Intel SpeedStep`
+
+    *   Check :guilabel:`Enable Intel SpeedStep`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Performance --> C-States Control`
+
+    *   Check :guilabel:`C States`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Performance --> Intel TurboBoost`
+
+    *   Check :guilabel:`Enable Intel TurboBoost`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Performance --> HyperThread control`
+
+    *   :guilabel:`Enabled`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Power Management --> AC Recovery`
+
+    *   :guilabel:`Last Power State`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Power Management --> Enable Intel Speed Shift Technology`
+
+    *   Check :guilabel:`Enable Intel Speed Shift Technology`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Power Management --> Auto On Time`
+
+    *   :guilabel:`Disabled`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Power Management --> Deep Sleep Control`
+
+    *   :guilabel:`Enabled in S4 and S5`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Power Management --> Fan Control Override`
+
+    *   Uncheck :guilabel:`Fan Control Overide`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Power Management --> USB Wake Support`
+
+    *   Uncheck :guilabel:`Enable USB Wake Support`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Power Management --> Wake on LAN/WLAN`
+
+    *   :guilabel:`Disabled`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Power Management --> Block Sleep`
+
+    *   Uncheck :guilabel:`Block Sleep`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`POST Behavior --> Numlock LED`
+
+    *   Check :guilabel:`Enable Numlock LED`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`POST Behavior --> Keyboard Errors`
+
+    *   Uncheck :guilabel:`Enable Keyboard Error Detection`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`POST Behavior --> Fastboot`
+
+    *   :guilabel:`Thorough`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`POST Behavior --> Extend BIOS POST Time`
+
+    *   :guilabel:`5 seconds`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`POST Behavior --> Full Screen Logo`
+
+    *   Uncheck :guilabel:`Enable Full Screen Logo`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`POST Behavior --> Warnings and Errors`
+
+    *   :guilabel:`Prompt on Warning and Errors`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Manageability --> Intel AMT Capability`
+
+    .. important::
+
+        This menu option will only appear if the Intel AMT capability was added at factory
+
+    *   :guilabel:`Enabled`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Manageability --> USB Provision`
+
+    *   Uncheck :guilabel:`Enable USB Provision`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Manageability --> MEBx Hotkey`
+
+    *   Check :guilabel:`Enable MEBx Hotkey`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Virtualization Support --> Virtualization`
+
+    *   Check :guilabel:`Enable Intel Virtualization Technology`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Virtualization Support --> VT for Direct I/O`
+
+    *   Check :guilabel:`Enable VT for Direct I/O`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Virtualization Support --> Trusted Execution`
+
+    *   Check :guilabel:`Trusted Execution`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Wireless --> Wireless Device Enable`
+
+    *   Uncheck :guilabel:`WLAN/WiGig`
+    *   Uncheck :guilabel:`Bluetooth`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Maintenance --> SERR Messages`
+
+    *   Check :guilabel:`Enable SERR Messages`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Maintenance --> BIOS Downgrade`
+
+    *   Check :guilabel:`Allow BIOS Downgrade`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Maintenance --> Data Wipe`
+
+    *   Uncheck :guilabel:`Wipe on Next Boot`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Maintenance --> BIOS Recovery`
+
+    *   Uncheck :guilabel:`BIOS Recovery from Hard Drive`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`System Logs --> BIOS Events`
+
+    *   Review BIOS Event Logs
+    *   :guilabel:`Clear Log --> Yes`
+
+#.  :guilabel:`Advanced configurations --> ASPM`
+
+    *   :guilabel:`Auto`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`SupportAssist System Resolution --> Auto OS Recovery Threshold`
+
+    *   :guilabel:`OFF`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`SupportAssist System Resolution --> SupportAssist OS Recovery`
+
+    *   Uncheck :guilabel:`SupportAssist OS Recovery`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`SupportAssist System Resolution --> BIOSConnect`
+
+    *   Uncheck :guilabel:`BIOSConnect`
+    *   :guilabel:`Apply`
+
+#.  :guilabel:`Security --> Admin Password` *If not already set*
+
+    *   :kbd:`Enter new *Admin level password*`
+    *   :kbd:`Confirm new *Admin level password*`
+    *   :guilabel:`OK`
+
+#.  :guilabel:`Exit`
+#.  Dell 3431 Workstation will reboot. **If** configuration of the BIOS version was the only need at this time, let Dell 3431 boot into its normal boot cycle. Otherwise :kbd:`F12` and continue to Intel(R) Management Engine BIOS Extension (MEBx) Configuration section
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. END: {{ self._TemplateReference__context.name }}
