@@ -1,0 +1,166 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(4,'Configuration of VMware vSphere vCenter Server **'+host['_name']+'** (via Web GUI)', ) }}
+
+{{ macros.create_heading(5,'VMware vSphere vCenter vSAN Cluster Setup Completion', ) }}
+
+#.  Open :program:`Web Browser` and go to `<https://{{ host['_name']}}.{{ host['network']['domain']}}:443>`_
+#.  :guilabel:`LAUNCH VSPHERE CLIENT (HTML5)`
+#.  Login as :kbd:`{{ host['sso']['admin_username']}}@{{ host['sso']['domain_name']}}` and :kbd:`<adminPassword>`
+#.  Expand :guilabel:`{{ host['datacenter']}} --> {{ host['cluster']}}`
+#.  Right-click :guilabel:`{{ host['cluster']}} --> Add hosts`
+#.  Under *New hosts* tab, enter the following for each cluster member:
+
+    {% for esx_host in esx_hosts if esx_host['esxi']['position'] in ['secondary'] %}
+
+    #.  Cluster Member: **{{ esx_host['_name']}}**
+
+        *   IP address of FQDN: :kbd:`{{ esx_host['_name']}}.{{ esx_host['network']['domain']}}`
+        *   Username:   :kbd:`{{ esx_host['admin_user']}}`
+        *   Password:   :kbd:`<adminPassword>`
+
+    {% endfor %}
+
+#.  :guilabel:`NEXT`
+#.  Check box to manually accept certificates for listes hosts then :guilabel:`NEXT`
+#.  :guilabel:`NEXT`
+#.  :guilabel:`FINISH`
+#.  Once you see the added ESXi server listed under *{{ host['datacenter']}}* and in *(Maintenance Mode)* :guilabel:`{{ host['datacenter']}} --> Configure tab --> Configuration Menu --> Quickstart`
+#.  Use the Cluster quickstart helper and :guilabel:`Configure` to configure all hosts in cluster for network and vSAN settings
+#.  *Distributed switches* Configure the following:
+
+    *   Uncheck :guilabel:`Configure networking setting later`
+    *   Number of distributed switches: :guilabel:`1`
+    *   Distributed Switch Name: :kbd:`{{ host['vsan']['dswitch']['name']}}`
+    *   Port groups, vSAN network: :guilabel:`{{ host['vsan']['dswitch']['name']}}` and :kbd:`{{ host['vsan']['dswitch']['portgroup']['name']}}`
+    *   Physical adapters:
+
+        *   Adapter 0 (vmnic0):    :guilabel:`Not in use`
+        *   Adapter 1 (vmnic1):    :guilabel:`{{ host['vsan']['dswitch']['name']}}`
+        *   Adapter 2 (vmnic2):    :guilabel:`{{ host['vsan']['dswitch']['name']}}`
+
+#.  :guilabel:`NEXT`
+#.  *Storage traffic* Configure the following:
+
+    *   Check :guilabel:`Use VLAN` and *VLAN ID*: :kbd:`{{ host['vsan']['dswitch']['portgroup']['network']['vlanID']}}`
+    *   Protocol: :guilabel:`IPv4`
+    *   IPv4 Configuration, :guilabel:`Static IPs` and configure the following:
+
+    {% for esx_host in esx_hosts %}
+
+        *   *{{ esx_host['_name']}}.{{ esx_host['network']['domain']}}* *IPv4:* :kbd:`{{ esx_host['esxi']['vsan']['network']['network_pre']}}.{{ esx_host['esxi']['vsan']['network']['ip01']}}` *Subnet mask:* :kbd:`{{ esx_host['esxi']['vsan']['network']['subnetMask']}}`
+
+    {% endfor %}
+
+#.  :guilabel:`NEXT`
+#.  *Advanced options* Configure the following:
+
+    *   *vSAN Options*
+
+        *   Deployment type:    :guilabel:`Single site cluster`
+        *   Data-At-Rest Encryption:    :guilabel:`Off`
+        *   Deduplication and compression:  :guilabel:`On` *Requires all-flash configuration*
+        *   Fault domains:  :guilabel:`Off`
+        *   Large scale cluster support:    :guilabel:`Off`
+
+    *   *Host options*
+
+        *   Lockdown mode:  :guilabel:`Normal`
+        *   NTP server: :kbd:`{{ host['network']['ntp_server']}}`
+        *   Host update preference: :guilabel:`Include patches and updates for current ESXi version` 
+        
+            .. note::
+            
+                This will requires a connection to internet or you will get failure notifications, :guilabel:`No recommendation` on closed network
+        
+    *   *Enhanced vMotion Compatibility*
+
+        *   Enable EVC: :guilabel:`Off`
+
+#.  :guilabel:`NEXT`
+#.  *Claim disks* Configure the following:
+
+    .. important::
+
+        **With matching hardware in all cluster hosts**, the wizard should auto assign the disks to matching tiers from the vCenter deployment of cache and capacity. But this only works if all the disks are unused. I had installed Windows on one of the disks, for testing and it made it unavailible to the wizard to claim for a host tier. If this occurs for you, :guilabel:`CANCEL` wizard and go and clear the partitions from disk on the affected host. I attempted to do this via host webgui and cleared it but wizard didn't refresh information until I restarted wizard and then it auto assigned to tiers as expected.
+
+    *   All *Local NVMe Disk (t10.NVMe____Samsung_SSD_970_PRO_1TB...* disks should be *Claim for:* :guilabel:`Cache tier` of *Drive type:* :guilabel:`Flash` for all hosts.
+    *   All *Local NVMe Disk (t10.ATA____Samsung_SSD_860_PRO_2TB...* disks should be *Claim for:* :guilabel:`Capacity tier` of *Drive type:* :guilabel:`Flash` for all hosts.
+
+#.  :guilabel:`NEXT`
+#.  *Proxy settings* :guilabel:`Next`
+#.  Verify settings are correct and :guilabel:`Finish`
+#.  Verify the following:
+
+    *   Reconfigure vSAN cluster task completed successfully
+    *   All hosts under {{ host['cluster']}} are operational and not in Maintanenance Mode
+    *   Under Cluster quickstart, add hosts: No warnings exists and the top says "Nice work!"
+
+    .. important::
+
+        Due to this being a homelab and VMware vSphere 7.0 is just released, you may see alot of alerts and cautions of non supported hardware. If you go under :guilabel:`{{ host['cluster']}} --> Monitor --> vSAN --> Skyline Health` there is a *Hardware compatibility* section and you can :guilabel:`Silence Alert` for items like *SCSI controller is VMware certified* or *Controller is VMware certified*. These items are a concern for a production system not homelabs.
+
+    .. important:
+
+        You will have a red alarm for *Host TPM attestation alarm* for each of the hosts. This is due to having a TPM 2.0 enabled but not having secure boot enabled. Since we did not configured Secure Boot in BIOS this is expected and just :guilabel:`Acknowledge` and :guilabel:`Reset to Green` when it appears.
+
+    .. important
+
+        You will have (2) warnings for each host for *No coredump target has been configured. Host core dumps cannot be saved* and *System logs on host <hostname> are stored on non-persistent storage.* These require further research but should be a non-impact issue.
+
+#.  :guilabel:`{{ host['cluster']}} --> Monitor --> vSAN --> Skyline Health`
+#.  :guilabel:`vSAN Build Recommendation...` under *vSAN Build Recommendation* and :guilabel:`Login to My.Vmware.Com` and login using your VMware account information
+#.  :guilabel:`{{ host['datacenter']}} --> {{ host['cluster']}} --> {{ host['vsan']['dswitch']['name']}} --> Configure --> EDIT... --> Advanced` and configure the following:
+
+    *   MTU (Bytes): :kbd:`9000`
+    *   Multicast filtering mode: :guilabel:`IGMP/MLD snooping`
+
+#.  :guilabel:`OK`
+
+    {% for dswitch in host['dswitches'] %}
+        {% for portgroup in dswitch['portgroups'] if portgroup['traffic'] not in ['vSAN'] %}
+
+#.  Perform the following to create an additional Distributed Port Group **{{ portgroup['name']}}** on Distributed Switch **{{ dswitch['name']}}**
+
+    #.  :guilabel:`{{ host['datacenter']}} --> {{ host['cluster']}} --> {{ dswitch['name']}}`
+    #.  :guilabel:`Actions --> Distributed Port Group --> New Distributed Port Group`
+    #.  Name:   :kbd:`{{ portgroup['name']}}`
+    #.  :guilabel:`NEXT`
+    #.  Configure the following:
+
+        *   Port binding:   :guilabel:`Static binding`
+        *   Port allocation:    :guilabel:`Elastic`
+        *   Number of ports:    :kbd:`8`
+        *   Network resource pool:   :guilabel:`(default)`
+        *   VLAN type:  :guilabel:`{{ portgroup['network']['esxi_vlanType']}}`
+
+            {% if portgroup['network']['vlanType'] not in ['None'] %}
+
+        *   VLAN ID:    :kbd:`{{ portgroup['network']['vlanID']}}`
+
+            {% endif %}
+
+        *   Uncheck :guilabel:`Customize default policies configuration`
+
+    #.  :guilabel:`Next`
+    #.  Verify settings are correct and :guilabel:`Finish`
+    #.  Verify *Add Distributed Port Groups* task is completed
+
+        {% endfor %}
+    {% endfor %}
+
+#.  Move *{{ host['_name']}}* to Distributed Port Group **{{ host['esxi_host']['portgroup']['name']}}**
+
+    #.  :guilabel:`VMs and Templates (Sticky Pad icon)`
+    #.  :guilabel:`{{ host['datacenter']}} --> {{ host['_name']}}`
+    #.  :guilabel:`ACTIONS --> EDIT SETTINGS...`
+    #.  For *Network adaptor 1* :guilabel:`Dropdown --> Browse...`
+    #.  :guilabel:`{{ host['esxi_host']['portgroup']['name']}}` the :guilabel:`OK --> OK`
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. raw:: latex
+
+    \newpage
+
+.. END: {{ self._TemplateReference__context.name }}

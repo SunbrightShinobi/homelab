@@ -1,0 +1,110 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(4,'Deployment of VMware vSphere vCenter OVA for **'+host['_name']+'** (GUI Method)', ) }}
+
+{{ macros.create_heading(5,'Deployment of VMware vSphere vCenter OVA for **'+host['_name']+'** (Stage 1)', ) }}
+
+..  important::
+
+    Ensure you have all vSphere ESXi and vCenter hosts configured properly in DNS, otherwise deployment will fail.
+
+#.  On a Windows 10 workstation mount {{ host['os']['media'] }} by :guilabel:`Right-Clicking ISO file --> Mount`
+#.  Open :program:`Explorer` and browse to mount ISO file to :file:`<Mounted ISO File Drive>:\\vcsa-ui-installer\\win32\\`
+#.  Run :file:`installer.exe`
+#.  :guilabel:`Install`
+#.  :guilabel:`NEXT`
+#.  Check :guilabel:`I accept the terms of the license agreement` then :guilabel:`NEXT`
+#.  Enter the following information:
+
+    *   ESXi host or vCenter Server name:    :kbd:`{{ host['esxi_host']['_name']}}.{{ host['esxi_host']['network']['domain']}}`
+    *   HTTPS port:  :kbd:`443`
+    *   User name:   :kbd:`{{ host['esxi_host']['admin_user']}}`
+    *   Password:    :kbd:`<adminPassword to esxiHost>`
+
+#.  :guilabel:`NEXT` then :guilabel:`YES` when prompted about certificate warning
+#.  Enter the following information:
+
+    *   VM name:    :kbd:`{{ host['_name']}}`
+    *   Set rootPassword:    :kbd:`<adminPassword>`
+    *   Confirm rootPassword:    :kbd:`<adminPassword>`
+
+#.  :guilabel:`NEXT`
+#.  Configure the following settings:
+
+    *   Deployment size:    :guilabel:`Tiny`
+    *   Storage size:   :guilabel:`Default`
+
+#.  :guilabel:`NEXT`
+#.  :guilabel:`Install on a new vSAN cluster containing the target host`
+#.  Enter the following information:
+
+    *   Datacenter Name:    :kbd:`{{ host['datacenter']}}`
+    *   Cluster Name:   :kbd:`{{ host['cluster']}}`
+
+#.  :guilabel:`NEXT`
+#.  Verify already claimed for or check the following disks for vSAN then :guilabel:`Claim for Capacity`
+
+    *   :guilabel:`(t10.ATA____Samsung_SSD_860_PRO_2TB__________xxxxxxxxxxxx______)`
+
+#.  Verify already claimed for or check the following disks for vSAN then :guilabel:`Claim for Capacity`
+
+    *   :guilabel:`(t10.NVMe____Samsung_SSD_970_PRO_1TB__________xxxxxxxxxxxx______)`
+
+#.  Check :guilabel:`Enable Thin Disk Mode`
+#.  Check :guilabel:`Enable Deduplication and compression`
+#.  :guilabel:`NEXT`
+#.  Enter the following information:
+
+    *   Network:    :kbd:`VM Network`
+    *   IP version:   :kbd:`IPv4`
+    *   IP assignment:   :kbd:`static`
+    *   FQDN:   :kbd:`{{ host['_name']}}.{{ host['esxi_host']['network']['domain']}}`
+    *   IP address:   :kbd:`{{ host['network']['network_pre']}}.{{ host['network']['ip01']}}`
+    *   Subnet mask or prefix length:   :kbd:`{{ host['network']['subnetMask']}}`
+    *   Default gateway:   :kbd:`{{ host['network']['gateway']}}`
+    *   DNS servers:   :kbd:`{{ host['network']['dns01']}},{{ host['network']['dns02']}}`
+    *   HTTP:   :kbd:`80`
+    *   HTTPS:  :kbd:`443`
+
+#.  :guilabel:`NEXT`
+#.  Verify settings are correct and :guilabel:`Finish`
+#.  Verify you recieve "You have successfully deployed the vCenter Server" and :guilabel:`CONTINUE`
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. raw:: latex
+
+    \newpage
+
+{{ macros.create_heading(5,'Deployment of VMware vSphere vCenter OVA for **'+host['_name']+'** (Stage 2)', ) }}
+
+.. note::
+
+    If your installer crashes or another issue occurs, continue Stage 2 from `<https://{{ host['_name']}}.{{ host['network']['domain']}}:5480>`_
+
+#.  :guilabel:`NEXT`
+#.  Time synchronization mode: :guilabel:`Synchronize time with NTP servers`
+#.  NTP servers (comma-seperated list): :kbd:`{{ host['network']['ntp_server']}}`
+#.  SSH access: :guilabel:`Disabled`
+#.  :guilabel:`NEXT`
+#.  :guilabel:`Create a new SSO domain`
+#.  Enter the following information:
+
+    *   Single Sign-On domain name:    :kbd:`{{ host['sso']['domain_name']}}`
+    *   Single Sign-on user name:   :kbd:`{{ host['sso']['admin_username']}}`
+    *   Single Signon user name:    :kbd:`<adminPassword>`
+    *   Confirm password:    :kbd:`<adminPassword>`
+
+#.  :guilabel:`NEXT`
+#.  Check :guilabel:`Join the VMware's Customer Experience Improvement Program (CEIP)`
+#.  :guilabel:`NEXT`
+#.  Verify settings are correct and :guilabel:`Finish --> OK`
+#.  Verify you recieve "You have successfully setup this vCenter Server" and :guilabel:`CLOSE`
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. raw:: latex
+
+    \newpage
+
+.. END: {{ self._TemplateReference__context.name }}

@@ -13,6 +13,10 @@ operating_systems:
   _name: VMware vSphere ESXi
   type: Linux
   media: VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso
+- &vc_os
+  _name: VMware vSphere vCenter
+  type: Linux
+  media: VMware-VCSA-all-7.0.0-16189094.iso
 
 networks:
   hyrule_network: &hyrule_network
@@ -23,11 +27,41 @@ networks:
     subnetMask: 255.255.255.0
     cidr: /24
     vlanID: 10
-    gateway: 10.1.10.1
+    gateway: &hyrule_gateway 10.1.10.1
     dns01: 10.1.10.1
     dns02: 0.0.0.0
     domain: hyrule.binarylandscapes.com
     dns_suffixes: hyrule.binarylandscapes.com
+    ntp_server: *hyrule_gateway
+    esxi_vlanType: None
+
+  vsan_network: &vsan_network
+    _name: vmware_vsan
+    network_id: 10.1.255.0
+    network_pre: 10.1.255
+    broadcast: 10.1.255.255
+    subnetMask: 255.255.255.0
+    cidr: /24
+    vlanID: 255
+    gateway: 
+    dns01: 
+    dns02: 
+    domain: 
+    dns_suffixes: 
+    ntp_server: 
+    esxi_vlanType: VLAN
+
+portgroups:
+  hyrule: &hyrule_pg
+    name: &hyrule_pg_name DSwitch01-Hyrule
+    traffic: VM Network
+    network: 
+      <<: *hyrule_network
+  vsan: &vsan_pg
+    name: &vsan_pg_name DSwitch01-vSAN
+    traffic: vSAN
+    network: 
+      <<: *vsan_network
 
 hosts:
 - &esx01
@@ -38,6 +72,7 @@ hosts:
     <<: *dell_3431_ws
   os: 
     <<: *esx_os
+  admin_user: root
   network: 
     <<: *hyrule_network
     ip01: 101
@@ -46,6 +81,14 @@ hosts:
     network: 
       <<: *hyrule_network
       ip01: 191
+    admin_user: admin
+  esxi:
+    position: primary
+    vsan:
+      network: 
+        <<: *vsan_network
+        ip01: 101
+
 - &esx02
   _name: &esx02_name hebra
   hostname: *esx02_name
@@ -54,6 +97,7 @@ hosts:
     <<: *dell_3431_ws
   os: 
     <<: *esx_os
+  admin_user: root
   network: 
     <<: *hyrule_network
     ip01: 102
@@ -62,6 +106,13 @@ hosts:
     network: 
       <<: *hyrule_network
       ip01: 192
+    admin_user: admin
+  esxi:
+    position: secondary
+    vsan:
+      network: 
+        <<: *vsan_network
+        ip01: 102
 - &esx03
   _name: &esx03_name akkala
   hostname: *esx03_name
@@ -70,6 +121,7 @@ hosts:
     <<: *dell_3431_ws
   os: 
     <<: *esx_os
+  admin_user: root
   network: 
     <<: *hyrule_network
     ip01: 103
@@ -78,4 +130,42 @@ hosts:
     network: 
       <<: *hyrule_network
       ip01: 193
+    admin_user: admin
+  esxi:
+    position: secondary
+    vsan:
+      network: 
+        <<: *vsan_network
+        ip01: 103
+- &vcenter01
+  _name: &vcenter01_name triforce
+  hostname: *vcenter01_name
+  type: Virtual
+  esxi_host:
+    <<: *esx01
+    portgroup:
+      <<: *hyrule_pg
+  os: 
+    <<: *vc_os
+  admin_user: root
+  network: 
+    <<: *hyrule_network
+    ip01: 100
+  datacenter: Homelab Datacenter
+  cluster: Homelab Cluster
+  sso:
+    domain_name: vsphere.local
+    admin_username: administrator
+  dswitches:
+  - &dswitch01
+    name: &dswitch01_name DSwitch01
+    portgroups:
+    - <<: *hyrule_pg
+    - <<: *vsan_pg
+  vsan:
+    dswitch:
+      name: *dswitch01_name
+      portgroup: 
+        <<: *vsan_pg
+
 ... # End of document content
