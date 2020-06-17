@@ -25,6 +25,7 @@
 
     {% include "/common_docs/jinja/vmware/vsphere/vcenter/deploy_gui.jinja" %}
     {% include "/common_docs/jinja/vmware/vsphere/vcenter/configure_webgui.jinja" %}
+    {% include "/common_docs/jinja/vmware/vsphere/vcenter/license_webgui.jinja" %}
 
         {% endfor %}
     {% endif %}

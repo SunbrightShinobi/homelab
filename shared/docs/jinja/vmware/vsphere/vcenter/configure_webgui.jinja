@@ -7,6 +7,7 @@
 #.  Open :program:`Web Browser` and go to `<https://{{ host['_name']}}.{{ host['network']['domain']}}:443>`_
 #.  :guilabel:`LAUNCH VSPHERE CLIENT (HTML5)`
 #.  Login as :kbd:`{{ host['sso']['admin_username']}}@{{ host['sso']['domain_name']}}` and :kbd:`<adminPassword>`
+#.  :guilabel:`vSphere Client --> Hosts and Clusters`
 #.  Expand :guilabel:`{{ host['datacenter']}} --> {{ host['cluster']}}`
 #.  Right-click :guilabel:`{{ host['cluster']}} --> Add hosts`
 #.  Under *New hosts* tab, enter the following for each cluster member:

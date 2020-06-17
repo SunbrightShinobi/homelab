@@ -167,5 +167,18 @@ hosts:
       name: *dswitch01_name
       portgroup: 
         <<: *vsan_pg
+    license:
+      key: 5H01N-J4H1H-08HHH-0E880-0RMHH
+      name: VMUG vSAN Enterprise License 12 CPUs (up to 32 cores)
+      expires: 30MAY2021
+  vc_license:
+    key: HN490-N9H80-N89G5-0V002-9XJ2M
+    name: VMUG vCenter License (2 Instance)
+    expires: 30MAY2021
+  esxi_license:
+    key: HJ002-JT242-189GT-0D0A6-0R9KH
+    name: VMUG vSphere 7 Enterprise Plus License 12 CPUs (up to 32 cores)
+    expires: 30MAY2021
+
 
 ... # End of document content
