@@ -32,6 +32,7 @@ hosts:
     <<: *dell_3431_ws
   os: 
     <<: *win10_os
+  admin_user: josh.johnson@binarylandscapes.com
   remote_mgmt:
     hostname: 
     network: 

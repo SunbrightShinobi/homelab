@@ -1,0 +1,86 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(4,'Licensing of VMware vSphere Infrastructure Licensing (via Web GUI)', ) }}
+
+    {% for host in vc_hosts %}
+
+{{ macros.create_heading(5,'VMware vSphere vCenter Licensing for **'+host['_name']+'**', ) }}
+
+#.  Open :program:`Web Browser` and go to `<https://{{ host['_name']}}.{{ host['network']['domain']}}:443>`_
+#.  :guilabel:`LAUNCH VSPHERE CLIENT (HTML5)`
+#.  Login as :kbd:`{{ host['sso']['admin_username']}}@{{ host['sso']['domain_name']}}` and :kbd:`<adminPassword>`
+#.  :guilabel:`vSphere Client --> Hosts and Clusters`
+#.  :guilabel:`{{ host['_name']}}.{{ host['network']['domain']}}`
+#.  :guilabel:`Configure tab` then :guilabel:`Licensing` under *Settings*
+#.  :guilabel:`ASSIGN LICENSE --> NEW LICENSE` and complete the following:
+
+    *   License key:    :kbd:`{{ host['vc_license']['key']}}`
+    *   License Name:   :kbd:`{{ host['vc_license']['name']}}`
+
+    .. important::
+
+        Take note if you have a *Some features will become unavailable* message to determine if you are affected
+
+#.  :guilabel:`OK`
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+    {% endfor %}
+
+    {% for esx_host in esx_hosts %}
+
+{{ macros.create_heading(5,'VMware vSphere ESXi Licensing for **'+esx_host['_name']+'**', ) }}
+
+#.  :guilabel:`vSphere Client --> Hosts and Clusters`
+#.  Expand :guilabel:`{{ host['_name']}}.{{ host['network']['domain']}} --> {{ host['datacenter']}} --> {{ host['cluster']}}`
+#.  :guilabel:`{{ esx_host['_name']}}.{{ esx_host['network']['domain']}}`
+#.  :guilabel:`Configure tab` then :guilabel:`Licensing` under *System*
+#.  :guilabel:`ASSIGN LICENSE`
+
+        {% if esx_host['esxi']['position'] not in ['secondary'] %}
+
+#.  :guilabel:`NEW LICENSE` and complete the following:
+
+    *   License key:    :kbd:`{{ host['esxi_license']['key']}}`
+    *   License Name:   :kbd:`{{ host['esxi_license']['name']}}`
+
+        {% else %}
+
+#. :guilabel:`Existing LICENSE` and :guilabel:`{{ host['esxi_license']['name']}}`
+
+        {% endif %}
+
+    .. important::
+
+        Take note if you have a *Some features will become unavailable* message to determine if you are affected
+
+#.  :guilabel:`OK`
+
+{{ macros.sign_off_table([esx_host['_name']]) }}
+
+    {% endfor %}
+
+{{ macros.create_heading(5,'VMware vSphere vSAN Licensing', ) }}
+
+#.  :guilabel:`vSphere Client --> Hosts and Clusters`
+#.  Expand :guilabel:`{{ host['_name']}}.{{ host['network']['domain']}} --> {{ host['datacenter']}}`
+#.  :guilabel:`{{ host['cluster']}}`
+#.  :guilabel:`Configure tab` then :guilabel:`Licensing` under *Configuration*
+#.  :guilabel:`ASSIGN LICENSE --> NEW LICENSE` and complete the following:
+
+    *   License key:    :kbd:`{{ host['vsan']['license']['key']}}`
+    *   License Name:   :kbd:`{{ host['vsan']['license']['name']}}`
+
+    .. important::
+
+        Take note if you have a *Some features will become unavailable* message to determine if you are affected
+
+#.  :guilabel:`OK`
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. raw:: latex
+
+    \newpage
+
+.. END: {{ self._TemplateReference__context.name }}

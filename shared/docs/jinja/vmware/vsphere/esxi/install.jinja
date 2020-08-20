@@ -23,10 +23,24 @@
 
 #.  :guilabel:`OK` and verify you have have a green bar with **IDE-R Session, Connected** at top of :program:`MeshCommander` now
 #.  :guilabel:`Power Actions... --> Power On to IDE-R CDROM --> OK`
-#.  Verify you see Dell boot image and then it continues to *Loading ESXi installer* 
+#.  Verify you see boot image and then it continues to *Loading ESXi installer* 
 #.  At the *Welcome to the VMware ESXI Installation* screen, press :kbd:`Enter`
 #.  At the *EULA* screen, :kbd:`F11`
+
+{% if host['hardware']['model'] in ['3431 SFF Workstation'] %}
+
 #.  At the *Select a Disk to Install or Upgrade*, :menuselection:`Local: Samsung Flash Drive (mpx.vmhba34:C0:T0:L0)` and :kbd:`Enter`
+
+{% elif host['hardware']['model'] in ['NUC NUC9VXQNX'] %}
+
+#.  At the *Select a Disk to Install or Upgrade*, :menuselection:`Local: Samsung Flash Drive (mpx.vmhba32:C0:T0:L0)` and :kbd:`Enter`
+
+{% else %}
+
+#.  At the *Select a Disk to Install or Upgrade*, :menuselection:`Local: Samsung Flash Drive` and :kbd:`Enter`
+
+{% endif %}
+
 #.  *If prompted*, use :kbd:`UP` and :kbd:`DOWN` and :kbd:`SPACEBAR` to select :menuselection:`Install` then :kbd:`Enter` to perform a fresh install over current ESXi installation
 #.  At the *Please select a keyboard layout screen*, select :menuselection:`US Default` and :kbd:`Enter`
 #.  :kbd:`<adminPassword>` then reenter to confirm :kbd:`<adminPassword>`

@@ -1,0 +1,19 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+    {% for esx_host in esx_hosts if esx_host['esxi']['vsan']['member'] is equalto false %}
+
+{{ macros.create_heading(5,'Adding ``'+ esx_host['_name'] +'`` to ``'+ host['datacenter'] +'`` Datacenter', ) }}
+
+#.  Right-click :guilabel:`{{ host['datacenter'] }}` Datacenter then :guilabel:`Add host...`
+#.  Enter :kbd:`{{ esx_host['_name'] }}.{{ esx_host['network']['domain'] }}` then :guilabel:`Next`
+#.  :kbd:`root` and :kbd:`<adminPassword>` then :guilabel:`Next`
+#.  :guilabel:`Yes to Accept Security Warning` then :guilabel:`Next`
+#.  Check :guilabel:`Disabled` for Lockdown mode then :guilabel:`Next`
+#.  :guilabel:`Next`
+#.  :guilabel:`Finish`
+
+{{ macros.sign_off_table( [esx_host['_name']]) }}
+
+        {% endfor %}
+
+.. END: {{ self._TemplateReference__context.name }}

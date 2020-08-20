@@ -10,9 +10,16 @@
 
     {{ macros.create_heading(2,"Hardware Assembly", true, ) }}
 
-        {% for host in esx_hosts %}
+        {% for host in esx_hosts if host['hardware']['model'] in ['3431 SFF Workstation'] %}
 
     {% include "/common_docs/jinja/dell/precision_3431/phys_assy.jinja" %}
 
         {% endfor %}
+
+        {% for host in esx_hosts if host['hardware']['model'] in ['NUC NUC9VXQNX'] %}
+
+    {% include "/common_docs/jinja/intel/nuc9vxqnx/phys_assy.jinja" %}
+
+        {% endfor %}
+
     {% endif %}

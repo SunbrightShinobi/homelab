@@ -12,5 +12,7 @@
 
     {% include "/common_docs/jinja/dell/precision_3431/specs.jinja" %}
 
+    {% include "/common_docs/jinja/intel/nuc9vxqnx/specs.jinja" %}
+
     {% endif %}
 

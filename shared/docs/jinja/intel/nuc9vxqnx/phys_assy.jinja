@@ -1,0 +1,299 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(3,'Intel NUC NUC9VXQNX, Hardware Assembly of **'+host['_name']+'**', true, ) }}
+
+.. todo::
+
+    TODO: [HOMELAB-33] Update assembly documentation for NUC9VXQNX
+
+
+.. important::
+
+    These assembly steps and images are intended to be used by someone with previous experience and knowledge of electronics assembly including following proper :term:`ESD` procedures and are provided for use at user's own risk.
+
+    .. only:: html
+
+        See :download:`Reference: OEM Dell Precision 3431 Workstation Service Manual </common_docs/pdfs/dell_3431/precision-3431-workstation_service-manual_en-us.pdf>`
+
+#.  Remove top cover from system by sliding *Blue Lever* at rear of system to right. Then use grip on cover to slide cover rearward from front of system to where it can be lifted up and set aside.
+
+    .. figure:: /images/dell/precision_3431/assembled_rear.png
+        :scale: 25
+        :alt: Dell Precision 3431, Assembled, Rear View
+        :align: center
+
+        Dell Precision 3431, Assembled, Rear View
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+#.  Remove Factory 2.5/3.5 inch :term:`HDD` Mount from factory :term:`HDD` Mount Cage:
+
+    #.  Disconnect SATA Power cable from :term:`HDD` Mount harness
+    #.  Using care, remove remaining cabling from being attached to :term:`HDD` Mount in order for it to be removed without obstacles
+
+        .. figure:: /images/dell/precision_3431/factory_cover_off.png
+            :scale: 25
+            :alt: Dell Precision 3431, Top Cover Removed
+            :align: center
+
+            Dell Precision 3431, Top Cover Removed
+
+    #.  Using the lever with arrow on it, pull level towards front of system and lift out :term:`HDD` Mount and set aside
+
+        .. figure:: /images/dell/precision_3431/factory_hdd_mount_removed.png
+            :scale: 25
+            :alt: Dell Precision 3431, HDD Mount Removed
+            :align: center
+
+            Dell Precision 3431, HDD Mount Removed
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+#.  Remove Factory :term:`HDD` Mount Cage from system:
+
+    #.  Using care, remove cabling from being attached to :term:`HDD` Cage lever in order for it to be removed without obstacles
+
+        .. figure:: /images/dell/precision_3431/factory_hdd_cage_removal_cable_prep.png
+            :scale: 25
+            :alt: Dell Precision 3431, HDD Cage Cabling Unrouted
+            :align: center
+
+            Dell Precision 3431, HDD Cage Cabling Unrouted
+
+    #.  Using care, lift up on three tabs of system front bezel cover, so that it is tilted away from system frame and not locking in :term:`HDD` Cage edge
+    #.  Using the lever with arrow on it, pull level towards rear of system and lift out :term:`HDD` Mount and set aside
+
+        .. figure:: /images/dell/precision_3431/factory_hdd_cage_removed.png
+            :scale: 25
+            :alt: Dell Precision 3431, HDD Cage Removed
+            :align: center
+
+            Dell Precision 3431, HDD Cage Removed
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+#.  Replace (or Install) PCIe NVMe M.2 SSD Drive system:
+
+    #.  Using care, unscrew Phillips screw at edge of :term:`SSD` and set aside
+
+        .. figure:: /images/dell/precision_3431/pcie_nvm_ssd_replacement01.png
+            :scale: 25
+            :alt: Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (1 of 4)
+            :align: center
+
+            Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (1 of 4)
+
+    #.  Using care, lift up on screw edge of :term:`SSD` to 45 degree angle and then pull out very carefully from PCIe NVMe M.2 connector and set aside. Take care of silicon sponge-like heatsink (If factory installed)
+
+        .. figure:: /images/dell/precision_3431/pcie_nvm_ssd_replacement02.png
+            :scale: 25
+            :alt: Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (2 of 4)
+            :align: center
+
+            Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (2 of 4)
+
+    #.  Using care, remove and install in same location silicon sponge-like heatsink from removed :term:`SSD` (If factory installed) onto new :term:`SSD`
+
+        .. figure:: /images/dell/precision_3431/pcie_nvm_ssd_replacement03.png
+            :scale: 25
+            :alt: Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (3 of 4)
+            :align: center
+
+            Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (3 of 4)
+
+    #.  Using care, install new :term:`SSD` in same manner as removal by inserting device into PCIe NVMe M.2 connector at a 45 degree and ensuring it is seated fully, then tilting down to line up screw mount and install screw.
+
+        .. figure:: /images/dell/precision_3431/pcie_nvm_ssd_replacement04.png
+            :scale: 25
+            :alt: Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (4 of 4)
+            :align: center
+
+            Dell Precision 3431, PCIe NVMe M.2 SSD Replacement/Installation (4 of 4)
+
+    #.  Verify :term:`SSD` is mounted correctly and fully in connector before continuing.
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+#.  Reinstallation of :term:`HDD` Mount Cage into system:
+
+    #.  Ensure factory connected *Blue* SATA cable to **SATA0** port and the *Black* SATA cable to the **SATA3** port next to the PCIe NVMe M.2 SSD connector as shown in previous section.
+
+        .. figure:: /images/dell/precision_3431/pcie_nvm_ssd_replacement04.png
+            :scale: 25
+            :alt: Dell Precision 3431, Verify SATA Connections
+            :align: center
+
+            Dell Precision 3431, Verify SATA Connections
+
+    #.  Reinstall :term:`HDD` Mount Cage by inserting at a angle to the side of system, ensuring metal tabs slide into position.
+    #.  Then rotate :term:`HDD` Mount Cage down until flat in position.
+    #.  Reinstall system front bezel cover, ensuring all three tabs are secured
+    #.  Using the lever with arrow on it on :term:`HDD` Mount Cage, pull level towards front of system to fully secure cage.
+
+        .. figure:: /images/dell/precision_3431/factory_hdd_cage_reinstalled.png
+            :scale: 25
+            :alt: Dell Precision 3431, :term:`HDD` Mount Cage Reinstalled
+            :align: center
+
+            Dell Precision 3431, :term:`HDD` Mount Cage Reinstalled
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+#.  Installation of :term:`SSD` into Factory 2.5/3.5 inch HDD Mount:
+
+    #. Install :term:`SSD` into Factory 2.5/3.5 inch HDD Mount in HDD1 slot, using the below figures
+
+        .. figure:: /images/dell/precision_3431/factory_2.5_hdd_install_mount01.png
+            :scale: 25
+            :alt: Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (1/2)
+            :align: center
+
+            Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (1/2)
+
+        .. figure:: /images/dell/precision_3431/factory_2.5_hdd_install_mount02.png
+            :scale: 25
+            :alt: Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (2/2)
+            :align: center
+
+            Dell Precision 3431, Installation of :term:`SSD` into HDD Mount, HDD1 Slot (2/2)
+
+    #.  Reinstall the Factory 2.5/3.5 inch HDD Mount into system, connect and route cabling using the below figures
+
+        .. figure:: /images/dell/precision_3431/factory_2.5_hdd_install_mount03.png
+            :scale: 25
+            :alt: Dell Precision 3431, Reinstallation of Factory 2.5/3.5 inch HDD Mount into system
+            :align: center
+
+            Dell Precision 3431, Reinstallation of Factory 2.5/3.5 inch HDD Mount into system
+
+        .. figure:: /images/dell/precision_3431/factory_2.5_hdd_install_mount04.png
+            :scale: 25
+            :alt: Dell Precision 3431, Reconnection of Factory 2.5/3.5 inch HDD Mount to system
+            :align: center
+
+            Dell Precision 3431, Reconnection of Factory 2.5/3.5 inch HDD Mount to system
+
+        .. figure:: /images/dell/precision_3431/factory_2.5_hdd_install_mount05.png
+            :scale: 25
+            :alt: Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (1/2)
+            :align: center
+
+            Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (1/2)
+
+        .. figure:: /images/dell/precision_3431/factory_2.5_hdd_install_mount06.png
+            :scale: 25
+            :alt: Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (2/2)
+            :align: center
+
+            Dell Precision 3431, Cable routing of Factory 2.5/3.5 inch HDD Mount to system (2/2)
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+#.  Replacement or Installation of NVIDIA Tesla P4 8GB :term:`GPU`, PCIe 3.0, 16x
+
+    .. important::
+
+        The NVIDIA Tesla P4 GPU is meant for a system with an active forced air cooling system to push in cool air to inlet of GPU. For a normal enterprise datacenter server this airflow is built into the server but the Dell 3431 Workstation is not an enterprise server. I am testing installation of the Tesla P4 as-is since its installed position is directly in front of the main systme intake fan that hopefully will not require an inlet duct for more direct air flow force.
+
+    #.  Replace the full profile bracket with the low profile bracket on the NVIDIA Tesla P4 GPU with the (2) front screws and (2) rear screws on backplate shown in the following figures.
+
+        .. figure:: /images/dell/precision_3431/factory_gpu_replacement02.png
+            :scale: 25
+            :alt: Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (1/2)
+            :align: center
+
+            Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (1/2)
+
+        .. figure:: /images/dell/precision_3431/factory_gpu_replacement03.png
+            :scale: 25
+            :alt: Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (2/2)
+            :align: center
+
+            Dell Precision 3431, NVIDIA Tesla P4 GPU Profile Bracket (2/2)
+
+    #.  Remove currently installed GPU (If there is one) then replace with NVIDIA Tesla P4 PCIe 3.0 GPU in the PCIe 3.0, 16x slot.
+
+        .. figure:: /images/dell/precision_3431/factory_gpu_replacement04.png
+            :scale: 25
+            :alt: Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (1/2)
+            :align: center
+
+            Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (1/2)
+
+        .. figure:: /images/dell/precision_3431/factory_gpu_replacement05.png
+            :scale: 25
+            :alt: Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (2/2)
+            :align: center
+
+            Dell Precision 3431, NVIDIA Tesla P4 GPU Installed (2/2)
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+#.  Installation of Intel X520-DA2 10Gbe :term:`NIC`, PCIe 2.0, 8x into PCIe 3.0, 4x slot per the images below
+
+    .. important::
+
+        The Intel X520-DA2 10Gbe :term:`NIC` is designed for a PCIe 2.0, 8x but the Dell 3431 PCIe 3.0, 4x slot is open ended so a 8x card will fit. I am still testing if there are bandwidth limitations by installing it in a PCIe 3.0, 4x slot. It is compatible and usable by VMware vSphere ESXi but needs to be load tested to determine if both 10Gbe SFP+ port can support 10Gbe concurrently.
+
+    .. figure:: /images/dell/precision_3431/10gbe_pcie_install01.png
+        :scale: 25
+        :alt: Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (1/3)
+        :align: center
+
+        Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (1/3)
+
+    .. figure:: /images/dell/precision_3431/10gbe_pcie_install02.png
+        :scale: 25
+        :alt: Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (2/3)
+        :align: center
+
+        Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (2/3)
+
+    .. figure:: /images/dell/precision_3431/10gbe_pcie_install03.png
+        :scale: 25
+        :alt: Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (3/3)
+        :align: center
+
+        Dell Precision 3431, Intel X520-DA2 10Gbe :term:`NIC` Installation (3/3)
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+#.  Final Assembly
+
+    #.  Reinstall Dell 3431 Workstation top cover
+
+        .. figure:: /images/dell/precision_3431/post_assemble_rearview.png
+            :scale: 25
+            :alt: Dell Precision 3431, Assembled Top Cover (Rear View)
+            :align: center
+
+            Dell Precision 3431, Assembled Top Cover (Rear View)
+
+    #.  Install Dell SFF Intake Filter on Dell 3431 Workstation
+
+        .. figure:: /images/dell/precision_3431/filter_installation.png
+            :scale: 25
+            :alt: Dell Precision 3431, Intake Filter Installation
+            :align: center
+
+            Dell Precision 3431, Intake Filter Installation
+
+    #.  Install Samsung USB key and Dell SFF Intake Filter
+
+        .. figure:: /images/dell/precision_3431/samsung_usb_drive.png
+            :scale: 25
+            :alt: Dell Precision 3431, Bootable USB (Front View)
+            :align: center
+
+            Dell Precision 3431, Bootable USB (Front View)
+
+        .. figure:: /images/dell/precision_3431/assembled_front.png
+            :scale: 25
+            :alt: Dell Precision 3431, Assembled (Front View)
+            :align: center
+
+            Dell Precision 3431, Assembled (Front View)
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. END: {{ self._TemplateReference__context.name }}

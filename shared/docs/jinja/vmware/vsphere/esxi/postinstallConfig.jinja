@@ -10,7 +10,21 @@
     #.  :menuselection:`Network Adaptors` then :kbd:`Enter`
 
         *   Verify that ``vmnic0`` is ``[X]`` and ``Status`` is ``Connected``
+
+{% if host['hardware']['model'] in ['3431 SFF Workstation'] %}
+
         *   Verify that ``vmnic1-2`` are ``[ ]`` and ``Status`` is ``Connected``
+
+{% elif host['hardware']['model'] in ['NUC NUC9VXQNX'] %}
+
+        *   Verify that ``vmnic1-3`` are ``[ ]`` and ``Status`` is ``Connected``
+
+{% else %}
+
+        *   Verify that ``other vmnics`` are ``[ ]`` and ``Status`` is ``Connected``
+
+{% endif %}
+
         *   :kbd:`Enter`
 
     #.  :menuselection:`VLAN (optional)` then :kbd:`Enter` to apply settings and exit menu.
