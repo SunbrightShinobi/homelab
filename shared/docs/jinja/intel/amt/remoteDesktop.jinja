@@ -5,7 +5,7 @@
 Prerequistes: 
 
     *   Download and installation of :program:`Meshcommander` from `MeshCommander Download <https://www.meshcommander.com/meshcommander/meshcmd>`_
-    *   Intel AMT is configured per :ref:`dell3431_intel_amt_config_{{ host['remote_mgmt']['hostname'] }}`
+    *   Intel AMT is configured per :ref:`{{ host['hardware']['manufacture'] }}_{{ host['hardware']['model'] }}_intel_amt_config_{{ host['remote_mgmt']['hostname'] }}`:
 
 #.  From workstation, open :program:`MeshCommander`
 #.  :guilabel:`Computer Management (Networked Computers Icon)`

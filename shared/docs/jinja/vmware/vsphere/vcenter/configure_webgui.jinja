@@ -12,7 +12,9 @@
 #.  Right-click :guilabel:`{{ host['cluster']}} --> Add hosts`
 #.  Under *New hosts* tab, enter the following for each cluster member:
 
-    {% for esx_host in esx_hosts if esx_host['esxi']['position'] in ['secondary'] %}
+    {% for esx_host in esx_hosts if esx_host['esxi']['vsan']['member'] %}
+        {% if esx_host['esxi']['position'] in ['secondary'] %}
+
 
     #.  Cluster Member: **{{ esx_host['_name']}}**
 
@@ -20,10 +22,11 @@
         *   Username:   :kbd:`{{ esx_host['admin_user']}}`
         *   Password:   :kbd:`<adminPassword>`
 
+        {% endif %}
     {% endfor %}
 
 #.  :guilabel:`NEXT`
-#.  Check box to manually accept certificates for listes hosts then :guilabel:`NEXT`
+#.  Check box to manually accept certificates for lists hosts then :guilabel:`NEXT`
 #.  :guilabel:`NEXT`
 #.  :guilabel:`FINISH`
 #.  Once you see the added ESXi server listed under *{{ host['datacenter']}}* and in *(Maintenance Mode)* :guilabel:`{{ host['datacenter']}} --> Configure tab --> Configuration Menu --> Quickstart`
@@ -47,7 +50,7 @@
     *   Protocol: :guilabel:`IPv4`
     *   IPv4 Configuration, :guilabel:`Static IPs` and configure the following:
 
-    {% for esx_host in esx_hosts %}
+    {% for esx_host in esx_hosts if esx_host['esxi']['vsan']['member'] %}
 
         *   *{{ esx_host['_name']}}.{{ esx_host['network']['domain']}}* *IPv4:* :kbd:`{{ esx_host['esxi']['vsan']['network']['network_pre']}}.{{ esx_host['esxi']['vsan']['network']['ip01']}}` *Subnet mask:* :kbd:`{{ esx_host['esxi']['vsan']['network']['subnetMask']}}`
 
@@ -118,7 +121,7 @@
 
 #.  :guilabel:`OK`
 
-    {% for dswitch in host['dswitches'] %}
+    {% for dswitch in host['dswitchs'] %}
         {% for portgroup in dswitch['portgroups'] if portgroup['traffic'] not in ['vSAN'] %}
 
 #.  Perform the following to create an additional Distributed Port Group **{{ portgroup['name']}}** on Distributed Switch **{{ dswitch['name']}}**

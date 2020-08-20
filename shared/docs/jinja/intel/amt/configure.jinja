@@ -1,15 +1,24 @@
 .. START: {{ self._TemplateReference__context.name }}
 
-.. _dell3431_intel_amt_config_{{ host['remote_mgmt']['hostname'] }}:
+.. _{{ host['hardware']['manufacture'] }}_{{ host['hardware']['model'] }}_intel_amt_config_{{ host['remote_mgmt']['hostname'] }}:
 
-{{ macros.create_heading(4,'Dell Precision 3431, Intel Management Engine Configuration for **'+host['_name']+'**', ) }}
+{{ macros.create_heading(4, host['hardware']['manufacture']+' '+host['hardware']['model']+', Intel Management Engine Configuration for **'+host['_name']+'**', ) }}
 
 .. important::
 
     You cannot access the BIOS configuration menu for the Intel AMT system if connected via the Intel AMT Remote Desktop, once you set a BIOS Admin password. The menu option will dissapear from menu.
 
-#.  If not already at Boot Option Menu, Restart or Power On (if Off) the Dell 3431 Workstation and :kbd:`F12` when Dell 3431 powers on and shows Dell logo
+{% if host['hardware']['model'] in ['3431 SFF Workstation'] %}
+
+#.  If not already at Boot Option Menu, Restart or Power On (if Off) the {{ host['hardware']['manufacture'] }} {{ host['hardware']['model'] }} and :kbd:`F12` when {{ host['hardware']['manufacture'] }} {{ host['hardware']['model'] }} powers on and shows {{ host['hardware']['manufacture'] }} logo
 #.  :menuselection:`Intel(R) Management Engine BIOS Extension (MEBx)`
+
+{% elif host['hardware']['model'] in ['NUC NUC9VXQNX'] %}
+
+#.  If not already at Boot Option Menu, Restart or Power On (if Off) the {{ host['hardware']['manufacture'] }} {{ host['hardware']['model'] }} and :kbd:`CTRL-P` when {{ host['hardware']['manufacture'] }} {{ host['hardware']['model'] }} powers on and shows {{ host['hardware']['manufacture'] }} logo
+
+{% endif %}
+
 #.  :menuselection:`MEBx Login`
 #.  You will be prompted for factory *Intel(R) ME Password* :kbd:`admin` then :kbd:`Enter`
 #.  You will be prompted to set new password for MEBx login, :kbd:`<Desired Admin Password>` then :kbd:`Enter`
@@ -80,7 +89,7 @@
 
 {{ macros.sign_off_table([host['_name']]) }}
 
-{% include "/common_docs/jinja/dell/precision_3431/intel_amt_remoteDesktopConfigure.jinja" %}
+{% include "/common_docs/jinja/intel/amt/remoteDesktopConfigure.jinja" %}
 
 {{ macros.sign_off_table([host['_name']]) }}
 

@@ -11,7 +11,7 @@
 
     {{ macros.create_heading(2,'VMware vSphere ESXi Deployment for **'+host['_name']+'**', true, ) }}
 
-    {% include "/common_docs/jinja/dell/precision_3431/intel_amt_remoteDesktop.jinja" %}
+    {% include "/common_docs/jinja/intel/amt/remoteDesktop.jinja" %}
     {% include "/common_docs/jinja/vmware/vsphere/esxi/install.jinja" %}
     {% include "/common_docs/jinja/vmware/vsphere/esxi/postinstallConfig.jinja" %}
 
@@ -25,6 +25,7 @@
 
     {% include "/common_docs/jinja/vmware/vsphere/vcenter/deploy_gui.jinja" %}
     {% include "/common_docs/jinja/vmware/vsphere/vcenter/configure_webgui.jinja" %}
+    {% include "/common_docs/jinja/vmware/vsphere/vcenter/add_esxi_host_vcenter.jinja" %}
     {% include "/common_docs/jinja/vmware/vsphere/vcenter/license_webgui.jinja" %}
 
         {% endfor %}

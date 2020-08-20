@@ -1,0 +1,42 @@
+.. START: {{ self._TemplateReference__context.name }}
+
+{{ macros.create_heading(4,'Intel NUC NUC9VXQNX, BIOS Update for **'+host['_name']+'**', ) }}
+
+.. todo::
+
+    TODO: [HOMELAB-36] Update bios updated documentation for NUC9VXQNX
+
+..  important::
+
+    Currently if Remote Management if desired, then it must be done at factory to load the correct BIOS version that enabled the Intel vManagement platform. Enabling this feature, if not already enabled in BIOS menu, will not be coverted in these instructions.
+
+#.  Download **Version {{ host['hardware']['biosVersion'] }}** BIOS upgrade file from `<https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=gh411&oscode=biosa&productcode=precision-3431-workstation>`_ and copy to a USB drive
+#.  Connect the USB drive to Dell 3431 Workstation
+#.  Restart or Power On (if Off) the Dell 3431 Workstation
+#.  :kbd:`F12` when Dell 3431 powers on and shows Dell logo
+#.  At Boot Options Menu, under `OTHER OPTIONS:` :menuselection:`BIOS Flash Update`
+#.  At BIOS Flash Update window, :guilabel:`...` and browse through the different File Systems: :samp:`FS#` until you find the USB drive you inserted
+#.  :guilabel:`Precision_3431_{{ host['hardware']['biosVersion'] }}.exe` then :guilabel:`OK`
+#.  Once file is verified, verify the listed information is correct under **System BIOS Information**
+
+    *   **System:** :samp:`Precision Tower 3431`
+    *   **Revision:** :samp:`<Currently installed BIOS version>` (Should be lower than listed BIOS Update Information, Revision version)
+    *   **Vendor:** :samp:`Dell Inc.`
+
+#.  Verify the listed information is correct under **BIOS UpdateInformation**
+
+    *   **BIOS update file:** :samp:`<FS#>:\\Precision_3431_{{ host['hardware']['biosVersion'] }}.exe` (File you copied to USB drive)
+    *   **System:** :samp:`Precision Tower 3431`
+    *   **Revision:** :samp:`{{ host['hardware']['biosVersion'] }}`
+    *   **Vendor:** :samp:`Dell Inc.`
+
+#.  :guilabel:`Begin Flash Update`
+#.  When prompted, :guilabel:`Yes` to proceed with flashing of BIOS
+#.  Once flashing of BIOS is complete and Dell 3431 reboots and shows shows Dell logo, :kbd:`F12` to enter BIOS Boot Options Menu
+#.  Verify that bottom banner of Boot Options Menu shows :samp:`BIOS Revision {{ host['hardware']['biosVersion'] }}` indicating a complete BIOS update.
+#.  Remove USB drive with BIOS update file from Dell 3431
+#.  **If** updating the BIOS version was the only need at this time, reboot Dell 3431 so it boots into its normal boot cycle. Otherwise continue to BIOS Configuration section
+
+{{ macros.sign_off_table([host['_name']]) }}
+
+.. END: {{ self._TemplateReference__context.name }}
