@@ -37,7 +37,7 @@
 
     {% include "/common_docs/jinja/intel/nuc9vxqnx/bios_update.jinja" %}
 
-    {% include "/common_docs/jinja/intel/amt/iconfigure.jinja" %}
+    {% include "/common_docs/jinja/intel/amt/configure.jinja" %}
 
     {% include "/common_docs/jinja/intel/nuc9vxqnx/bios_configure.jinja" %}
 
