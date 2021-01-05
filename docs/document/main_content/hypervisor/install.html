@@ -1,41 +1,41 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.5.1. VMware vSphere ESXi Deployment for gerudo &mdash; Homelab System Buildup Git: homelab - HOMELAB-18-document-dell-3431-buildup  [ 43e7fc4a2ea ] documentation</title>
+  <title>1.5.1. VMware vSphere ESXi Deployment for gerudo &mdash; Homelab System Buildup 61da837c015 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
-        <script src="../../../_static/drawio_html.js"></script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/drawio.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/drawio_html.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/drawio_html.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="1.6. System Cyber Security Deployment and Configuration" href="../security/contents.html" />
@@ -55,7 +55,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home"> Homelab System Buildup
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Homelab System Buildup
           
 
           
@@ -78,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -110,6 +111,18 @@
 <li class="toctree-l4"><a class="reference internal" href="#post-installation-configuration-of-vmware-vsphere-esxi-for-akkala">1.5.3.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>akkala</strong></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#vmware-vsphere-esxi-deployment-for-underworld">1.5.4. VMware vSphere ESXi Deployment for <strong>underworld</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#establish-an-intel-amt-remote-desktop-session-to-underworld">1.5.4.1. Establish an Intel AMT Remote Desktop session to <strong>underworld</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-of-vmware-vsphere-esxi-for-underworld">1.5.4.2. Installation of VMware vSphere ESXi for <strong>underworld</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-installation-configuration-of-vmware-vsphere-esxi-for-underworld">1.5.4.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>underworld</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#vmware-vsphere-vcenter-deployment-for-triforce">1.5.5. VMware vSphere vCenter Deployment for <strong>triforce</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deployment-of-vmware-vsphere-vcenter-ova-for-triforce-gui-method">1.5.5.1. Deployment of VMware vSphere vCenter OVA for <strong>triforce</strong> (GUI Method)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-of-vmware-vsphere-vcenter-server-triforce-via-web-gui">1.5.5.2. Configuration of VMware vSphere vCenter Server <strong>triforce</strong> (via Web GUI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#licensing-of-vmware-vsphere-infrastructure-licensing-via-web-gui">1.5.5.3. Licensing of VMware vSphere Infrastructure Licensing (via Web GUI)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../security/contents.html">1.6. System Cyber Security Deployment and Configuration</a></li>
@@ -119,12 +132,13 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../common_docs/appendices/acronym_list.html">1. Acronym List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common_docs/appendices/acronym_list.html">1. ACRONYM LIST</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -163,7 +177,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../contents.html"><span class="section-number">1. </span><strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a> &raquo;</li>
         
@@ -196,7 +210,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>Download and installation of <strong class="program">Meshcommander</strong> from <a class="reference external" href="https://www.meshcommander.com/meshcommander/meshcmd">MeshCommander Download</a></p></li>
-<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#dell3431-intel-amt-config-gerudo-mgmt"><span class="std std-ref">Dell Precision 3431, Intel Management Engine Configuration for gerudo</span></a></p></li>
+<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#dell-3431-sff-workstation-intel-amt-config-gerudo-mgmt"><span class="std std-ref">Dell 3431 SFF Workstation, Intel Management Engine Configuration for gerudo</span></a>:</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic">
@@ -252,13 +266,13 @@
 <li><p><span class="guilabel">IDER</span> and configure the following options:</p>
 <ul class="simple">
 <li><p>Source <span class="guilabel">ISO &amp; IMG from file</span></p></li>
-<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso</span></code></p></li>
+<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0b-16324942.x86_64.iso</span></code></p></li>
 <li><p>Start <span class="guilabel">Immediate</span></p></li>
 </ul>
 </li>
 <li><p><span class="guilabel">OK</span> and verify you have have a green bar with <strong>IDE-R Session, Connected</strong> at top of <strong class="program">MeshCommander</strong> now</p></li>
 <li><p><span class="guilabel">Power Actions… –&gt; Power On to IDE-R CDROM –&gt; OK</span></p></li>
-<li><p>Verify you see Dell boot image and then it continues to <em>Loading ESXi installer</em></p></li>
+<li><p>Verify you see boot image and then it continues to <em>Loading ESXi installer</em></p></li>
 <li><p>At the <em>Welcome to the VMware ESXI Installation</em> screen, press <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
 <li><p>At the <em>EULA</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
 <li><p>At the <em>Select a Disk to Install or Upgrade</em>, <span class="menuselection">Local: Samsung Flash Drive (mpx.vmhba34:C0:T0:L0)</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
@@ -327,7 +341,7 @@
 <ul class="simple">
 <li><p><span class="menuselection">Use the following DNS server addresses and hostname</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
 <li><p><span class="guilabel">Primary DNS Server</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
-<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">0.0.0.0</kbd></p></li>
+<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">208.67.220.220</kbd></p></li>
 <li><p><span class="guilabel">Hostname</span> = <kbd class="kbd docutils literal notranslate">gerudo</kbd></p></li>
 <li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
 </ul>
@@ -347,7 +361,7 @@
 <li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a ping test to the default Gateway</p></li>
 <li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#0</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
 <li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#1</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
-<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(0.0.0.0).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(208.67.220.220).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
 <li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Resolving</span> <span class="pre">hostname</span> <span class="pre">(gerudo.hyrule.binarylandscapes.com).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
 <li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
 </ul>
@@ -394,7 +408,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>Download and installation of <strong class="program">Meshcommander</strong> from <a class="reference external" href="https://www.meshcommander.com/meshcommander/meshcmd">MeshCommander Download</a></p></li>
-<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#dell3431-intel-amt-config-hebra-mgmt"><span class="std std-ref">Dell Precision 3431, Intel Management Engine Configuration for hebra</span></a></p></li>
+<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#dell-3431-sff-workstation-intel-amt-config-hebra-mgmt"><span class="std std-ref">Dell 3431 SFF Workstation, Intel Management Engine Configuration for hebra</span></a>:</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic">
@@ -450,13 +464,13 @@
 <li><p><span class="guilabel">IDER</span> and configure the following options:</p>
 <ul class="simple">
 <li><p>Source <span class="guilabel">ISO &amp; IMG from file</span></p></li>
-<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso</span></code></p></li>
+<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0b-16324942.x86_64.iso</span></code></p></li>
 <li><p>Start <span class="guilabel">Immediate</span></p></li>
 </ul>
 </li>
 <li><p><span class="guilabel">OK</span> and verify you have have a green bar with <strong>IDE-R Session, Connected</strong> at top of <strong class="program">MeshCommander</strong> now</p></li>
 <li><p><span class="guilabel">Power Actions… –&gt; Power On to IDE-R CDROM –&gt; OK</span></p></li>
-<li><p>Verify you see Dell boot image and then it continues to <em>Loading ESXi installer</em></p></li>
+<li><p>Verify you see boot image and then it continues to <em>Loading ESXi installer</em></p></li>
 <li><p>At the <em>Welcome to the VMware ESXI Installation</em> screen, press <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
 <li><p>At the <em>EULA</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
 <li><p>At the <em>Select a Disk to Install or Upgrade</em>, <span class="menuselection">Local: Samsung Flash Drive (mpx.vmhba34:C0:T0:L0)</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
@@ -525,7 +539,7 @@
 <ul class="simple">
 <li><p><span class="menuselection">Use the following DNS server addresses and hostname</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
 <li><p><span class="guilabel">Primary DNS Server</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
-<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">0.0.0.0</kbd></p></li>
+<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">208.67.220.220</kbd></p></li>
 <li><p><span class="guilabel">Hostname</span> = <kbd class="kbd docutils literal notranslate">hebra</kbd></p></li>
 <li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
 </ul>
@@ -545,7 +559,7 @@
 <li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a ping test to the default Gateway</p></li>
 <li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#0</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
 <li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#1</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
-<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(0.0.0.0).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(208.67.220.220).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
 <li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Resolving</span> <span class="pre">hostname</span> <span class="pre">(hebra.hyrule.binarylandscapes.com).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
 <li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
 </ul>
@@ -592,7 +606,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>Download and installation of <strong class="program">Meshcommander</strong> from <a class="reference external" href="https://www.meshcommander.com/meshcommander/meshcmd">MeshCommander Download</a></p></li>
-<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#dell3431-intel-amt-config-akkala-mgmt"><span class="std std-ref">Dell Precision 3431, Intel Management Engine Configuration for akkala</span></a></p></li>
+<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#dell-3431-sff-workstation-intel-amt-config-akkala-mgmt"><span class="std std-ref">Dell 3431 SFF Workstation, Intel Management Engine Configuration for akkala</span></a>:</p></li>
 </ul>
 </div></blockquote>
 <ol class="arabic">
@@ -648,13 +662,13 @@
 <li><p><span class="guilabel">IDER</span> and configure the following options:</p>
 <ul class="simple">
 <li><p>Source <span class="guilabel">ISO &amp; IMG from file</span></p></li>
-<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0.0-15843807.x86_64.iso</span></code></p></li>
+<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0b-16324942.x86_64.iso</span></code></p></li>
 <li><p>Start <span class="guilabel">Immediate</span></p></li>
 </ul>
 </li>
 <li><p><span class="guilabel">OK</span> and verify you have have a green bar with <strong>IDE-R Session, Connected</strong> at top of <strong class="program">MeshCommander</strong> now</p></li>
 <li><p><span class="guilabel">Power Actions… –&gt; Power On to IDE-R CDROM –&gt; OK</span></p></li>
-<li><p>Verify you see Dell boot image and then it continues to <em>Loading ESXi installer</em></p></li>
+<li><p>Verify you see boot image and then it continues to <em>Loading ESXi installer</em></p></li>
 <li><p>At the <em>Welcome to the VMware ESXI Installation</em> screen, press <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
 <li><p>At the <em>EULA</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
 <li><p>At the <em>Select a Disk to Install or Upgrade</em>, <span class="menuselection">Local: Samsung Flash Drive (mpx.vmhba34:C0:T0:L0)</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
@@ -723,7 +737,7 @@
 <ul class="simple">
 <li><p><span class="menuselection">Use the following DNS server addresses and hostname</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
 <li><p><span class="guilabel">Primary DNS Server</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
-<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">0.0.0.0</kbd></p></li>
+<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">208.67.220.220</kbd></p></li>
 <li><p><span class="guilabel">Hostname</span> = <kbd class="kbd docutils literal notranslate">akkala</kbd></p></li>
 <li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
 </ul>
@@ -743,7 +757,7 @@
 <li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a ping test to the default Gateway</p></li>
 <li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#0</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
 <li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#1</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
-<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(0.0.0.0).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(208.67.220.220).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
 <li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Resolving</span> <span class="pre">hostname</span> <span class="pre">(akkala.hyrule.binarylandscapes.com).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
 <li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
 </ul>
@@ -782,6 +796,822 @@
 </ol>
 </div>
 </div>
+<div class="section" id="vmware-vsphere-esxi-deployment-for-underworld">
+<span id="id6"></span><h1><span class="section-number">1.5.4. </span>VMware vSphere ESXi Deployment for <strong>underworld</strong><a class="headerlink" href="#vmware-vsphere-esxi-deployment-for-underworld" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="establish-an-intel-amt-remote-desktop-session-to-underworld">
+<h2><span class="section-number">1.5.4.1. </span>Establish an Intel AMT Remote Desktop session to <strong>underworld</strong><a class="headerlink" href="#establish-an-intel-amt-remote-desktop-session-to-underworld" title="Permalink to this headline">¶</a></h2>
+<p>Prerequistes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Download and installation of <strong class="program">Meshcommander</strong> from <a class="reference external" href="https://www.meshcommander.com/meshcommander/meshcmd">MeshCommander Download</a></p></li>
+<li><p>Intel AMT is configured per <a class="reference internal" href="../hardware/bios_fw.html#intel-nuc-nuc9vxqnx-intel-amt-config-underworld-mgmt"><span class="std std-ref">Intel NUC NUC9VXQNX, Intel Management Engine Configuration for underworld</span></a>:</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic">
+<li><p>From workstation, open <strong class="program">MeshCommander</strong></p></li>
+<li><p><span class="guilabel">Computer Management (Networked Computers Icon)</span></p></li>
+<li><p>Find <strong>underworld-mgmt</strong> and to on the same row at right-hand side of window <span class="guilabel">Connect</span></p></li>
+<li><p>Wait for system status to populate then <span class="guilabel">Remote Desktop</span> on left-hand side menu</p></li>
+<li><p>In Remote Desktop section of <strong class="program">MeshCommander</strong> <span class="guilabel">Connect</span></p></li>
+<li><p>You now have a remote desktop session to <strong>underworld</strong> in its current state.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>During reboots or power cycles <strong class="program">MeshCommander</strong> sometimes disconnects and has a delay to reconnect. Just reconnect as able but this is why its recommend to start from powered down for OS installations over Remote Desktop.</p>
+</div>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">underworld</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="installation-of-vmware-vsphere-esxi-for-underworld">
+<h2><span class="section-number">1.5.4.2. </span>Installation of VMware vSphere ESXi for <strong>underworld</strong><a class="headerlink" href="#installation-of-vmware-vsphere-esxi-for-underworld" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently for VMware vSphere ESXi 7.0.0-15843807, PXE boot via BIOS or UEFI is non-operational</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Currently for VMware vSphere ESXi 7.0.0-15843807, customization of ISO file is non-functional as well as using <strong class="program">Ventoy</strong> for a ISO booting USB.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These steps are written from the expectation previous section is complete for establishing a remote desktop session to host via <strong class="program">MeshCommander</strong></p>
+</div>
+<ol class="arabic">
+<li><p>If host is powered on, <span class="guilabel">Power Actions… –&gt; Power down –&gt; OK</span> and wait for red notification that Remote computer is not powered on.</p></li>
+<li><p><span class="guilabel">IDER</span> and configure the following options:</p>
+<ul class="simple">
+<li><p>Source <span class="guilabel">ISO &amp; IMG from file</span></p></li>
+<li><p>.ISO file <span class="guilabel">Choose File</span> and browse to location of and then select <code class="file docutils literal notranslate"><span class="pre">VMware-VMvisor-Installer-7.0b-16324942.x86_64.iso</span></code></p></li>
+<li><p>Start <span class="guilabel">Immediate</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span> and verify you have have a green bar with <strong>IDE-R Session, Connected</strong> at top of <strong class="program">MeshCommander</strong> now</p></li>
+<li><p><span class="guilabel">Power Actions… –&gt; Power On to IDE-R CDROM –&gt; OK</span></p></li>
+<li><p>Verify you see boot image and then it continues to <em>Loading ESXi installer</em></p></li>
+<li><p>At the <em>Welcome to the VMware ESXI Installation</em> screen, press <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p>At the <em>EULA</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
+<li><p>At the <em>Select a Disk to Install or Upgrade</em>, <span class="menuselection">Local: Samsung Flash Drive (mpx.vmhba32:C0:T0:L0)</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><em>If prompted</em>, use <kbd class="kbd docutils literal notranslate">UP</kbd> and <kbd class="kbd docutils literal notranslate">DOWN</kbd> and <kbd class="kbd docutils literal notranslate">SPACEBAR</kbd> to select <span class="menuselection">Install</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a fresh install over current ESXi installation</p></li>
+<li><p>At the <em>Please select a keyboard layout screen</em>, select <span class="menuselection">US Default</span> and <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd> then reenter to confirm <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+<li><p>At the <em>Confirm Install</em> screen, <kbd class="kbd docutils literal notranslate">F11</kbd></p></li>
+<li><p>Once installation is complete, <span class="guilabel">Stop IDE-R Session</span> from <strong class="program">MeshCommander</strong></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to <span class="menuselection">Reboot</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">underworld</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="post-installation-configuration-of-vmware-vsphere-esxi-for-underworld">
+<h2><span class="section-number">1.5.4.3. </span>Post-Installation Configuration of VMware vSphere ESXi for <strong>underworld</strong><a class="headerlink" href="#post-installation-configuration-of-vmware-vsphere-esxi-for-underworld" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Verify system is booted up and ready at the Yellow &amp; Black screen then <kbd class="kbd docutils literal notranslate">F2</kbd> to Customize System</p></li>
+<li><p>Enter <kbd class="kbd docutils literal notranslate">root</kbd> for <code class="docutils literal notranslate"><span class="pre">Login</span> <span class="pre">Name</span></code> and <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd> for <code class="docutils literal notranslate"><span class="pre">Password</span></code> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+<li><p><span class="menuselection">Configure Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ol class="arabic">
+<li><p><span class="menuselection">Network Adaptors</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">vmnic0</span></code> is <code class="docutils literal notranslate"><span class="pre">[X]</span></code> and <code class="docutils literal notranslate"><span class="pre">Status</span></code> is <code class="docutils literal notranslate"><span class="pre">Connected</span></code></p></li>
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">vmnic1-3</span></code> are <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> and <code class="docutils literal notranslate"><span class="pre">Status</span></code> is <code class="docutils literal notranslate"><span class="pre">Connected</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">VLAN (optional)</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd> to apply settings and exit menu.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to have your VMware management network as the native vlan or EPG on the configured trunk or as an access port. Which is configured as blank for the VLAN ID.</p>
+</div>
+<ul class="simple">
+<li><p>Verify that <span class="guilabel">VLAN ID (1-4094, or 4095 to access all VLANs):</span> <kbd class="kbd docutils literal notranslate">blank</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">IPv4 Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Set static IPv4 address and network configuration</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
+<li><p><span class="guilabel">IPv4 Address</span> = <kbd class="kbd docutils literal notranslate">10.1.10.109</kbd></p></li>
+<li><p><span class="guilabel">Subnet Mask</span> = <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p><span class="guilabel">Default Gateway</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">DNS Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Use the following DNS server addresses and hostname</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd> to mark selection</p></li>
+<li><p><span class="guilabel">Primary DNS Server</span> = <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p><span class="guilabel">Alternate DNS Server</span> = <kbd class="kbd docutils literal notranslate">208.67.220.220</kbd></p></li>
+<li><p><span class="guilabel">Hostname</span> = <kbd class="kbd docutils literal notranslate">underworld</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Custom DNS Suffixes</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="guilabel">Suffixes</span> = <kbd class="kbd docutils literal notranslate">hyrule.binarylandscapes.com</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">ESC</kbd> and <kbd class="kbd docutils literal notranslate">Y</kbd> to Apply changes and restart management network</p></li>
+</ol>
+</li>
+<li><p><span class="menuselection">Test Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">10.1.10.1</span></code> is listed for <code class="docutils literal notranslate"><span class="pre">Ping</span> <span class="pre">Address</span> <span class="pre">#0</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd> to perform a ping test to the default Gateway</p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#0</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#1</span> <span class="pre">(10.1.10.1).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><em>If populated</em> Verify you get <code class="docutils literal notranslate"><span class="pre">Pinging</span> <span class="pre">address</span> <span class="pre">#2</span> <span class="pre">(208.67.220.220).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p>Verify you get <code class="docutils literal notranslate"><span class="pre">Resolving</span> <span class="pre">hostname</span> <span class="pre">(underworld.hyrule.binarylandscapes.com).</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">OK.</span></code></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Configure Management Network</span> then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ol class="arabic simple">
+<li><p><span class="menuselection">IPv6 Configuration</span> and then <kbd class="kbd docutils literal notranslate">Enter</kbd></p>
+<ul class="simple">
+<li><p><span class="menuselection">Disable IPv6 (restart required)</span> and then <kbd class="kbd docutils literal notranslate">Space</kbd></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Enter</kbd></p></li>
+</ul>
+</li>
+<li><p><kbd class="kbd docutils literal notranslate">ESC</kbd> and <kbd class="kbd docutils literal notranslate">Y</kbd> to Apply changes and reboot host</p></li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">underworld</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="vmware-vsphere-vcenter-deployment-for-triforce">
+<span id="id8"></span><h1><span class="section-number">1.5.5. </span>VMware vSphere vCenter Deployment for <strong>triforce</strong><a class="headerlink" href="#vmware-vsphere-vcenter-deployment-for-triforce" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="deployment-of-vmware-vsphere-vcenter-ova-for-triforce-gui-method">
+<h2><span class="section-number">1.5.5.1. </span>Deployment of VMware vSphere vCenter OVA for <strong>triforce</strong> (GUI Method)<a class="headerlink" href="#deployment-of-vmware-vsphere-vcenter-ova-for-triforce-gui-method" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deployment-of-vmware-vsphere-vcenter-ova-for-triforce-stage-1">
+<h3><span class="section-number">1.5.5.1.1. </span>Deployment of VMware vSphere vCenter OVA for <strong>triforce</strong> (Stage 1)<a class="headerlink" href="#deployment-of-vmware-vsphere-vcenter-ova-for-triforce-stage-1" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ensure you have all vSphere ESXi and vCenter hosts configured properly in DNS, otherwise deployment will fail.</p>
+</div>
+<ol class="arabic">
+<li><p>On a Windows 10 workstation mount VMware-VCSA-all-7.0.0-16189094.iso by <span class="guilabel">Right-Clicking ISO file –&gt; Mount</span></p></li>
+<li><p>Open <strong class="program">Explorer</strong> and browse to mount ISO file to <code class="file docutils literal notranslate"><span class="pre">&lt;Mounted</span> <span class="pre">ISO</span> <span class="pre">File</span> <span class="pre">Drive&gt;:\vcsa-ui-installer\win32\</span></code></p></li>
+<li><p>Run <code class="file docutils literal notranslate"><span class="pre">installer.exe</span></code></p></li>
+<li><p><span class="guilabel">Install</span></p></li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Check <span class="guilabel">I accept the terms of the license agreement</span> then <span class="guilabel">NEXT</span></p></li>
+<li><p>Enter the following information:</p>
+<ul class="simple">
+<li><p>ESXi host or vCenter Server name:    <kbd class="kbd docutils literal notranslate">gerudo.hyrule.binarylandscapes.com</kbd></p></li>
+<li><p>HTTPS port:  <kbd class="kbd docutils literal notranslate">443</kbd></p></li>
+<li><p>User name:   <kbd class="kbd docutils literal notranslate">root</kbd></p></li>
+<li><p>Password:    <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">&lt;adminPassword</kbd> <kbd class="kbd docutils literal notranslate">to</kbd> <kbd class="kbd docutils literal notranslate">esxiHost&gt;</kbd></kbd></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span> then <span class="guilabel">YES</span> when prompted about certificate warning</p></li>
+<li><p>Enter the following information:</p>
+<ul class="simple">
+<li><p>VM name:    <kbd class="kbd docutils literal notranslate">triforce</kbd></p></li>
+<li><p>Set rootPassword:    <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+<li><p>Confirm rootPassword:    <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Configure the following settings:</p>
+<ul class="simple">
+<li><p>Deployment size:    <span class="guilabel">Tiny</span></p></li>
+<li><p>Storage size:   <span class="guilabel">Default</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p><span class="guilabel">Install on a new vSAN cluster containing the target host</span></p></li>
+<li><p>Enter the following information:</p>
+<ul class="simple">
+<li><p>Datacenter Name:    <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Homelab</kbd> <kbd class="kbd docutils literal notranslate">Datacenter</kbd></kbd></p></li>
+<li><p>Cluster Name:   <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Homelab</kbd> <kbd class="kbd docutils literal notranslate">Cluster</kbd></kbd></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Verify already claimed for or check the following disks for vSAN then <span class="guilabel">Claim for Capacity</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">(t10.ATA____Samsung_SSD_860_PRO_2TB__________xxxxxxxxxxxx______)</span></p></li>
+</ul>
+</li>
+<li><p>Verify already claimed for or check the following disks for vSAN then <span class="guilabel">Claim for Capacity</span></p>
+<ul class="simple">
+<li><p><span class="guilabel">(t10.NVMe____Samsung_SSD_970_PRO_1TB__________xxxxxxxxxxxx______)</span></p></li>
+</ul>
+</li>
+<li><p>Check <span class="guilabel">Enable Thin Disk Mode</span></p></li>
+<li><p>Check <span class="guilabel">Enable Deduplication and compression</span></p></li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Enter the following information:</p>
+<ul class="simple">
+<li><p>Network:    <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">VM</kbd> <kbd class="kbd docutils literal notranslate">Network</kbd></kbd></p></li>
+<li><p>IP version:   <kbd class="kbd docutils literal notranslate">IPv4</kbd></p></li>
+<li><p>IP assignment:   <kbd class="kbd docutils literal notranslate">static</kbd></p></li>
+<li><p>FQDN:   <kbd class="kbd docutils literal notranslate">triforce.hyrule.binarylandscapes.com</kbd></p></li>
+<li><p>IP address:   <kbd class="kbd docutils literal notranslate">10.1.10.100</kbd></p></li>
+<li><p>Subnet mask or prefix length:   <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p>Default gateway:   <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p>DNS servers:   <kbd class="kbd docutils literal notranslate">10.1.10.1,208.67.220.220</kbd></p></li>
+<li><p>HTTP:   <kbd class="kbd docutils literal notranslate">80</kbd></p></li>
+<li><p>HTTPS:  <kbd class="kbd docutils literal notranslate">443</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Verify settings are correct and <span class="guilabel">Finish</span></p></li>
+<li><p>Verify you recieve “You have successfully deployed the vCenter Server” and <span class="guilabel">CONTINUE</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">triforce</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="deployment-of-vmware-vsphere-vcenter-ova-for-triforce-stage-2">
+<h3><span class="section-number">1.5.5.1.2. </span>Deployment of VMware vSphere vCenter OVA for <strong>triforce</strong> (Stage 2)<a class="headerlink" href="#deployment-of-vmware-vsphere-vcenter-ova-for-triforce-stage-2" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your installer crashes or another issue occurs, continue Stage 2 from <a class="reference external" href="https://triforce.hyrule.binarylandscapes.com:5480">https://triforce.hyrule.binarylandscapes.com:5480</a></p>
+</div>
+<ol class="arabic">
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Time synchronization mode: <span class="guilabel">Synchronize time with NTP servers</span></p></li>
+<li><p>NTP servers (comma-seperated list): <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p>SSH access: <span class="guilabel">Disabled</span></p></li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p><span class="guilabel">Create a new SSO domain</span></p></li>
+<li><p>Enter the following information:</p>
+<ul class="simple">
+<li><p>Single Sign-On domain name:    <kbd class="kbd docutils literal notranslate">vsphere.local</kbd></p></li>
+<li><p>Single Sign-on user name:   <kbd class="kbd docutils literal notranslate">administrator</kbd></p></li>
+<li><p>Single Signon user name:    <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+<li><p>Confirm password:    <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Check <span class="guilabel">Join the VMware’s Customer Experience Improvement Program (CEIP)</span></p></li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Verify settings are correct and <span class="guilabel">Finish –&gt; OK</span></p></li>
+<li><p>Verify you recieve “You have successfully setup this vCenter Server” and <span class="guilabel">CLOSE</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">triforce</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="configuration-of-vmware-vsphere-vcenter-server-triforce-via-web-gui">
+<h2><span class="section-number">1.5.5.2. </span>Configuration of VMware vSphere vCenter Server <strong>triforce</strong> (via Web GUI)<a class="headerlink" href="#configuration-of-vmware-vsphere-vcenter-server-triforce-via-web-gui" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vmware-vsphere-vcenter-vsan-cluster-setup-completion">
+<h3><span class="section-number">1.5.5.2.1. </span>VMware vSphere vCenter vSAN Cluster Setup Completion<a class="headerlink" href="#vmware-vsphere-vcenter-vsan-cluster-setup-completion" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Open <strong class="program">Web Browser</strong> and go to <a class="reference external" href="https://triforce.hyrule.binarylandscapes.com:443">https://triforce.hyrule.binarylandscapes.com:443</a></p></li>
+<li><p><span class="guilabel">LAUNCH VSPHERE CLIENT (HTML5)</span></p></li>
+<li><p>Login as <kbd class="kbd docutils literal notranslate">administrator&#64;vsphere.local</kbd> and <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+<li><p><span class="guilabel">vSphere Client –&gt; Hosts and Clusters</span></p></li>
+<li><p>Expand <span class="guilabel">Homelab Datacenter –&gt; Homelab Cluster</span></p></li>
+<li><p>Right-click <span class="guilabel">Homelab Cluster –&gt; Add hosts</span></p></li>
+<li><p>Under <em>New hosts</em> tab, enter the following for each cluster member:</p>
+<ol class="arabic simple">
+<li><p>Cluster Member: <strong>hebra</strong></p>
+<ul class="simple">
+<li><p>IP address of FQDN: <kbd class="kbd docutils literal notranslate">hebra.hyrule.binarylandscapes.com</kbd></p></li>
+<li><p>Username:   <kbd class="kbd docutils literal notranslate">root</kbd></p></li>
+<li><p>Password:   <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+</ul>
+</li>
+<li><p>Cluster Member: <strong>akkala</strong></p>
+<ul class="simple">
+<li><p>IP address of FQDN: <kbd class="kbd docutils literal notranslate">akkala.hyrule.binarylandscapes.com</kbd></p></li>
+<li><p>Username:   <kbd class="kbd docutils literal notranslate">root</kbd></p></li>
+<li><p>Password:   <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Check box to manually accept certificates for lists hosts then <span class="guilabel">NEXT</span></p></li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p><span class="guilabel">FINISH</span></p></li>
+<li><p>Once you see the added ESXi server listed under <em>Homelab Datacenter</em> and in <em>(Maintenance Mode)</em> <span class="guilabel">Homelab Datacenter –&gt; Configure tab –&gt; Configuration Menu –&gt; Quickstart</span></p></li>
+<li><p>Use the Cluster quickstart helper and <span class="guilabel">Configure</span> to configure all hosts in cluster for network and vSAN settings</p></li>
+<li><p><em>Distributed switches</em> Configure the following:</p>
+<ul class="simple">
+<li><p>Uncheck <span class="guilabel">Configure networking setting later</span></p></li>
+<li><p>Number of distributed switches: <span class="guilabel">1</span></p></li>
+<li><p>Distributed Switch Name: <kbd class="kbd docutils literal notranslate">DSwitch01</kbd></p></li>
+<li><p>Port groups, vSAN network: <span class="guilabel">DSwitch01</span> and <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">DSwitch01</kbd>-<kbd class="kbd docutils literal notranslate">vSAN</kbd></kbd></p></li>
+<li><p>Physical adapters:</p>
+<ul>
+<li><p>Adapter 0 (vmnic0):    <span class="guilabel">Not in use</span></p></li>
+<li><p>Adapter 1 (vmnic1):    <span class="guilabel">DSwitch01</span></p></li>
+<li><p>Adapter 2 (vmnic2):    <span class="guilabel">DSwitch01</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p><em>Storage traffic</em> Configure the following:</p>
+<ul class="simple">
+<li><p>Check <span class="guilabel">Use VLAN</span> and <em>VLAN ID</em>: <kbd class="kbd docutils literal notranslate">255</kbd></p></li>
+<li><p>Protocol: <span class="guilabel">IPv4</span></p></li>
+<li><p>IPv4 Configuration, <span class="guilabel">Static IPs</span> and configure the following:</p>
+<ul>
+<li><p><em>gerudo.hyrule.binarylandscapes.com</em> <em>IPv4:</em> <kbd class="kbd docutils literal notranslate">10.1.255.101</kbd> <em>Subnet mask:</em> <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p><em>hebra.hyrule.binarylandscapes.com</em> <em>IPv4:</em> <kbd class="kbd docutils literal notranslate">10.1.255.102</kbd> <em>Subnet mask:</em> <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+<li><p><em>akkala.hyrule.binarylandscapes.com</em> <em>IPv4:</em> <kbd class="kbd docutils literal notranslate">10.1.255.103</kbd> <em>Subnet mask:</em> <kbd class="kbd docutils literal notranslate">255.255.255.0</kbd></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p><em>Advanced options</em> Configure the following:</p>
+<ul>
+<li><p><em>vSAN Options</em></p>
+<ul class="simple">
+<li><p>Deployment type:    <span class="guilabel">Single site cluster</span></p></li>
+<li><p>Data-At-Rest Encryption:    <span class="guilabel">Off</span></p></li>
+<li><p>Deduplication and compression:  <span class="guilabel">On</span> <em>Requires all-flash configuration</em></p></li>
+<li><p>Fault domains:  <span class="guilabel">Off</span></p></li>
+<li><p>Large scale cluster support:    <span class="guilabel">Off</span></p></li>
+</ul>
+</li>
+<li><p><em>Host options</em></p>
+<ul>
+<li><p>Lockdown mode:  <span class="guilabel">Normal</span></p></li>
+<li><p>NTP server: <kbd class="kbd docutils literal notranslate">10.1.10.1</kbd></p></li>
+<li><p>Host update preference: <span class="guilabel">Include patches and updates for current ESXi version</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will requires a connection to internet or you will get failure notifications, <span class="guilabel">No recommendation</span> on closed network</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p><em>Enhanced vMotion Compatibility</em></p>
+<ul class="simple">
+<li><p>Enable EVC: <span class="guilabel">Off</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p><em>Claim disks</em> Configure the following:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>With matching hardware in all cluster hosts</strong>, the wizard should auto assign the disks to matching tiers from the vCenter deployment of cache and capacity. But this only works if all the disks are unused. I had installed Windows on one of the disks, for testing and it made it unavailible to the wizard to claim for a host tier. If this occurs for you, <span class="guilabel">CANCEL</span> wizard and go and clear the partitions from disk on the affected host. I attempted to do this via host webgui and cleared it but wizard didn’t refresh information until I restarted wizard and then it auto assigned to tiers as expected.</p>
+</div>
+<ul class="simple">
+<li><p>All <em>Local NVMe Disk (t10.NVMe____Samsung_SSD_970_PRO_1TB…</em> disks should be <em>Claim for:</em> <span class="guilabel">Cache tier</span> of <em>Drive type:</em> <span class="guilabel">Flash</span> for all hosts.</p></li>
+<li><p>All <em>Local NVMe Disk (t10.ATA____Samsung_SSD_860_PRO_2TB…</em> disks should be <em>Claim for:</em> <span class="guilabel">Capacity tier</span> of <em>Drive type:</em> <span class="guilabel">Flash</span> for all hosts.</p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p><em>Proxy settings</em> <span class="guilabel">Next</span></p></li>
+<li><p>Verify settings are correct and <span class="guilabel">Finish</span></p></li>
+<li><p>Verify the following:</p>
+<ul class="simple">
+<li><p>Reconfigure vSAN cluster task completed successfully</p></li>
+<li><p>All hosts under Homelab Cluster are operational and not in Maintanenance Mode</p></li>
+<li><p>Under Cluster quickstart, add hosts: No warnings exists and the top says “Nice work!”</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Due to this being a homelab and VMware vSphere 7.0 is just released, you may see alot of alerts and cautions of non supported hardware. If you go under <span class="guilabel">Homelab Cluster –&gt; Monitor –&gt; vSAN –&gt; Skyline Health</span> there is a <em>Hardware compatibility</em> section and you can <span class="guilabel">Silence Alert</span> for items like <em>SCSI controller is VMware certified</em> or <em>Controller is VMware certified</em>. These items are a concern for a production system not homelabs.</p>
+</div>
+</li>
+<li><p><span class="guilabel">Homelab Cluster –&gt; Monitor –&gt; vSAN –&gt; Skyline Health</span></p></li>
+<li><p><span class="guilabel">vSAN Build Recommendation…</span> under <em>vSAN Build Recommendation</em> and <span class="guilabel">Login to My.Vmware.Com</span> and login using your VMware account information</p></li>
+<li><p><span class="guilabel">Homelab Datacenter –&gt; Homelab Cluster –&gt; DSwitch01 –&gt; Configure –&gt; EDIT… –&gt; Advanced</span> and configure the following:</p>
+<ul class="simple">
+<li><p>MTU (Bytes): <kbd class="kbd docutils literal notranslate">9000</kbd></p></li>
+<li><p>Multicast filtering mode: <span class="guilabel">IGMP/MLD snooping</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">OK</span></p></li>
+<li><p>Perform the following to create an additional Distributed Port Group <strong>DSwitch01-Hyrule</strong> on Distributed Switch <strong>DSwitch01</strong></p>
+<ol class="arabic simple">
+<li><p><span class="guilabel">Homelab Datacenter –&gt; Homelab Cluster –&gt; DSwitch01</span></p></li>
+<li><p><span class="guilabel">Actions –&gt; Distributed Port Group –&gt; New Distributed Port Group</span></p></li>
+<li><p>Name:   <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">DSwitch01</kbd>-<kbd class="kbd docutils literal notranslate">Hyrule</kbd></kbd></p></li>
+<li><p><span class="guilabel">NEXT</span></p></li>
+<li><p>Configure the following:</p>
+<ul class="simple">
+<li><p>Port binding:   <span class="guilabel">Static binding</span></p></li>
+<li><p>Port allocation:    <span class="guilabel">Elastic</span></p></li>
+<li><p>Number of ports:    <kbd class="kbd docutils literal notranslate">8</kbd></p></li>
+<li><p>Network resource pool:   <span class="guilabel">(default)</span></p></li>
+<li><p>VLAN type:  <span class="guilabel">None</span></p></li>
+<li><p>VLAN ID:    <kbd class="kbd docutils literal notranslate">10</kbd></p></li>
+<li><p>Uncheck <span class="guilabel">Customize default policies configuration</span></p></li>
+</ul>
+</li>
+<li><p><span class="guilabel">Next</span></p></li>
+<li><p>Verify settings are correct and <span class="guilabel">Finish</span></p></li>
+<li><p>Verify <em>Add Distributed Port Groups</em> task is completed</p></li>
+</ol>
+</li>
+<li><p>Move <em>triforce</em> to Distributed Port Group <strong>DSwitch01-Hyrule</strong></p>
+<ol class="arabic simple">
+<li><p><span class="guilabel">VMs and Templates (Sticky Pad icon)</span></p></li>
+<li><p><span class="guilabel">Homelab Datacenter –&gt; triforce</span></p></li>
+<li><p><span class="guilabel">ACTIONS –&gt; EDIT SETTINGS…</span></p></li>
+<li><p>For <em>Network adaptor 1</em> <span class="guilabel">Dropdown –&gt; Browse…</span></p></li>
+<li><p><span class="guilabel">DSwitch01-Hyrule</span> the <span class="guilabel">OK –&gt; OK</span></p></li>
+</ol>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">triforce</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="adding-underworld-to-homelab-datacenter-datacenter">
+<h3><span class="section-number">1.5.5.2.2. </span>Adding <code class="docutils literal notranslate"><span class="pre">underworld</span></code> to <code class="docutils literal notranslate"><span class="pre">Homelab</span> <span class="pre">Datacenter</span></code> Datacenter<a class="headerlink" href="#adding-underworld-to-homelab-datacenter-datacenter" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Right-click <span class="guilabel">Homelab Datacenter</span> Datacenter then <span class="guilabel">Add host…</span></p></li>
+<li><p>Enter <kbd class="kbd docutils literal notranslate">underworld.hyrule.binarylandscapes.com</kbd> then <span class="guilabel">Next</span></p></li>
+<li><p><kbd class="kbd docutils literal notranslate">root</kbd> and <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd> then <span class="guilabel">Next</span></p></li>
+<li><p><span class="guilabel">Yes to Accept Security Warning</span> then <span class="guilabel">Next</span></p></li>
+<li><p>Check <span class="guilabel">Disabled</span> for Lockdown mode then <span class="guilabel">Next</span></p></li>
+<li><p><span class="guilabel">Next</span></p></li>
+<li><p><span class="guilabel">Finish</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">underworld</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="licensing-of-vmware-vsphere-infrastructure-licensing-via-web-gui">
+<h2><span class="section-number">1.5.5.3. </span>Licensing of VMware vSphere Infrastructure Licensing (via Web GUI)<a class="headerlink" href="#licensing-of-vmware-vsphere-infrastructure-licensing-via-web-gui" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vmware-vsphere-vcenter-licensing-for-triforce">
+<h3><span class="section-number">1.5.5.3.1. </span>VMware vSphere vCenter Licensing for <strong>triforce</strong><a class="headerlink" href="#vmware-vsphere-vcenter-licensing-for-triforce" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Open <strong class="program">Web Browser</strong> and go to <a class="reference external" href="https://triforce.hyrule.binarylandscapes.com:443">https://triforce.hyrule.binarylandscapes.com:443</a></p></li>
+<li><p><span class="guilabel">LAUNCH VSPHERE CLIENT (HTML5)</span></p></li>
+<li><p>Login as <kbd class="kbd docutils literal notranslate">administrator&#64;vsphere.local</kbd> and <kbd class="kbd docutils literal notranslate">&lt;adminPassword&gt;</kbd></p></li>
+<li><p><span class="guilabel">vSphere Client –&gt; Hosts and Clusters</span></p></li>
+<li><p><span class="guilabel">triforce.hyrule.binarylandscapes.com</span></p></li>
+<li><p><span class="guilabel">Configure tab</span> then <span class="guilabel">Licensing</span> under <em>Settings</em></p></li>
+<li><p><span class="guilabel">ASSIGN LICENSE –&gt; NEW LICENSE</span> and complete the following:</p>
+<ul class="simple">
+<li><p>License key:    <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">HN490</kbd>-<kbd class="kbd docutils literal notranslate">N9H80</kbd>-<kbd class="kbd docutils literal notranslate">N89G5</kbd>-<kbd class="kbd docutils literal notranslate">0V002</kbd>-<kbd class="kbd docutils literal notranslate">9XJ2M</kbd></kbd></p></li>
+<li><p>License Name:   <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">VMUG</kbd> <kbd class="kbd docutils literal notranslate">vCenter</kbd> <kbd class="kbd docutils literal notranslate">License</kbd> <kbd class="kbd docutils literal notranslate">(2</kbd> <kbd class="kbd docutils literal notranslate">Instance)</kbd></kbd></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Take note if you have a <em>Some features will become unavailable</em> message to determine if you are affected</p>
+</div>
+</li>
+<li><p><span class="guilabel">OK</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">triforce</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="vmware-vsphere-esxi-licensing-for-gerudo">
+<h3><span class="section-number">1.5.5.3.2. </span>VMware vSphere ESXi Licensing for <strong>gerudo</strong><a class="headerlink" href="#vmware-vsphere-esxi-licensing-for-gerudo" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><span class="guilabel">vSphere Client –&gt; Hosts and Clusters</span></p></li>
+<li><p>Expand <span class="guilabel">triforce.hyrule.binarylandscapes.com –&gt; Homelab Datacenter –&gt; Homelab Cluster</span></p></li>
+<li><p><span class="guilabel">gerudo.hyrule.binarylandscapes.com</span></p></li>
+<li><p><span class="guilabel">Configure tab</span> then <span class="guilabel">Licensing</span> under <em>System</em></p></li>
+<li><p><span class="guilabel">ASSIGN LICENSE</span></p></li>
+<li><p><span class="guilabel">NEW LICENSE</span> and complete the following:</p>
+<ul class="simple">
+<li><p>License key:    <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">HJ002</kbd>-<kbd class="kbd docutils literal notranslate">JT242</kbd>-<kbd class="kbd docutils literal notranslate">189GT</kbd>-<kbd class="kbd docutils literal notranslate">0D0A6</kbd>-<kbd class="kbd docutils literal notranslate">0R9KH</kbd></kbd></p></li>
+<li><p>License Name:   <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">VMUG</kbd> <kbd class="kbd docutils literal notranslate">vSphere</kbd> <kbd class="kbd docutils literal notranslate">7</kbd> <kbd class="kbd docutils literal notranslate">Enterprise</kbd> <kbd class="kbd docutils literal notranslate">Plus</kbd> <kbd class="kbd docutils literal notranslate">License</kbd> <kbd class="kbd docutils literal notranslate">12</kbd> <kbd class="kbd docutils literal notranslate">CPUs</kbd> <kbd class="kbd docutils literal notranslate">(up</kbd> <kbd class="kbd docutils literal notranslate">to</kbd> <kbd class="kbd docutils literal notranslate">32</kbd> <kbd class="kbd docutils literal notranslate">cores)</kbd></kbd></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Take note if you have a <em>Some features will become unavailable</em> message to determine if you are affected</p>
+</div>
+</li>
+<li><p><span class="guilabel">OK</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gerudo</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="vmware-vsphere-esxi-licensing-for-hebra">
+<h3><span class="section-number">1.5.5.3.3. </span>VMware vSphere ESXi Licensing for <strong>hebra</strong><a class="headerlink" href="#vmware-vsphere-esxi-licensing-for-hebra" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><span class="guilabel">vSphere Client –&gt; Hosts and Clusters</span></p></li>
+<li><p>Expand <span class="guilabel">triforce.hyrule.binarylandscapes.com –&gt; Homelab Datacenter –&gt; Homelab Cluster</span></p></li>
+<li><p><span class="guilabel">hebra.hyrule.binarylandscapes.com</span></p></li>
+<li><p><span class="guilabel">Configure tab</span> then <span class="guilabel">Licensing</span> under <em>System</em></p></li>
+<li><p><span class="guilabel">ASSIGN LICENSE</span></p></li>
+<li><p><span class="guilabel">Existing LICENSE</span> and <span class="guilabel">VMUG vSphere 7 Enterprise Plus License 12 CPUs (up to 32 cores)</span></p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Take note if you have a <em>Some features will become unavailable</em> message to determine if you are affected</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><span class="guilabel">OK</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hebra</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="vmware-vsphere-esxi-licensing-for-akkala">
+<h3><span class="section-number">1.5.5.3.4. </span>VMware vSphere ESXi Licensing for <strong>akkala</strong><a class="headerlink" href="#vmware-vsphere-esxi-licensing-for-akkala" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><span class="guilabel">vSphere Client –&gt; Hosts and Clusters</span></p></li>
+<li><p>Expand <span class="guilabel">triforce.hyrule.binarylandscapes.com –&gt; Homelab Datacenter –&gt; Homelab Cluster</span></p></li>
+<li><p><span class="guilabel">akkala.hyrule.binarylandscapes.com</span></p></li>
+<li><p><span class="guilabel">Configure tab</span> then <span class="guilabel">Licensing</span> under <em>System</em></p></li>
+<li><p><span class="guilabel">ASSIGN LICENSE</span></p></li>
+<li><p><span class="guilabel">Existing LICENSE</span> and <span class="guilabel">VMUG vSphere 7 Enterprise Plus License 12 CPUs (up to 32 cores)</span></p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Take note if you have a <em>Some features will become unavailable</em> message to determine if you are affected</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><span class="guilabel">OK</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">akkala</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="vmware-vsphere-esxi-licensing-for-underworld">
+<h3><span class="section-number">1.5.5.3.5. </span>VMware vSphere ESXi Licensing for <strong>underworld</strong><a class="headerlink" href="#vmware-vsphere-esxi-licensing-for-underworld" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><span class="guilabel">vSphere Client –&gt; Hosts and Clusters</span></p></li>
+<li><p>Expand <span class="guilabel">triforce.hyrule.binarylandscapes.com –&gt; Homelab Datacenter –&gt; Homelab Cluster</span></p></li>
+<li><p><span class="guilabel">underworld.hyrule.binarylandscapes.com</span></p></li>
+<li><p><span class="guilabel">Configure tab</span> then <span class="guilabel">Licensing</span> under <em>System</em></p></li>
+<li><p><span class="guilabel">ASSIGN LICENSE</span></p></li>
+<li><p><span class="guilabel">Existing LICENSE</span> and <span class="guilabel">VMUG vSphere 7 Enterprise Plus License 12 CPUs (up to 32 cores)</span></p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Take note if you have a <em>Some features will become unavailable</em> message to determine if you are affected</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><span class="guilabel">OK</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">underworld</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="section" id="vmware-vsphere-vsan-licensing">
+<h3><span class="section-number">1.5.5.3.6. </span>VMware vSphere vSAN Licensing<a class="headerlink" href="#vmware-vsphere-vsan-licensing" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><span class="guilabel">vSphere Client –&gt; Hosts and Clusters</span></p></li>
+<li><p>Expand <span class="guilabel">triforce.hyrule.binarylandscapes.com –&gt; Homelab Datacenter</span></p></li>
+<li><p><span class="guilabel">Homelab Cluster</span></p></li>
+<li><p><span class="guilabel">Configure tab</span> then <span class="guilabel">Licensing</span> under <em>Configuration</em></p></li>
+<li><p><span class="guilabel">ASSIGN LICENSE –&gt; NEW LICENSE</span> and complete the following:</p>
+<ul class="simple">
+<li><p>License key:    <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">5H01N</kbd>-<kbd class="kbd docutils literal notranslate">J4H1H</kbd>-<kbd class="kbd docutils literal notranslate">08HHH</kbd>-<kbd class="kbd docutils literal notranslate">0E880</kbd>-<kbd class="kbd docutils literal notranslate">0RMHH</kbd></kbd></p></li>
+<li><p>License Name:   <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">VMUG</kbd> <kbd class="kbd docutils literal notranslate">vSAN</kbd> <kbd class="kbd docutils literal notranslate">Enterprise</kbd> <kbd class="kbd docutils literal notranslate">License</kbd> <kbd class="kbd docutils literal notranslate">12</kbd> <kbd class="kbd docutils literal notranslate">CPUs</kbd> <kbd class="kbd docutils literal notranslate">(up</kbd> <kbd class="kbd docutils literal notranslate">to</kbd> <kbd class="kbd docutils literal notranslate">32</kbd> <kbd class="kbd docutils literal notranslate">cores)</kbd></kbd></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Take note if you have a <em>Some features will become unavailable</em> message to determine if you are affected</p>
+</div>
+</li>
+<li><p><span class="guilabel">OK</span></p>
+<p><strong>Mark Complete:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Hostname</strong></p></th>
+<th class="head"><p><strong>Print and Sign Name</strong></p></th>
+<th class="head"><p><strong>Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">triforce</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -803,11 +1633,19 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Josh Johnson @binarylandscapes
+        
+        &copy; Copyright 2021, Binarylandscapes LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -818,7 +1656,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

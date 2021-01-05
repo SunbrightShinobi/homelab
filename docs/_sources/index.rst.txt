@@ -6,14 +6,54 @@
 
     .. only:: html
 
+        ------------------
+        Revision History
+        ------------------
+
+        .. tabularcolumns:: |>{\RaggedRight}p{\dimexpr 0.36\linewidth-2\tabcolsep}
+                            |>{\RaggedRight}p{\dimexpr 0.14\linewidth-2\tabcolsep}
+                            |>{\RaggedRight}p{\dimexpr 0.07\linewidth-2\tabcolsep}
+                            |>{\RaggedRight}p{\dimexpr 0.43\linewidth-2\tabcolsep}|
+
+        .. list-table:: Revision History
+            :header-rows: 1
+            :class: longtable
+            :name: revision_history
+            :align: center
+
+            * - **Date**
+              - **CN#**
+              - **Rev.**
+              - **Description**
+
+            {% for revision in _document['revisionHistory']['html'] %}
+
+            * - {{ revision['revisionDate'] }}
+              - {{ revision['revisionCN'] }}
+              - {{ revision['revision'] }}
+              - {{ revision['revisionDescriptonLine01'] }}
+                
+                {{ revision['revisionDescriptonLine02'] }}
+                
+                {{ revision['revisionDescriptonLine03'] }}
+                
+            {% endfor %}
+
+        --------------
+        To Do List
+        --------------
+
+        .. todolist::
+
+
         .. image:: /images/FullColor_1280x1024_lightBG.png
             :scale: 10
             :alt: Binarylandscapes Consulting
             :align: center
 
-    ---------------------
-    Contents
-    ---------------------
+    -----------------------------
+    Homelab System Build
+    -----------------------------
 
     .. toctree::
         :maxdepth: 5
@@ -23,42 +63,12 @@
 
         document/main_content/contents
 
-    ------------------
-    Revision History
-    ------------------
+    .. raw:: latex
 
-    .. tabularcolumns:: |>{\RaggedRight}p{\dimexpr 0.2\linewidth-2\tabcolsep}
-                        |>{\RaggedRight}p{\dimexpr 0.2\linewidth-2\tabcolsep}
-                        |>{\RaggedRight}p{\dimexpr 0.6\linewidth-2\tabcolsep}|
-
-    .. list-table:: Revision History
-        :header-rows: 1
-        :class: longtable
-        :name: revision_history
-        :align: center
-
-        * - **Date**
-            - **Rev**
-            - **Description**
-
-        {% for revision in _document['revisionHistory'] %}
-
-        * - {{ revision['date'] }}
-            - {{ revision['rev'] }}
-            - {% for change in revision['changes'] %}
-            {{ change }}
-            {% endfor %}
-
-        {% endfor %}
-
-    --------------
-    To Do List
-    --------------
-
-    .. todolist::
+        \beginappendices
 
     ---------------------
-    Appendices
+    APPENDICIES
     ---------------------
 
     .. toctree::
@@ -68,6 +78,22 @@
         :glob:
 
         common_docs/appendices/acronym_list
+
+    .. raw:: latex
+
+        \renewcommand{\bibname}{REFERENCES}
+        \renewcommand{\thepage}{REF-\arabic{page}}
+
+    .. only:: html
+
+        ---------------------
+        REFERENCES
+        ---------------------
+
+    .. only:: html or latex
+
+        .. bibliography::
+            :style: alpha
 
     .. only:: html
 

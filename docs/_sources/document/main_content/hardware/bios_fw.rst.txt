@@ -24,11 +24,24 @@
 
     {{ macros.create_heading(3,'Hardware BIOS & Firmware Update/Configuration for **'+host['_name']+'**', true, ) }}
 
+            {% if host['hardware']['model'] in ['3431 SFF Workstation'] %}
+
     {% include "/common_docs/jinja/dell/precision_3431/bios_update.jinja" %}
 
-    {% include "/common_docs/jinja/dell/precision_3431/intel_amt_configure.jinja" %}
+    {% include "/common_docs/jinja/intel/amt/configure.jinja" %}
 
     {% include "/common_docs/jinja/dell/precision_3431/bios_configure.jinja" %}
+
+
+            {% elif host['hardware']['model'] in ['NUC NUC9VXQNX'] %}
+
+    {% include "/common_docs/jinja/intel/nuc9vxqnx/bios_update.jinja" %}
+
+    {% include "/common_docs/jinja/intel/amt/configure.jinja" %}
+
+    {% include "/common_docs/jinja/intel/nuc9vxqnx/bios_configure.jinja" %}
+
+            {% endif %}
 
         {% endfor %}
     {% endif %}

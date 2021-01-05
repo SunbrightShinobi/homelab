@@ -1,41 +1,41 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.5. System Hypervisor Deployment and Configuration &mdash; Homelab System Buildup Git: homelab - HOMELAB-18-document-dell-3431-buildup  [ 43e7fc4a2ea ] documentation</title>
+  <title>1.5. System Hypervisor Deployment and Configuration &mdash; Homelab System Buildup 61da837c015 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
-        <script src="../../../_static/drawio_html.js"></script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/drawio.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/drawio_html.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/drawio_html.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="1.5.1. VMware vSphere ESXi Deployment for gerudo" href="install.html" />
@@ -55,7 +55,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home"> Homelab System Buildup
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Homelab System Buildup
           
 
           
@@ -78,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -95,6 +96,8 @@
 <li class="toctree-l3"><a class="reference internal" href="install.html">1.5.1. VMware vSphere ESXi Deployment for <strong>gerudo</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-esxi-deployment-for-hebra">1.5.2. VMware vSphere ESXi Deployment for <strong>hebra</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-esxi-deployment-for-akkala">1.5.3. VMware vSphere ESXi Deployment for <strong>akkala</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-esxi-deployment-for-underworld">1.5.4. VMware vSphere ESXi Deployment for <strong>underworld</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-vcenter-deployment-for-triforce">1.5.5. VMware vSphere vCenter Deployment for <strong>triforce</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../security/contents.html">1.6. System Cyber Security Deployment and Configuration</a></li>
@@ -104,12 +107,13 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../common_docs/appendices/acronym_list.html">1. Acronym List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common_docs/appendices/acronym_list.html">1. ACRONYM LIST</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -148,7 +152,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../contents.html"><span class="section-number">1. </span><strong>Binarylandscapes’s HomeLab</strong> Assembly, Deployment and Configuration</a> &raquo;</li>
         
@@ -193,6 +197,34 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html#post-installation-configuration-of-vmware-vsphere-esxi-for-akkala">1.5.3.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>akkala</strong></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#vmware-vsphere-esxi-deployment-for-underworld">1.5.4. VMware vSphere ESXi Deployment for <strong>underworld</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#establish-an-intel-amt-remote-desktop-session-to-underworld">1.5.4.1. Establish an Intel AMT Remote Desktop session to <strong>underworld</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#installation-of-vmware-vsphere-esxi-for-underworld">1.5.4.2. Installation of VMware vSphere ESXi for <strong>underworld</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#post-installation-configuration-of-vmware-vsphere-esxi-for-underworld">1.5.4.3. Post-Installation Configuration of VMware vSphere ESXi for <strong>underworld</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#vmware-vsphere-vcenter-deployment-for-triforce">1.5.5. VMware vSphere vCenter Deployment for <strong>triforce</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#deployment-of-vmware-vsphere-vcenter-ova-for-triforce-gui-method">1.5.5.1. Deployment of VMware vSphere vCenter OVA for <strong>triforce</strong> (GUI Method)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#deployment-of-vmware-vsphere-vcenter-ova-for-triforce-stage-1">1.5.5.1.1. Deployment of VMware vSphere vCenter OVA for <strong>triforce</strong> (Stage 1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#deployment-of-vmware-vsphere-vcenter-ova-for-triforce-stage-2">1.5.5.1.2. Deployment of VMware vSphere vCenter OVA for <strong>triforce</strong> (Stage 2)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#configuration-of-vmware-vsphere-vcenter-server-triforce-via-web-gui">1.5.5.2. Configuration of VMware vSphere vCenter Server <strong>triforce</strong> (via Web GUI)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-vcenter-vsan-cluster-setup-completion">1.5.5.2.1. VMware vSphere vCenter vSAN Cluster Setup Completion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#adding-underworld-to-homelab-datacenter-datacenter">1.5.5.2.2. Adding <code class="docutils literal notranslate"><span class="pre">underworld</span></code> to <code class="docutils literal notranslate"><span class="pre">Homelab</span> <span class="pre">Datacenter</span></code> Datacenter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#licensing-of-vmware-vsphere-infrastructure-licensing-via-web-gui">1.5.5.3. Licensing of VMware vSphere Infrastructure Licensing (via Web GUI)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-vcenter-licensing-for-triforce">1.5.5.3.1. VMware vSphere vCenter Licensing for <strong>triforce</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-esxi-licensing-for-gerudo">1.5.5.3.2. VMware vSphere ESXi Licensing for <strong>gerudo</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-esxi-licensing-for-hebra">1.5.5.3.3. VMware vSphere ESXi Licensing for <strong>hebra</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-esxi-licensing-for-akkala">1.5.5.3.4. VMware vSphere ESXi Licensing for <strong>akkala</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-esxi-licensing-for-underworld">1.5.5.3.5. VMware vSphere ESXi Licensing for <strong>underworld</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="install.html#vmware-vsphere-vsan-licensing">1.5.5.3.6. VMware vSphere vSAN Licensing</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -217,11 +249,19 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Josh Johnson @binarylandscapes
+        
+        &copy; Copyright 2021, Binarylandscapes LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -232,7 +272,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
