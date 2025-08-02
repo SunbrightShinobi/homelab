@@ -6,7 +6,7 @@ hardware:
   dell_3431: &dell_3431_ws
     manufacture: Dell
     model: 3431 SFF Workstation
-    biosVersion: 1.6.0
+    biosVersion: 1.7.2
   intel_nuc9vxqnx: &intel_nuc9vxqnx
     manufacture: Intel
     model: NUC NUC9VXQNX
