@@ -1,5 +1,5 @@
 ######################################################################
-**Binarylandscapes's HomeLab** Assembly, Deployment and Configuration
+**Galaxy Forest Lab HomeLab** Assembly, Deployment and Configuration
 ######################################################################
 
 .. toctree::
